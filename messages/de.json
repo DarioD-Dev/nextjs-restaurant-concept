@@ -1,0 +1,95 @@
+{
+    "Meta": {
+        "title": "Wurzelwerk — Bistro in Wien",
+        "description": "Saisonale, vegetabil geprägte Küche in Wien-Margareten. Speisekarte mit klaren Vegan-, Vegetarisch- und Allergenkennzeichnungen."
+    },
+    "Header": {
+        "menu": "Speisekarte",
+        "reservations": "Reservieren",
+        "contact": "Kontakt",
+        "openMenu": "Menü öffnen",
+        "closeMenu": "Menü schließen"
+    },
+    "Footer": {
+        "copyright": "© {year} Wurzelwerk"
+    },
+    "Home": {
+        "eyebrow": "Bistro · Wien-Margareten",
+        "headline": "Saisonal gekocht, aus der Wurzel gedacht.",
+        "subtitle": "Ein Menü, das mit dem Gemüse beginnt statt mit dem Fleisch — und klar sagt, was vegan, vegetarisch oder allergenfrei ist.",
+        "ctaMenu": "Speisekarte ansehen",
+        "ctaReserve": "Tisch reservieren",
+        "values": {
+            "seasonal": { "title": "Saisonal & regional", "body": "Die Karte wechselt mit der Ernte, nicht mit dem Kalenderjahr." },
+            "labelled": { "title": "Klar gekennzeichnet", "body": "Jedes Gericht zeigt vegan, vegetarisch oder Allergene direkt auf der Karte — nicht erst auf Nachfrage." },
+            "noPhoneQueue": { "title": "Ohne Warteschlange am Telefon", "body": "Reservierung und Kontakt sind jederzeit erreichbar, auch außerhalb der Öffnungszeiten." }
+        }
+    },
+    "Menu": {
+        "metaTitle": "Speisekarte — Wurzelwerk",
+        "metaDescription": "Vorspeisen, Hauptgerichte und Desserts mit klarer Vegan-, Vegetarisch- und Allergenkennzeichnung.",
+        "title": "Speisekarte",
+        "subtitle": "Saisonal, vegetabil geprägt — jedes Gericht mit Diät- und Allergenkennzeichnung.",
+        "categories": {
+            "vorspeisen": "Vorspeisen",
+            "hauptgerichte": "Hauptgerichte",
+            "desserts": "Desserts"
+        },
+        "containsAllergens": "Enthält:",
+        "dietary": {
+            "vegan": "Vegan",
+            "vegetarisch": "Vegetarisch",
+            "glutenfrei": "Glutenfrei"
+        },
+        "allergens": {
+            "gluten": "Gluten",
+            "milchprodukte": "Milchprodukte",
+            "nuesse": "Nüsse",
+            "fisch": "Fisch",
+            "eier": "Eier"
+        },
+        "items": {
+            "rote-bete-carpaccio": { "name": "Rote-Bete-Carpaccio", "description": "Mit Ziegenfrischkäse, geröstetem Walnusskrokant und Apfel-Vinaigrette." },
+            "kuerbissuppe": { "name": "Kürbissuppe", "description": "Mit geröstetem Kürbiskernöl und Kernen." },
+            "wurzelgemuese-tarte": { "name": "Wurzelgemüse-Tarte", "description": "Mit Kräuterseitlingen und Bergkäse." },
+            "geschmorte-pastinake": { "name": "Geschmorte Pastinake", "description": "Mit Linsen-Ragout und Petersilienwurzel-Püree." },
+            "saiblingsfilet": { "name": "Saiblingsfilet", "description": "Mit Wurzelgemüse und Beurre blanc." },
+            "rindsragout": { "name": "Rindsragout", "description": "Vom Weiderind, mit Wurzelgemüse und Kartoffelstampf." },
+            "sellerie-steak": { "name": "Sellerie-Steak", "description": "Gegrillt, mit Chimichurri und geröstetem Buchweizen." },
+            "apfel-topfen-strudel": { "name": "Apfel-Topfen-Strudel", "description": "Mit Vanillesauce." },
+            "schokoladentarte": { "name": "Schokoladentarte", "description": "Mit Fleur de Sel." }
+        }
+    },
+    "Reservations": {
+        "metaTitle": "Reservieren — Wurzelwerk",
+        "metaDescription": "Tisch reservieren telefonisch oder per Nachricht — noch ohne Online-Buchung.",
+        "title": "Tisch reservieren",
+        "body": "Reservierungen nehmen wir aktuell telefonisch oder über das Kontaktformular entgegen — eine Online-Buchung gibt es noch nicht.",
+        "hoursTitle": "Öffnungszeiten",
+        "ctaCall": "Anrufen:",
+        "ctaContact": "Nachricht schreiben"
+    },
+    "Contact": {
+        "metaTitle": "Kontakt — Wurzelwerk",
+        "metaDescription": "Adresse, Öffnungszeiten und Kontaktformular für Wurzelwerk in Wien-Margareten.",
+        "title": "Kontakt",
+        "body": "Fragen, Reservierungswünsche oder Feedback? Schreib uns — wir melden uns meist innerhalb eines Tages.",
+        "detailsTitle": "So erreichst du uns",
+        "hours": {
+            "title": "Öffnungszeiten",
+            "weekdays": "Di–Sa",
+            "weekdaysTime": "11:30–14:30 & 17:30–22:00",
+            "weekend": "So–Mo",
+            "weekendTime": "Ruhetag"
+        },
+        "form": {
+            "nameLabel": "Name",
+            "emailLabel": "E-Mail",
+            "messageLabel": "Nachricht",
+            "error": "Bitte überprüfen — dieses Feld fehlt oder ist ungültig.",
+            "submit": "Nachricht senden",
+            "submitting": "Wird gesendet…",
+            "success": "Danke! Deine Nachricht ist angekommen."
+        }
+    }
+}
