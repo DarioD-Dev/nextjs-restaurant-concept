@@ -1,55 +1,66 @@
 @import "tailwindcss";
 
 /* ─── Layer 1: primitives. Raw values, never used directly in a component. ───
-   Wurzelwerk's palette: warm cream ground, deep olive as the primary accent,
-   terracotta as a secondary, decorative-only accent. One light theme, no
-   dark mode — food photography and a menu read better on a warm light
-   ground than an inverted one, and a single theme keeps this project's
-   scope proportional to what it actually needs. Contrast measured against
-   the two colors that actually carry text (cream background, ink text),
-   not guessed. */
+   AMSEL's palette: deep warm ink at dusk, matte brass, oxblood and
+   petrol-black as accent SURFACES only (both measured too low-contrast to
+   carry small text on the ink ground — see comments below). One dark theme,
+   deliberately — this is a night/editorial mood, not a bright bistro. */
 :root {
-  color-scheme: light;
-  --ww-cream-50: #f5efe6; /* page ground */
-  --ww-cream-25: #fbf7f0; /* raised surfaces — lighter than the ground */
-  --ww-ink-900: #2b2118; /* body text — 13.78:1 on cream-50 */
-  --ww-olive-600: #4b5d3a; /* primary accent — 6.28:1 on cream-50 */
-  --ww-olive-700: #3c4a2e; /* accent hover / darker text-safe variant — 8.31:1 */
-  --ww-terracotta-500: #a85c32; /* decorative only — 4.33:1, fails AA for small text */
-  --ww-terracotta-700: #8f4a24; /* text-safe terracotta (e.g. allergen tags) — 5.79:1 */
-  --ww-sand-200: #e4d5c2; /* borders, rules */
-  --ww-muted-700: #6b5d4f; /* secondary text — 5.56:1 on cream-50 */
+  color-scheme: dark;
+  --am-ink-950: #14110f; /* page ground */
+  --am-ink-900: #1e1a17; /* alternating sections */
+  --am-bone-100: #ede6dc; /* body text — 15.18:1 on ink-950 */
+  --am-bone-400: #a79c8e; /* secondary text — 6.97:1 on ink-950 */
+  --am-brass-500: #b08d57; /* primary accent — 6.08:1 on ink-950 */
+  --am-brass-400: #c9a66b; /* accent hover — 8.19:1 on ink-950 */
+  --am-oxblood-700: #6b1f2a; /* surface only — 1.66:1 on ink-950, fails as text */
+  --am-petrol-900: #1f3b3a; /* surface only — feather-sheen accent */
+  --am-line-800: #3a322c; /* hairline rule, deliberately low-contrast/quiet */
+  --am-surface-900: #211c19; /* raised cards — 13.62:1 for bone text on it */
+  --am-surface-800: #2c2521; /* stronger raised surface */
+  --am-sage-500: #7c8a6e; /* success — 5.12:1 on ink-950 */
 }
 
 /* ─── Layer 2: semantic. ─── */
 :root {
-  --background: var(--ww-cream-50);
-  --foreground: var(--ww-ink-900);
-  --surface: var(--ww-cream-25);
-  --border: var(--ww-sand-200);
-  --muted: var(--ww-muted-700);
-  --accent: var(--ww-olive-600);
-  --accent-hover: var(--ww-olive-700);
-  --accent-foreground: var(--ww-cream-50);
+  --background: var(--am-ink-950);
+  --background-secondary: var(--am-ink-900);
+  --foreground: var(--am-bone-100);
+  --foreground-muted: var(--am-bone-400);
+  --primary: var(--am-brass-500);
+  --primary-hover: var(--am-brass-400);
+  --accent: var(--am-oxblood-700);
+  --accent-secondary: var(--am-petrol-900);
+  --border: var(--am-line-800);
+  --surface: var(--am-surface-900);
+  --surface-strong: var(--am-surface-800);
+  --success: var(--am-sage-500);
 }
 
 /* ─── Layer 3: Tailwind. Components only ever touch this. ─── */
 @theme inline {
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
   --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-border: var(--border);
-  --color-muted: var(--muted);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-success: var(--success);
   --font-sans: var(--font-sans-ui);
   --font-display: var(--font-display);
 
-  /* Fluid display scale — see DarioDev's globals.css for why clamp() beats
-     fixed Tailwind steps for a hero that has to actually claim a wide page. */
-  --text-hero: clamp(2.75rem, 2rem + 4vw, 6rem);
-  --text-section: clamp(2rem, 1.6rem + 2vw, 3.5rem);
+  /* Editorial scale: a large jump from body to display, no in-between
+     steps — hierarchy comes from contrast in size, matching a magazine
+     rather than a SaaS template's five-step type ramp. */
+  --text-display-xl: clamp(3rem, 2rem + 6vw, 7.5rem);
+  --text-display-lg: clamp(2.25rem, 1.6rem + 3.2vw, 4.5rem);
+  --text-display-md: clamp(1.75rem, 1.4rem + 1.6vw, 2.75rem);
+  --tracking-label: 0.2em;
 }
 
 body {
@@ -64,15 +75,17 @@ h3 {
   font-family: var(--font-display), Georgia, serif;
 }
 
+/* No rounded-full anywhere in this project by design — sharp, rectilinear
+   edges are part of the art direction, a deliberate break from the
+   pill-button language every other DarioDev project uses. */
 button:not(:disabled),
 [role="button"] {
   cursor: pointer;
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
-  border-radius: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -87,13 +100,13 @@ button:not(:disabled),
 }
 
 /* Hero entrance: visible by default, the animation only exists inside this
-   guard — no JS, no reduced-motion user, and no slow first paint ever hides
-   the headline (same reasoning as DarioDev's hero-rise). */
+   guard — slow and heavy (curtain-like), not bouncy, matching the signature
+   motion principle (deliberate cross-fades, never spring/scale). */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes hero-rise {
     from {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(14px);
     }
     to {
       opacity: 1;
@@ -102,7 +115,53 @@ button:not(:disabled),
   }
 
   .hero-rise {
-    animation: hero-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
     animation-delay: var(--rise-delay, 0ms);
   }
+}
+
+/* ─── Saisonlinie: the range input restyled as an editorial instrument, not
+   an OS control. Native <input type="range"> on purpose — free keyboard
+   (arrow keys, Home/End), free touch drag, free screen-reader value
+   announcement via aria-valuetext. Only the visual chrome is custom. ─── */
+.season-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  outline-offset: 6px;
+}
+
+.season-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  transform: rotate(45deg);
+  background: var(--primary);
+  border: none;
+  cursor: grab;
+  transition: background-color 0.2s ease-out;
+}
+
+.season-slider:active::-webkit-slider-thumb {
+  cursor: grabbing;
+  background: var(--primary-hover);
+}
+
+.season-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  transform: rotate(45deg);
+  background: var(--primary);
+  border: none;
+  cursor: grab;
+}
+
+.season-slider::-moz-range-track {
+  height: 1px;
+  background: var(--border);
 }

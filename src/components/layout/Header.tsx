@@ -6,24 +6,22 @@ import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { RESTAURANT } from "@/data/restaurant";
 
+const NAV_LINKS = ["/saison", "/haus", "/reservieren"] as const;
+
 function LocaleSwitcher() {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center gap-1 text-xs font-medium">
+    <div className="flex items-center gap-3 font-sans text-xs tracking-[0.2em] uppercase">
       {routing.locales.map((l) => (
         <button
           key={l}
           type="button"
           onClick={() => router.replace(pathname, { locale: l })}
           aria-current={l === locale}
-          className={
-            l === locale
-              ? "rounded-full bg-accent px-2 py-1 text-accent-foreground"
-              : "rounded-full px-2 py-1 text-muted transition-colors hover:text-foreground"
-          }
+          className={l === locale ? "text-primary" : "text-foreground-muted transition-colors hover:text-foreground"}
         >
           {l.toUpperCase()}
         </button>
@@ -32,42 +30,44 @@ function LocaleSwitcher() {
   );
 }
 
-const NAV_LINKS = ["/speisekarte", "/reservieren", "/kontakt"] as const;
-
 export function Header() {
   const t = useTranslations("Header");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-10 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-display text-xl font-semibold tracking-tight" onClick={() => setOpen(false)}>
+    <header className="sticky top-0 z-10 border-b border-border bg-background/95 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <Link
+          href="/"
+          className="font-display text-2xl tracking-tight text-foreground"
+          onClick={() => setOpen(false)}
+        >
           {RESTAURANT.name}
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-10 md:flex">
           {NAV_LINKS.map((href) => (
             <Link
               key={href}
               href={href}
               aria-current={pathname === href ? "page" : undefined}
-              className="text-sm text-muted transition-colors hover:text-foreground aria-[current=page]:text-accent aria-[current=page]:font-medium"
+              className="font-sans text-xs tracking-[0.2em] text-foreground-muted uppercase transition-colors hover:text-foreground aria-[current=page]:text-primary"
             >
-              {t(href === "/speisekarte" ? "menu" : href === "/reservieren" ? "reservations" : "contact")}
+              {t(href === "/saison" ? "season" : href === "/haus" ? "haus" : "reservations")}
             </Link>
           ))}
           <LocaleSwitcher />
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-4 md:hidden">
           <LocaleSwitcher />
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? t("closeMenu") : t("openMenu")}
             aria-expanded={open}
-            className="flex size-9 items-center justify-center rounded-full border border-border"
+            className="flex size-9 items-center justify-center border border-border"
           >
             <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth={1.5}>
               {open ? (
@@ -88,9 +88,9 @@ export function Header() {
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="py-2 text-sm text-muted transition-colors hover:text-foreground"
+                className="py-3 font-sans text-xs tracking-[0.2em] text-foreground-muted uppercase transition-colors hover:text-foreground"
               >
-                {t(href === "/speisekarte" ? "menu" : href === "/reservieren" ? "reservations" : "contact")}
+                {t(href === "/saison" ? "season" : href === "/haus" ? "haus" : "reservations")}
               </Link>
             ))}
           </div>

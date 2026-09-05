@@ -1,41 +1,63 @@
 {
     "Meta": {
-        "title": "Wurzelwerk — Bistro in Wien",
-        "description": "Saisonale, vegetabil geprägte Küche in Wien-Margareten. Speisekarte mit klaren Vegan-, Vegetarisch- und Allergenkennzeichnungen."
+        "title": "Amsel — Küche in Wien",
+        "description": "Amsel: eine Küche in Wien-Margareten, die der Saison folgt statt einer festen Karte. Die Saisonlinie zeigt, was gerade wächst."
     },
     "Header": {
-        "menu": "Speisekarte",
+        "season": "Saisonlinie",
+        "haus": "Haus",
         "reservations": "Reservieren",
-        "contact": "Kontakt",
         "openMenu": "Menü öffnen",
         "closeMenu": "Menü schließen"
     },
     "Footer": {
-        "copyright": "© {year} Wurzelwerk"
+        "hoursWeekdays": "Di–Sa 18:00–24:00",
+        "hoursWeekend": "So–Mo Ruhetag",
+        "copyright": "© {year} Amsel"
     },
     "Home": {
-        "eyebrow": "Bistro · Wien-Margareten",
-        "headline": "Saisonal gekocht, aus der Wurzel gedacht.",
-        "subtitle": "Ein Menü, das mit dem Gemüse beginnt statt mit dem Fleisch — und klar sagt, was vegan, vegetarisch oder allergenfrei ist.",
-        "ctaMenu": "Speisekarte ansehen",
-        "ctaReserve": "Tisch reservieren",
-        "values": {
-            "seasonal": { "title": "Saisonal & regional", "body": "Die Karte wechselt mit der Ernte, nicht mit dem Kalenderjahr." },
-            "labelled": { "title": "Klar gekennzeichnet", "body": "Jedes Gericht zeigt vegan, vegetarisch oder Allergene direkt auf der Karte — nicht erst auf Nachfrage." },
-            "noPhoneQueue": { "title": "Ohne Warteschlange am Telefon", "body": "Reservierung und Kontakt sind jederzeit erreichbar, auch außerhalb der Öffnungszeiten." }
+        "eyebrow": "Amsel · Küche & Keller in Wien-Margareten",
+        "headline": "Was heute reift, kommt heute auf den Tisch.",
+        "subtitle": "Amsel kocht nach dem, was Markt und Garten gerade hergeben — Gericht für Gericht, Monat für Monat neu gedacht.",
+        "ctaSeason": "Saisonlinie entdecken",
+        "ctaReserve": "Tisch anfragen",
+        "heroImageLabel": "Hero — Küche bei Dämmerlicht, Koch am Pass",
+        "manifesto": {
+            "eyebrow": "Haltung",
+            "quote": "Wir kochen, was diese Woche wächst — nicht, was immer auf der Karte steht.",
+            "quoteAttribution": "— aus der Küche, Amsel",
+            "body": "Amsel arbeitet ohne feste Jahreskarte. Was aus dem Boden kommt, aus dem Keller oder vom Markt in der Nähe, bestimmt, was auf dem Teller landet — die Saisonlinie zeigt genau das, Monat für Monat.",
+            "imageLabel": "Detail — Zutat auf dem Schneidebrett"
+        },
+        "seasonTeaser": {
+            "eyebrow": "Die Speisekarte, anders gedacht",
+            "title": "Die Saisonlinie",
+            "body": "Statt einer starren Karte: ein Zeitstrahl durchs Jahr. Ziehen, scrollen oder mit den Pfeiltasten durch die Monate — und sehen, was gerade wächst.",
+            "cta": "Saisonlinie ansehen",
+            "imageLabel": "Saisonlinie — Zutaten im Jahreslauf"
         }
     },
-    "Menu": {
-        "metaTitle": "Speisekarte — Wurzelwerk",
-        "metaDescription": "Vorspeisen, Hauptgerichte und Desserts mit klarer Vegan-, Vegetarisch- und Allergenkennzeichnung.",
-        "title": "Speisekarte",
-        "subtitle": "Saisonal, vegetabil geprägt — jedes Gericht mit Diät- und Allergenkennzeichnung.",
+    "Season": {
+        "metaTitle": "Saisonlinie — Amsel",
+        "metaDescription": "Die Speisekarte von Amsel als Zeitstrahl durchs Jahr — mit vollständigen Diät- und Allergenangaben zu jedem Gericht.",
+        "eyebrow": "Die Karte",
+        "title": "Die Saisonlinie",
+        "subtitle": "Zieh durch die Monate und sieh, was gerade Saison hat — die vollständige Karte mit allen Diät- und Allergenangaben bleibt dabei immer sichtbar.",
         "categories": {
             "vorspeisen": "Vorspeisen",
             "hauptgerichte": "Hauptgerichte",
             "desserts": "Desserts"
         },
-        "containsAllergens": "Enthält:",
+        "seasons": {
+            "fruehling": "Frühling",
+            "sommer": "Sommer",
+            "herbst": "Herbst",
+            "winter": "Winter"
+        },
+        "months": [
+            "Januar", "Februar", "März", "April", "Mai", "Juni",
+            "Juli", "August", "September", "Oktober", "November", "Dezember"
+        ],
         "dietary": {
             "vegan": "Vegan",
             "vegetarisch": "Vegetarisch",
@@ -48,6 +70,9 @@
             "fisch": "Fisch",
             "eier": "Eier"
         },
+        "containsAllergens": "Enthält:",
+        "inSeasonLabel": "Jetzt Saison",
+        "scrubberImageLabel": "Zutat des Monats",
         "items": {
             "rote-bete-carpaccio": { "name": "Rote-Bete-Carpaccio", "description": "Mit Ziegenfrischkäse, geröstetem Walnusskrokant und Apfel-Vinaigrette." },
             "kuerbissuppe": { "name": "Kürbissuppe", "description": "Mit geröstetem Kürbiskernöl und Kernen." },
@@ -60,28 +85,18 @@
             "schokoladentarte": { "name": "Schokoladentarte", "description": "Mit Fleur de Sel." }
         }
     },
-    "Reservations": {
-        "metaTitle": "Reservieren — Wurzelwerk",
-        "metaDescription": "Tisch reservieren telefonisch oder per Nachricht — noch ohne Online-Buchung.",
-        "title": "Tisch reservieren",
-        "body": "Reservierungen nehmen wir aktuell telefonisch oder über das Kontaktformular entgegen — eine Online-Buchung gibt es noch nicht.",
-        "hoursTitle": "Öffnungszeiten",
-        "ctaCall": "Anrufen:",
-        "ctaContact": "Nachricht schreiben"
-    },
-    "Contact": {
-        "metaTitle": "Kontakt — Wurzelwerk",
-        "metaDescription": "Adresse, Öffnungszeiten und Kontaktformular für Wurzelwerk in Wien-Margareten.",
-        "title": "Kontakt",
-        "body": "Fragen, Reservierungswünsche oder Feedback? Schreib uns — wir melden uns meist innerhalb eines Tages.",
-        "detailsTitle": "So erreichst du uns",
-        "hours": {
-            "title": "Öffnungszeiten",
-            "weekdays": "Di–Sa",
-            "weekdaysTime": "11:30–14:30 & 17:30–22:00",
-            "weekend": "So–Mo",
-            "weekendTime": "Ruhetag"
-        },
+    "Haus": {
+        "metaTitle": "Das Haus — Amsel",
+        "metaDescription": "Über Amsel: Küche, Raum und wie man einen Tisch anfragt.",
+        "eyebrow": "Über uns",
+        "title": "Das Haus",
+        "intro": "Amsel liegt in einem ehemaligen Hofgebäude in Wien-Margareten — Steinboden, hohe Fenster, ein Kachelofen, der noch echtes Holz brennt.",
+        "interiorImageLabel": "Innenraum — Gastraum bei Dämmerlicht",
+        "philosophyTitle": "Die Küche",
+        "philosophyBody": "Wir arbeiten mit einem festen Kreis kleiner Betriebe aus der Umgebung Wiens — was sie liefern, bestimmt die Karte, nicht umgekehrt. Kein Gericht steht länger auf der Karte, als es wirklich reif ist.",
+        "detailImageLabel": "Detail — Werkzeug und Zutat in der Küche",
+        "contactTitle": "Schreib uns",
+        "contactBody": "Für Fragen, besondere Anlässe oder einfach um Hallo zu sagen.",
         "form": {
             "nameLabel": "Name",
             "emailLabel": "E-Mail",
@@ -91,5 +106,15 @@
             "submitting": "Wird gesendet…",
             "success": "Danke! Deine Nachricht ist angekommen."
         }
+    },
+    "Reservations": {
+        "metaTitle": "Reservieren — Amsel",
+        "metaDescription": "Tisch bei Amsel anfragen — telefonisch oder per Nachricht, noch ohne Online-Buchung.",
+        "eyebrow": "Reservieren",
+        "title": "Tisch anfragen",
+        "body": "Amsel nimmt Reservierungen aktuell telefonisch oder über eine Nachricht entgegen — eine Online-Buchung gibt es noch nicht.",
+        "hoursTitle": "Öffnungszeiten",
+        "ctaCall": "Anrufen:",
+        "ctaWrite": "Nachricht schreiben"
     }
 }

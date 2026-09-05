@@ -1,41 +1,49 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
-// Same hero-rise approach as DarioDev's own Hero: visible by default, the
-// staggered entrance only exists inside a prefers-reduced-motion guard in
-// globals.css, so a slow first paint or JS never running still shows the
-// headline immediately.
+// Asymmetric on purpose: text sits in a narrow left column, the image
+// dominates the right two-thirds and bleeds to the page edge — a
+// centered-hero-over-full-width-image would read as every other
+// restaurant template. Slow entrance only (hero-rise), no scroll-linked
+// motion here — that's reserved for the Saisonlinie.
 export async function Hero() {
   const t = await getTranslations("Home");
 
   return (
-    <section className="relative mx-auto max-w-5xl px-6 pt-24 pb-20 sm:pt-32 sm:pb-28">
-      <p className="hero-rise font-display text-sm font-medium tracking-wide text-accent">{t("eyebrow")}</p>
-      <h1
-        className="hero-rise mt-5 max-w-3xl font-display font-semibold tracking-tight text-balance"
-        style={{ fontSize: "var(--text-hero)", lineHeight: 1.05, "--rise-delay": "60ms" } as React.CSSProperties}
-      >
-        {t("headline")}
-      </h1>
-      <p
-        className="hero-rise mt-6 max-w-xl text-lg text-muted sm:text-xl"
-        style={{ "--rise-delay": "140ms" } as React.CSSProperties}
-      >
-        {t("subtitle")}
-      </p>
-      <div className="hero-rise mt-9 flex flex-wrap gap-4" style={{ "--rise-delay": "200ms" } as React.CSSProperties}>
-        <Link
-          href="/speisekarte"
-          className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition hover:bg-accent-hover active:scale-[0.97]"
-        >
-          {t("ctaMenu")}
-        </Link>
-        <Link
-          href="/reservieren"
-          className="rounded-full border border-border px-6 py-3 text-sm font-medium transition hover:border-accent active:scale-[0.97]"
-        >
-          {t("ctaReserve")}
-        </Link>
+    <section className="border-b border-border">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-16 pb-16 sm:pt-24 sm:pb-0 lg:grid-cols-[minmax(0,20rem)_1fr] lg:items-end lg:gap-16">
+        <div className="hero-rise lg:pb-16">
+          <p className="font-sans text-xs tracking-[0.2em] text-primary uppercase">{t("eyebrow")}</p>
+          <h1
+            className="mt-5 font-display font-medium tracking-tight text-balance"
+            style={{ fontSize: "var(--text-display-lg)", lineHeight: 1.05 }}
+          >
+            {t("headline")}
+          </h1>
+          <p className="mt-6 max-w-sm text-base text-foreground-muted">{t("subtitle")}</p>
+          <div className="mt-8 flex flex-wrap gap-6">
+            <Link
+              href="/saison"
+              className="border border-primary px-6 py-3 font-sans text-xs tracking-[0.15em] text-primary uppercase transition-colors hover:bg-primary hover:text-background"
+            >
+              {t("ctaSeason")}
+            </Link>
+            <Link
+              href="/reservieren"
+              className="px-6 py-3 font-sans text-xs tracking-[0.15em] text-foreground-muted uppercase transition-colors hover:text-foreground"
+            >
+              {t("ctaReserve")}
+            </Link>
+          </div>
+        </div>
+
+        <ImagePlaceholder
+          label={t("heroImageLabel")}
+          aspect="4 / 5"
+          tone="brass"
+          className="hero-rise lg:aspect-[3/4]"
+        />
       </div>
     </section>
   );

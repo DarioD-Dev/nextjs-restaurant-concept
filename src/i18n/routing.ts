@@ -1,17 +1,18 @@
 import { defineRouting } from "next-intl/routing";
 
-// IA mirrors Salon Kupferglanz's shape (four lean pages, not five) rather
-// than Maison Aurelle's product-catalog structure: this is a service
-// business with one menu, not a multi-page product grid.
+// Experience-led IA, not a utility-page list: no dedicated Kontakt route —
+// contact details live in the persistent footer and the Haus page instead.
+// "Speisekarte" is replaced by "Saison" (the Saisonlinie IS the menu
+// experience, not a separate list bolted on next to it).
 export const routing = defineRouting({
   locales: ["de", "en"],
   defaultLocale: "de",
   localePrefix: "always",
   pathnames: {
     "/": "/",
-    "/speisekarte": { de: "/speisekarte", en: "/menu" },
+    "/saison": { de: "/saison", en: "/season" },
+    "/haus": { de: "/haus", en: "/house" },
     "/reservieren": { de: "/reservieren", en: "/reservations" },
-    "/kontakt": { de: "/kontakt", en: "/contact" },
   },
 });
 

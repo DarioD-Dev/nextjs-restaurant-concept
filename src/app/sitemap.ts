@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { absoluteUrl } from "@/lib/seo";
 
-const paths = ["/", "/speisekarte", "/reservieren", "/kontakt"] as const;
+const paths = ["/", "/saison", "/haus", "/reservieren"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return paths.flatMap((path) =>

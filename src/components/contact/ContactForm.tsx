@@ -7,10 +7,10 @@ import { submitContactForm, type ContactFormState } from "@/lib/actions/contact"
 const initialState: ContactFormState = { status: "idle" };
 
 const fieldClass =
-  "mt-1.5 w-full rounded-lg border border-border bg-background px-3.5 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-accent aria-[invalid=true]:border-accent";
+  "mt-1.5 w-full border border-border bg-background px-3.5 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-primary aria-[invalid=true]:border-accent";
 
 export function ContactForm() {
-  const t = useTranslations("Contact.form");
+  const t = useTranslations("Haus.form");
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
   const successRef = useRef<HTMLParagraphElement>(null);
 
@@ -23,7 +23,7 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <p ref={successRef} tabIndex={-1} role="status" className="font-medium text-accent-hover outline-none">
+      <p ref={successRef} tabIndex={-1} role="status" className="font-medium text-primary outline-none">
         {t("success")}
       </p>
     );
@@ -35,9 +35,9 @@ export function ContactForm() {
   const hasUnattributedError = state.status === "error" && !nameInvalid && !emailInvalid && !messageInvalid;
 
   return (
-    <form action={formAction} className="flex flex-col gap-4">
+    <form action={formAction} className="flex flex-col gap-5">
       <div>
-        <label htmlFor="name" className="text-sm font-medium text-foreground/90">
+        <label htmlFor="name" className="font-sans text-xs tracking-[0.15em] text-foreground-muted uppercase">
           {t("nameLabel")}
         </label>
         <input
@@ -49,13 +49,13 @@ export function ContactForm() {
           className={fieldClass}
         />
         {nameInvalid && (
-          <p id="name-error" className="mt-1 text-xs text-accent-hover">
+          <p id="name-error" className="mt-1 text-xs text-accent">
             {t("error")}
           </p>
         )}
       </div>
       <div>
-        <label htmlFor="email" className="text-sm font-medium text-foreground/90">
+        <label htmlFor="email" className="font-sans text-xs tracking-[0.15em] text-foreground-muted uppercase">
           {t("emailLabel")}
         </label>
         <input
@@ -68,13 +68,13 @@ export function ContactForm() {
           className={fieldClass}
         />
         {emailInvalid && (
-          <p id="email-error" className="mt-1 text-xs text-accent-hover">
+          <p id="email-error" className="mt-1 text-xs text-accent">
             {t("error")}
           </p>
         )}
       </div>
       <div>
-        <label htmlFor="message" className="text-sm font-medium text-foreground/90">
+        <label htmlFor="message" className="font-sans text-xs tracking-[0.15em] text-foreground-muted uppercase">
           {t("messageLabel")}
         </label>
         <textarea
@@ -88,16 +88,16 @@ export function ContactForm() {
           className={fieldClass}
         />
         {messageInvalid && (
-          <p id="message-error" className="mt-1 text-xs text-accent-hover">
+          <p id="message-error" className="mt-1 text-xs text-accent">
             {t("error")}
           </p>
         )}
       </div>
-      {hasUnattributedError && <p className="text-xs text-accent-hover">{t("error")}</p>}
+      {hasUnattributedError && <p className="text-xs text-accent">{t("error")}</p>}
       <button
         type="submit"
         disabled={pending}
-        className="mt-2 w-fit rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition hover:bg-accent-hover active:scale-[0.97] disabled:opacity-60"
+        className="mt-2 w-fit border border-primary px-6 py-3 font-sans text-xs tracking-[0.15em] text-primary uppercase transition-colors hover:bg-primary hover:text-background disabled:opacity-60"
       >
         {pending ? t("submitting") : t("submit")}
       </button>

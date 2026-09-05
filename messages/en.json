@@ -1,41 +1,63 @@
 {
     "Meta": {
-        "title": "Wurzelwerk — Bistro in Vienna",
-        "description": "Seasonal, vegetable-forward cooking in Vienna-Margareten. A menu with clear vegan, vegetarian and allergen labelling."
+        "title": "Amsel — Kitchen in Vienna",
+        "description": "Amsel: a kitchen in Vienna-Margareten that follows the season instead of a fixed menu. The Season Line shows what's actually growing."
     },
     "Header": {
-        "menu": "Menu",
+        "season": "Season Line",
+        "haus": "House",
         "reservations": "Reservations",
-        "contact": "Contact",
         "openMenu": "Open menu",
         "closeMenu": "Close menu"
     },
     "Footer": {
-        "copyright": "© {year} Wurzelwerk"
+        "hoursWeekdays": "Tue–Sat 6:00 pm–midnight",
+        "hoursWeekend": "Sun–Mon closed",
+        "copyright": "© {year} Amsel"
     },
     "Home": {
-        "eyebrow": "Bistro · Vienna-Margareten",
-        "headline": "Cooked seasonally, thought from the root up.",
-        "subtitle": "A menu that starts with the vegetable, not the meat — and states plainly what's vegan, vegetarian or allergen-free.",
-        "ctaMenu": "View the menu",
-        "ctaReserve": "Reserve a table",
-        "values": {
-            "seasonal": { "title": "Seasonal & regional", "body": "The menu changes with the harvest, not the calendar year." },
-            "labelled": { "title": "Clearly labelled", "body": "Every dish shows vegan, vegetarian or allergens right on the menu — not only on request." },
-            "noPhoneQueue": { "title": "No phone queue", "body": "Reservations and contact are reachable any time, even outside opening hours." }
+        "eyebrow": "Amsel · Kitchen & Cellar in Vienna-Margareten",
+        "headline": "What ripens today reaches the table today.",
+        "subtitle": "Amsel cooks from what the market and the garden give up right now — rethought dish by dish, month by month.",
+        "ctaSeason": "Explore the Season Line",
+        "ctaReserve": "Request a table",
+        "heroImageLabel": "Hero — kitchen at dusk, chef at the pass",
+        "manifesto": {
+            "eyebrow": "Approach",
+            "quote": "We cook what's growing this week — not what's always on the menu.",
+            "quoteAttribution": "— from the kitchen, Amsel",
+            "body": "Amsel works without a fixed year-round menu. What comes from the ground, the cellar or a nearby market decides what lands on the plate — the Season Line shows exactly that, month by month.",
+            "imageLabel": "Detail — ingredient on the cutting board"
+        },
+        "seasonTeaser": {
+            "eyebrow": "The menu, rethought",
+            "title": "The Season Line",
+            "body": "Instead of a fixed menu: a timeline through the year. Drag, scroll or use the arrow keys through the months — and see what's actually growing.",
+            "cta": "View the Season Line",
+            "imageLabel": "Season Line — ingredients through the year"
         }
     },
-    "Menu": {
-        "metaTitle": "Menu — Wurzelwerk",
-        "metaDescription": "Starters, mains and desserts with clear vegan, vegetarian and allergen labelling.",
-        "title": "Menu",
-        "subtitle": "Seasonal, vegetable-forward — every dish with dietary and allergen labelling.",
+    "Season": {
+        "metaTitle": "Season Line — Amsel",
+        "metaDescription": "Amsel's menu as a timeline through the year — with full dietary and allergen information for every dish.",
+        "eyebrow": "The menu",
+        "title": "The Season Line",
+        "subtitle": "Drag through the months to see what's in season — the complete menu with full dietary and allergen information stays visible at all times.",
         "categories": {
             "vorspeisen": "Starters",
             "hauptgerichte": "Mains",
             "desserts": "Desserts"
         },
-        "containsAllergens": "Contains:",
+        "seasons": {
+            "fruehling": "Spring",
+            "sommer": "Summer",
+            "herbst": "Autumn",
+            "winter": "Winter"
+        },
+        "months": [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ],
         "dietary": {
             "vegan": "Vegan",
             "vegetarisch": "Vegetarian",
@@ -48,6 +70,9 @@
             "fisch": "Fish",
             "eier": "Eggs"
         },
+        "containsAllergens": "Contains:",
+        "inSeasonLabel": "In season now",
+        "scrubberImageLabel": "Ingredient of the month",
         "items": {
             "rote-bete-carpaccio": { "name": "Beetroot carpaccio", "description": "With fresh goat cheese, toasted walnut crumble and apple vinaigrette." },
             "kuerbissuppe": { "name": "Pumpkin soup", "description": "With roasted pumpkin-seed oil and seeds." },
@@ -60,28 +85,18 @@
             "schokoladentarte": { "name": "Chocolate tart", "description": "With fleur de sel." }
         }
     },
-    "Reservations": {
-        "metaTitle": "Reservations — Wurzelwerk",
-        "metaDescription": "Reserve a table by phone or message — no online booking yet.",
-        "title": "Reserve a table",
-        "body": "We currently take reservations by phone or through the contact form — there's no online booking yet.",
-        "hoursTitle": "Opening hours",
-        "ctaCall": "Call:",
-        "ctaContact": "Send a message"
-    },
-    "Contact": {
-        "metaTitle": "Contact — Wurzelwerk",
-        "metaDescription": "Address, opening hours and contact form for Wurzelwerk in Vienna-Margareten.",
-        "title": "Contact",
-        "body": "Questions, reservation requests or feedback? Write to us — we usually reply within a day.",
-        "detailsTitle": "Reach us",
-        "hours": {
-            "title": "Opening hours",
-            "weekdays": "Tue–Sat",
-            "weekdaysTime": "11:30 am–2:30 pm & 5:30–10:00 pm",
-            "weekend": "Sun–Mon",
-            "weekendTime": "Closed"
-        },
+    "Haus": {
+        "metaTitle": "The House — Amsel",
+        "metaDescription": "About Amsel: kitchen, space, and how to request a table.",
+        "eyebrow": "About",
+        "title": "The House",
+        "intro": "Amsel sits in a former courtyard building in Vienna-Margareten — stone floors, tall windows, a tiled stove that still burns real wood.",
+        "interiorImageLabel": "Interior — dining room at dusk",
+        "philosophyTitle": "The kitchen",
+        "philosophyBody": "We work with a fixed circle of small producers around Vienna — what they deliver decides the menu, not the other way round. No dish stays on the menu longer than it's actually in season.",
+        "detailImageLabel": "Detail — tools and ingredient in the kitchen",
+        "contactTitle": "Write to us",
+        "contactBody": "For questions, special occasions, or just to say hello.",
         "form": {
             "nameLabel": "Name",
             "emailLabel": "Email",
@@ -91,5 +106,15 @@
             "submitting": "Sending…",
             "success": "Thanks! Your message has arrived."
         }
+    },
+    "Reservations": {
+        "metaTitle": "Reservations — Amsel",
+        "metaDescription": "Request a table at Amsel — by phone or message, no online booking yet.",
+        "eyebrow": "Reservations",
+        "title": "Request a table",
+        "body": "Amsel currently takes reservations by phone or message — there's no online booking yet.",
+        "hoursTitle": "Opening hours",
+        "ctaCall": "Call:",
+        "ctaWrite": "Send a message"
     }
 }

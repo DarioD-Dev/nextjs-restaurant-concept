@@ -16,48 +16,42 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title, description, openGraph: buildOpenGraph({ title, description, locale, href: "/reservieren" }) };
 }
 
-// Honest, not a fake booking widget: same pattern Salon Kupferglanz already
-// established for this exact situation (no bookingUrl → the CTA goes to
-// contact instead of pretending a reservation was taken). An online
-// reservation flow is exactly the kind of interactive solution planned as
-// the next build phase, not something to fake here.
+// Honest, not a fake booking widget — same pattern Salon Kupferglanz
+// established (no bookingUrl → the CTA goes to a real channel instead of
+// pretending a reservation was taken). An online reservation flow is
+// exactly the kind of interactive solution planned as a later phase.
 export default async function ReservationsPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("Reservations");
-  const tHours = await getTranslations("Contact.hours");
+  const tFooter = await getTranslations("Footer");
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
-      <h1 className="font-display font-semibold tracking-tight" style={{ fontSize: "var(--text-section)" }}>
+      <p className="font-sans text-xs tracking-[0.2em] text-primary uppercase">{t("eyebrow")}</p>
+      <h1 className="mt-4 font-display font-medium" style={{ fontSize: "var(--text-display-md)" }}>
         {t("title")}
       </h1>
-      <p className="mt-4 text-lg text-muted">{t("body")}</p>
+      <p className="mt-5 text-lg text-foreground-muted">{t("body")}</p>
 
-      <div className="mt-10 rounded-2xl border border-border bg-surface p-6">
-        <h2 className="font-display text-lg font-semibold">{t("hoursTitle")}</h2>
-        <ul className="mt-3 space-y-1 text-sm text-foreground/90">
-          <li>
-            {tHours("weekdays")}: {tHours("weekdaysTime")}
-          </li>
-          <li>
-            {tHours("weekend")}: {tHours("weekendTime")}
-          </li>
-        </ul>
+      <div className="mt-12 border-t border-border pt-8">
+        <h2 className="font-sans text-xs tracking-[0.2em] text-foreground-muted uppercase">{t("hoursTitle")}</h2>
+        <p className="mt-3 text-sm text-foreground">{tFooter("hoursWeekdays")}</p>
+        <p className="text-sm text-foreground">{tFooter("hoursWeekend")}</p>
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-4">
+      <div className="mt-10 flex flex-wrap gap-6">
         <a
           href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`}
-          className="rounded-full bg-accent px-6 py-3 text-sm font-medium text-accent-foreground transition hover:bg-accent-hover active:scale-[0.97]"
+          className="border border-primary px-6 py-3 font-sans text-xs tracking-[0.15em] text-primary uppercase transition-colors hover:bg-primary hover:text-background"
         >
           {t("ctaCall")} {RESTAURANT.phone}
         </a>
         <Link
-          href="/kontakt"
-          className="rounded-full border border-border px-6 py-3 text-sm font-medium transition hover:border-accent active:scale-[0.97]"
+          href="/haus"
+          className="px-6 py-3 font-sans text-xs tracking-[0.15em] text-foreground-muted uppercase transition-colors hover:text-foreground"
         >
-          {t("ctaContact")}
+          {t("ctaWrite")}
         </Link>
       </div>
     </div>
