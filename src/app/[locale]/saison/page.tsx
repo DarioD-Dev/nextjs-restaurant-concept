@@ -41,7 +41,7 @@ export default async function SeasonPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-      <p className="font-sans text-xs tracking-[0.2em] text-primary uppercase">{t("eyebrow")}</p>
+      <p className="font-sans text-xs tracking-label text-primary uppercase">{t("eyebrow")}</p>
       <h1 className="mt-4 max-w-2xl font-display font-medium" style={{ fontSize: "var(--text-display-md)" }}>
         {t("title")}
       </h1>

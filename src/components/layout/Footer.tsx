@@ -4,22 +4,27 @@ import { RESTAURANT } from "@/data/restaurant";
 // Contact details live here persistently rather than on a dedicated Kontakt
 // page — a request/reservation moment belongs on /reservieren, and the
 // house's own story belongs on /haus; a bare address/phone/email block
-// doesn't need a whole route of its own.
+// doesn't need a whole route of its own. The wordmark repeats large at the
+// close — not for size's own sake, but so the last thing a visitor sees is
+// the brand itself, not just a utility block of hours and a phone number.
 export function Footer() {
   const t = useTranslations("Footer");
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-3">
-        <div>
-          <p className="font-display text-lg text-foreground">{RESTAURANT.name}</p>
-          <address className="mt-3 space-y-1 font-sans text-sm text-foreground-muted not-italic">
-            <p>{RESTAURANT.address.street}</p>
-            <p>
-              {RESTAURANT.address.postalCode} {RESTAURANT.address.city}
-            </p>
-          </address>
-        </div>
+      <div className="mx-auto max-w-6xl px-6 pt-16 sm:pt-24">
+        <p className="font-display font-medium" style={{ fontSize: "var(--text-display-lg)", lineHeight: 1 }}>
+          {RESTAURANT.name}
+        </p>
+      </div>
+
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-10 pb-14 sm:grid-cols-3">
+        <address className="font-sans text-sm text-foreground-muted not-italic">
+          <p>{RESTAURANT.address.street}</p>
+          <p>
+            {RESTAURANT.address.postalCode} {RESTAURANT.address.city}
+          </p>
+        </address>
         <div className="font-sans text-sm text-foreground-muted">
           <p>
             <a href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-foreground">

@@ -16,9 +16,9 @@
         "copyright": "© {year} Amsel"
     },
     "Home": {
-        "eyebrow": "Amsel · Kitchen & Cellar in Vienna-Margareten",
-        "headline": "What ripens today reaches the table today.",
-        "subtitle": "Amsel cooks from what the market and the garden give up right now — rethought dish by dish, month by month.",
+        "eyebrow": "Amsel · Vienna-Margareten",
+        "headline": "Where the city goes quiet.",
+        "subtitle": "What ripens today reaches the table today — Amsel cooks from what the market and the garden give up right now.",
         "ctaSeason": "Explore the Season Line",
         "ctaReserve": "Request a table",
         "heroImageLabel": "Hero — kitchen at dusk, chef at the pass",
@@ -111,6 +111,8 @@
         "metaTitle": "Reservations — Amsel",
         "metaDescription": "Request a table at Amsel — by phone or message, no online booking yet.",
         "eyebrow": "Reservations",
+        "statement": "One table. One evening. Time.",
+        "imageLabel": "Photo — table set for the evening, candlelight",
         "title": "Request a table",
         "body": "Amsel currently takes reservations by phone or message — there's no online booking yet.",
         "hoursTitle": "Opening hours",

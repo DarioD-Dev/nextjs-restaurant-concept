@@ -16,9 +16,9 @@
         "copyright": "© {year} Amsel"
     },
     "Home": {
-        "eyebrow": "Amsel · Küche & Keller in Wien-Margareten",
-        "headline": "Was heute reift, kommt heute auf den Tisch.",
-        "subtitle": "Amsel kocht nach dem, was Markt und Garten gerade hergeben — Gericht für Gericht, Monat für Monat neu gedacht.",
+        "eyebrow": "Amsel · Wien-Margareten",
+        "headline": "Wo die Stadt leiser wird.",
+        "subtitle": "Was heute reift, kommt heute auf den Tisch — Amsel kocht nach dem, was Markt und Garten gerade hergeben.",
         "ctaSeason": "Saisonlinie entdecken",
         "ctaReserve": "Tisch anfragen",
         "heroImageLabel": "Hero — Küche bei Dämmerlicht, Koch am Pass",
@@ -111,6 +111,8 @@
         "metaTitle": "Reservieren — Amsel",
         "metaDescription": "Tisch bei Amsel anfragen — telefonisch oder per Nachricht, noch ohne Online-Buchung.",
         "eyebrow": "Reservieren",
+        "statement": "Ein Tisch. Ein Abend. Zeit.",
+        "imageLabel": "Foto — gedeckter Tisch am Abend, Kerzenlicht",
         "title": "Tisch anfragen",
         "body": "Amsel nimmt Reservierungen aktuell telefonisch oder über eine Nachricht entgegen — eine Online-Buchung gibt es noch nicht.",
         "hoursTitle": "Öffnungszeiten",

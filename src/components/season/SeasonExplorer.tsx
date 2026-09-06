@@ -71,15 +71,17 @@ export function SeasonExplorer({
   return (
     <div>
       <div className="border-b border-border pb-14">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,18rem)_1fr] lg:items-center lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,24rem)_1fr] lg:items-center lg:gap-16">
           <ImagePlaceholder
             label={`${scrubberLabel} — ${monthLabel}`}
             aspect="4 / 5"
             tone={month % 2 === 0 ? "petrol" : "brass"}
+            angledCrop
+            className="lg:-my-6"
           />
 
           <div>
-            <label htmlFor={sliderId} className="font-sans text-xs tracking-[0.2em] text-primary uppercase">
+            <label htmlFor={sliderId} className="font-sans text-xs tracking-label text-primary uppercase">
               {seasonLabels[season]}
             </label>
             <p className="mt-2 font-display text-4xl sm:text-5xl">{monthLabel}</p>

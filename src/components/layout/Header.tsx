@@ -14,7 +14,7 @@ function LocaleSwitcher() {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center gap-3 font-sans text-xs tracking-[0.2em] uppercase">
+    <div className="flex items-center gap-3 font-sans text-xs tracking-label uppercase">
       {routing.locales.map((l) => (
         <button
           key={l}
@@ -52,7 +52,7 @@ export function Header() {
               key={href}
               href={href}
               aria-current={pathname === href ? "page" : undefined}
-              className="font-sans text-xs tracking-[0.2em] text-foreground-muted uppercase transition-colors hover:text-foreground aria-[current=page]:text-primary"
+              className="font-sans text-xs tracking-label text-foreground-muted uppercase transition-colors hover:text-foreground aria-[current=page]:text-primary"
             >
               {t(href === "/saison" ? "season" : href === "/haus" ? "haus" : "reservations")}
             </Link>
@@ -88,7 +88,7 @@ export function Header() {
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="py-3 font-sans text-xs tracking-[0.2em] text-foreground-muted uppercase transition-colors hover:text-foreground"
+                className="py-3 font-sans text-xs tracking-label text-foreground-muted uppercase transition-colors hover:text-foreground"
               >
                 {t(href === "/saison" ? "season" : href === "/haus" ? "haus" : "reservations")}
               </Link>

@@ -2,48 +2,47 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
-// Asymmetric on purpose: text sits in a narrow left column, the image
-// dominates the right two-thirds and bleeds to the page edge — a
-// centered-hero-over-full-width-image would read as every other
-// restaurant template. Slow entrance only (hero-rise), no scroll-linked
-// motion here — that's reserved for the Saisonlinie.
+// The opening of an editorial, not a landing-page hero: one dominant,
+// full-bleed photograph with the type sitting directly on top of it (a
+// scrim protects legibility, not a text box). Content is deliberately
+// left-heavy and bottom-anchored — most of the frame stays pure image.
+// "Wo die Stadt leiser wird." carries the scene; the food-forward line
+// does the grounding work one register down, as the subtitle.
 export async function Hero() {
   const t = await getTranslations("Home");
 
   return (
-    <section className="border-b border-border">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-16 pb-16 sm:pt-24 sm:pb-0 lg:grid-cols-[minmax(0,20rem)_1fr] lg:items-end lg:gap-16">
-        <div className="hero-rise lg:pb-16">
-          <p className="font-sans text-xs tracking-[0.2em] text-primary uppercase">{t("eyebrow")}</p>
-          <h1
-            className="mt-5 font-display font-medium tracking-tight text-balance"
-            style={{ fontSize: "var(--text-display-lg)", lineHeight: 1.05 }}
-          >
-            {t("headline")}
-          </h1>
-          <p className="mt-6 max-w-sm text-base text-foreground-muted">{t("subtitle")}</p>
-          <div className="mt-8 flex flex-wrap gap-6">
-            <Link
-              href="/saison"
-              className="border border-primary px-6 py-3 font-sans text-xs tracking-[0.15em] text-primary uppercase transition-colors hover:bg-primary hover:text-background"
-            >
-              {t("ctaSeason")}
-            </Link>
-            <Link
-              href="/reservieren"
-              className="px-6 py-3 font-sans text-xs tracking-[0.15em] text-foreground-muted uppercase transition-colors hover:text-foreground"
-            >
-              {t("ctaReserve")}
-            </Link>
-          </div>
-        </div>
+    <section className="relative flex min-h-[94vh] items-end overflow-hidden border-b border-border">
+      <ImagePlaceholder label={t("heroImageLabel")} tone="brass" fill scrim />
 
-        <ImagePlaceholder
-          label={t("heroImageLabel")}
-          aspect="4 / 5"
-          tone="brass"
-          className="hero-rise lg:aspect-[3/4]"
-        />
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 pt-32 pb-16 sm:pb-20">
+        <p className="hero-rise font-sans text-xs tracking-[0.25em] text-primary uppercase">{t("eyebrow")}</p>
+        <h1
+          className="hero-rise mt-5 max-w-2xl font-display font-medium text-balance"
+          style={{ fontSize: "var(--text-display-xl)", lineHeight: 0.98, "--rise-delay": "80ms" } as React.CSSProperties}
+        >
+          {t("headline")}
+        </h1>
+        <p
+          className="hero-rise mt-6 max-w-md text-base text-foreground-muted sm:text-lg"
+          style={{ "--rise-delay": "160ms" } as React.CSSProperties}
+        >
+          {t("subtitle")}
+        </p>
+        <div className="hero-rise mt-9 flex flex-wrap gap-6" style={{ "--rise-delay": "220ms" } as React.CSSProperties}>
+          <Link
+            href="/saison"
+            className="border border-primary bg-background/40 px-6 py-3 font-sans text-xs tracking-[0.15em] text-primary uppercase backdrop-blur-sm transition-colors hover:bg-primary hover:text-background"
+          >
+            {t("ctaSeason")}
+          </Link>
+          <Link
+            href="/reservieren"
+            className="px-6 py-3 font-sans text-xs tracking-[0.15em] text-foreground uppercase transition-colors hover:text-primary"
+          >
+            {t("ctaReserve")}
+          </Link>
+        </div>
       </div>
     </section>
   );
