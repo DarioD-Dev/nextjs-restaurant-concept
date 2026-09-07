@@ -3,9 +3,9 @@
 // reads from here rather than repeating literals. Postal address stays in
 // its local (German) form on both locales, same as a real business address
 // would — opening hours are language content instead, so those live in
-// messages/*.json (Contact.hours) rather than here.
+// messages/*.json (Footer.hours) rather than here.
 export const RESTAURANT = {
-  name: "Amsel",
+  name: "Che Fame",
   email: "dario.dominkovic@hotmail.com",
   phone: "+43 1 890 12 34",
   address: {

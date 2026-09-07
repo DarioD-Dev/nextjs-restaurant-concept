@@ -1,102 +1,89 @@
 {
     "Meta": {
-        "title": "Amsel — Küche in Wien",
-        "description": "Amsel: eine Küche in Wien-Margareten, die der Saison folgt statt einer festen Karte. Die Saisonlinie zeigt, was gerade wächst."
+        "title": "Che Fame — Modernes italienisches Restaurant in Wien",
+        "description": "Che Fame: Pasta, Pizza, Antipasti und Dolci in Wien. Echte Gerichte, eine filterbare Speisekarte, kein Fine Dining."
     },
     "Header": {
-        "season": "Saisonlinie",
-        "haus": "Haus",
-        "reservations": "Reservieren",
+        "cucina": "La Cucina",
+        "prenota": "Prenota",
         "openMenu": "Menü öffnen",
         "closeMenu": "Menü schließen"
     },
     "Footer": {
-        "hoursWeekdays": "Di–Sa 18:00–24:00",
-        "hoursWeekend": "So–Mo Ruhetag",
-        "copyright": "© {year} Amsel"
+        "thanks": "Grazie per essere passato.",
+        "cities": "Roma · Napoli · Palermo",
+        "hoursWeekdays": "Di–So 11:30–22:00",
+        "hoursWeekend": "Mo Ruhetag",
+        "copyright": "© {year} Che Fame"
     },
     "Home": {
-        "eyebrow": "Amsel · Wien-Margareten",
-        "headline": "Wo die Stadt leiser wird.",
-        "subtitle": "Was heute reift, kommt heute auf den Tisch — Amsel kocht nach dem, was Markt und Garten gerade hergeben.",
-        "ctaSeason": "Saisonlinie entdecken",
-        "ctaReserve": "Tisch anfragen",
-        "heroImageLabel": "Hero — Küche bei Dämmerlicht, Koch am Pass",
-        "manifesto": {
-            "eyebrow": "Haltung",
-            "quote": "Wir kochen, was diese Woche wächst — nicht, was immer auf der Karte steht.",
-            "quoteAttribution": "— aus der Küche, Amsel",
-            "body": "Amsel arbeitet ohne feste Jahreskarte. Was aus dem Boden kommt, aus dem Keller oder vom Markt in der Nähe, bestimmt, was auf dem Teller landet — die Saisonlinie zeigt genau das, Monat für Monat.",
-            "imageLabel": "Detail — Zutat auf dem Schneidebrett"
+        "eyebrow": "Che Fame · Wien",
+        "headline": "Hunger? Perfetto.",
+        "subtitle": "Modernes italienisches Restaurant in Wien-Margareten. Pasta, Pizza, Antipasti, Dolci — gemacht, wie es sich gehört.",
+        "ctaPrenota": "Prenota",
+        "ctaCucina": "La Cucina",
+        "buonAppetito": "Buon appetito!",
+        "cucinaEyebrow": "Pasta, Pizza & mehr",
+        "cucinaCta": "Tutta la carta",
+        "pizzaTagline": "La pizza non aspetta.",
+        "dolciEyebrow": "Zum Schluss",
+        "fattoInCasa": {
+            "title": "Fatto in casa.",
+            "body": "Pomodoro, Basilico, Limone, Peperoncino — die vier Zutaten, die in fast jedem Gericht mitreden.",
+            "labels": {
+                "pomodoro": "Pomodoro",
+                "basilico": "Basilico",
+                "limone": "Limone",
+                "peperoncino": "Peperoncino"
+            }
         },
-        "seasonTeaser": {
-            "eyebrow": "Die Speisekarte, anders gedacht",
-            "title": "Die Saisonlinie",
-            "body": "Statt einer starren Karte: ein Zeitstrahl durchs Jahr. Ziehen, scrollen oder mit den Pfeiltasten durch die Monate — und sehen, was gerade wächst.",
-            "cta": "Saisonlinie ansehen",
-            "imageLabel": "Saisonlinie — Zutaten im Jahreslauf"
+        "prenotaCta": {
+            "title": "Heute Abend? Morgen? Für 2 oder für 4?",
+            "cta": "Tisch anfragen"
         }
     },
-    "Season": {
-        "metaTitle": "Saisonlinie — Amsel",
-        "metaDescription": "Die Speisekarte von Amsel als Zeitstrahl durchs Jahr — mit vollständigen Diät- und Allergenangaben zu jedem Gericht.",
+    "Cucina": {
+        "metaTitle": "La Cucina — Che Fame",
+        "metaDescription": "Die vollständige Speisekarte von Che Fame: Pasta, Pizza, Antipasti, Dolci — filterbar nach Kategorie, vegetarisch und vegan.",
         "eyebrow": "Die Karte",
-        "title": "Die Saisonlinie",
-        "subtitle": "Zieh durch die Monate und sieh, was gerade Saison hat — die vollständige Karte mit allen Diät- und Allergenangaben bleibt dabei immer sichtbar.",
+        "title": "La Cucina",
+        "subtitle": "Tutto, Pasta, Pizza, Antipasti oder Dolci — und vegetarisch oder vegan, wenn's passen muss.",
         "categories": {
-            "vorspeisen": "Vorspeisen",
-            "hauptgerichte": "Hauptgerichte",
-            "desserts": "Desserts"
+            "tutto": "Tutto",
+            "antipasti": "Antipasti",
+            "pasta": "Pasta",
+            "pizza": "Pizza",
+            "dolci": "Dolci"
         },
-        "seasons": {
-            "fruehling": "Frühling",
-            "sommer": "Sommer",
-            "herbst": "Herbst",
-            "winter": "Winter"
-        },
-        "months": [
-            "Januar", "Februar", "März", "April", "Mai", "Juni",
-            "Juli", "August", "September", "Oktober", "November", "Dezember"
-        ],
-        "dietary": {
-            "vegan": "Vegan",
-            "vegetarisch": "Vegetarisch",
-            "glutenfrei": "Glutenfrei"
-        },
-        "allergens": {
-            "gluten": "Gluten",
-            "milchprodukte": "Milchprodukte",
-            "nuesse": "Nüsse",
-            "fisch": "Fisch",
-            "eier": "Eier"
-        },
-        "containsAllergens": "Enthält:",
-        "inSeasonLabel": "Jetzt Saison",
-        "scrubberImageLabel": "Zutat des Monats",
-        "items": {
-            "rote-bete-carpaccio": { "name": "Rote-Bete-Carpaccio", "description": "Mit Ziegenfrischkäse, geröstetem Walnusskrokant und Apfel-Vinaigrette." },
-            "kuerbissuppe": { "name": "Kürbissuppe", "description": "Mit geröstetem Kürbiskernöl und Kernen." },
-            "wurzelgemuese-tarte": { "name": "Wurzelgemüse-Tarte", "description": "Mit Kräuterseitlingen und Bergkäse." },
-            "geschmorte-pastinake": { "name": "Geschmorte Pastinake", "description": "Mit Linsen-Ragout und Petersilienwurzel-Püree." },
-            "saiblingsfilet": { "name": "Saiblingsfilet", "description": "Mit Wurzelgemüse und Beurre blanc." },
-            "rindsragout": { "name": "Rindsragout", "description": "Vom Weiderind, mit Wurzelgemüse und Kartoffelstampf." },
-            "sellerie-steak": { "name": "Sellerie-Steak", "description": "Gegrillt, mit Chimichurri und geröstetem Buchweizen." },
-            "apfel-topfen-strudel": { "name": "Apfel-Topfen-Strudel", "description": "Mit Vanillesauce." },
-            "schokoladentarte": { "name": "Schokoladentarte", "description": "Mit Fleur de Sel." }
+        "vegetarian": "Vegetariano",
+        "vegan": "Vegano",
+        "countSuffix": "Gerichte",
+        "dishes": {
+            "bruschetta-pomodoro": { "name": "Bruschetta al Pomodoro", "description": "Geröstetes Sauerteigbrot, Tomaten, Basilikum, Knoblauch" },
+            "burrata-prosciutto": { "name": "Burrata e Prosciutto", "description": "Burrata, Parmaschinken, Rucola, Balsamico" },
+            "carpaccio-manzo": { "name": "Carpaccio di Manzo", "description": "Rinderfilet hauchdünn, Parmesan, Rucola, Zitrone" },
+            "spaghetti-pomodoro": { "name": "Spaghetti al Pomodoro", "description": "Tomatensauce, Basilikum, Olivenöl" },
+            "cacio-e-pepe": { "name": "Cacio e Pepe", "description": "Tonnarelli, Pecorino Romano, schwarzer Pfeffer" },
+            "pappardelle-ragu": { "name": "Pappardelle al Ragù", "description": "Breite Bandnudeln, Rind-Ragù, Pecorino" },
+            "ravioli-zucca": { "name": "Ravioli di Zucca", "description": "Kürbis-Ravioli, Salbeibutter, Parmesan" },
+            "margherita": { "name": "Margherita", "description": "Tomate, Mozzarella, Basilikum" },
+            "diavola": { "name": "Diavola", "description": "Tomate, Mozzarella, scharfe Salami, Peperoncino" },
+            "marinara": { "name": "Marinara", "description": "Tomate, Knoblauch, Oregano, Olivenöl" },
+            "funghi-tartufo": { "name": "Funghi e Tartufo", "description": "Champignons, Trüffelcreme, Mozzarella" },
+            "tiramisu": { "name": "Tiramisù", "description": "Mascarpone, Kaffee, Kakao" },
+            "panna-cotta-limone": { "name": "Panna Cotta al Limone", "description": "Sahnepudding, Zitrone, Beeren" },
+            "cannoli": { "name": "Cannoli Siciliani", "description": "Knusprige Röllchen, Ricotta, Pistazien" }
         }
     },
-    "Haus": {
-        "metaTitle": "Das Haus — Amsel",
-        "metaDescription": "Über Amsel: Küche, Raum und wie man einen Tisch anfragt.",
-        "eyebrow": "Über uns",
-        "title": "Das Haus",
-        "intro": "Amsel liegt in einem ehemaligen Hofgebäude in Wien-Margareten — Steinboden, hohe Fenster, ein Kachelofen, der noch echtes Holz brennt.",
-        "interiorImageLabel": "Innenraum — Gastraum bei Dämmerlicht",
-        "philosophyTitle": "Die Küche",
-        "philosophyBody": "Wir arbeiten mit einem festen Kreis kleiner Betriebe aus der Umgebung Wiens — was sie liefern, bestimmt die Karte, nicht umgekehrt. Kein Gericht steht länger auf der Karte, als es wirklich reif ist.",
-        "detailImageLabel": "Detail — Werkzeug und Zutat in der Küche",
-        "contactTitle": "Schreib uns",
-        "contactBody": "Für Fragen, besondere Anlässe oder einfach um Hallo zu sagen.",
+    "Prenota": {
+        "metaTitle": "Prenota — Che Fame",
+        "metaDescription": "Tisch bei Che Fame anfragen — telefonisch oder per Nachricht, noch ohne Online-Buchung.",
+        "eyebrow": "Prenota",
+        "title": "Tisch anfragen",
+        "body": "Che Fame nimmt Reservierungen aktuell telefonisch oder über eine Nachricht entgegen — eine Online-Buchung gibt es noch nicht.",
+        "hoursTitle": "Öffnungszeiten",
+        "ctaCall": "Anrufen:",
+        "formTitle": "Oder schreib uns",
         "form": {
             "nameLabel": "Name",
             "emailLabel": "E-Mail",
@@ -106,17 +93,5 @@
             "submitting": "Wird gesendet…",
             "success": "Danke! Deine Nachricht ist angekommen."
         }
-    },
-    "Reservations": {
-        "metaTitle": "Reservieren — Amsel",
-        "metaDescription": "Tisch bei Amsel anfragen — telefonisch oder per Nachricht, noch ohne Online-Buchung.",
-        "eyebrow": "Reservieren",
-        "statement": "Ein Tisch. Ein Abend. Zeit.",
-        "imageLabel": "Foto — gedeckter Tisch am Abend, Kerzenlicht",
-        "title": "Tisch anfragen",
-        "body": "Amsel nimmt Reservierungen aktuell telefonisch oder über eine Nachricht entgegen — eine Online-Buchung gibt es noch nicht.",
-        "hoursTitle": "Öffnungszeiten",
-        "ctaCall": "Anrufen:",
-        "ctaWrite": "Nachricht schreiben"
     }
 }

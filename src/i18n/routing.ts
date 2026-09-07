@@ -1,18 +1,16 @@
 import { defineRouting } from "next-intl/routing";
 
-// Experience-led IA, not a utility-page list: no dedicated Kontakt route —
-// contact details live in the persistent footer and the Haus page instead.
-// "Speisekarte" is replaced by "Saison" (the Saisonlinie IS the menu
-// experience, not a separate list bolted on next to it).
+// Three lean routes: the menu is the flagship feature and gets its own
+// shareable URL, reservations stay honest and separate, everything else
+// (contact details) lives in the footer instead of its own page.
 export const routing = defineRouting({
   locales: ["de", "en"],
   defaultLocale: "de",
   localePrefix: "always",
   pathnames: {
     "/": "/",
-    "/saison": { de: "/saison", en: "/season" },
-    "/haus": { de: "/haus", en: "/house" },
-    "/reservieren": { de: "/reservieren", en: "/reservations" },
+    "/la-cucina": { de: "/la-cucina", en: "/menu" },
+    "/prenota": { de: "/prenota", en: "/reservations" },
   },
 });
 

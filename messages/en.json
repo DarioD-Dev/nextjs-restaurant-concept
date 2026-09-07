@@ -1,102 +1,89 @@
 {
     "Meta": {
-        "title": "Amsel — Kitchen in Vienna",
-        "description": "Amsel: a kitchen in Vienna-Margareten that follows the season instead of a fixed menu. The Season Line shows what's actually growing."
+        "title": "Che Fame — Modern Italian Restaurant in Vienna",
+        "description": "Che Fame: pasta, pizza, antipasti and dolci in Vienna. Real dishes, a filterable menu, no fine dining."
     },
     "Header": {
-        "season": "Season Line",
-        "haus": "House",
-        "reservations": "Reservations",
+        "cucina": "La Cucina",
+        "prenota": "Prenota",
         "openMenu": "Open menu",
         "closeMenu": "Close menu"
     },
     "Footer": {
-        "hoursWeekdays": "Tue–Sat 6:00 pm–midnight",
-        "hoursWeekend": "Sun–Mon closed",
-        "copyright": "© {year} Amsel"
+        "thanks": "Grazie per essere passato.",
+        "cities": "Roma · Napoli · Palermo",
+        "hoursWeekdays": "Tue–Sun 11:30 am–10:00 pm",
+        "hoursWeekend": "Closed Mondays",
+        "copyright": "© {year} Che Fame"
     },
     "Home": {
-        "eyebrow": "Amsel · Vienna-Margareten",
-        "headline": "Where the city goes quiet.",
-        "subtitle": "What ripens today reaches the table today — Amsel cooks from what the market and the garden give up right now.",
-        "ctaSeason": "Explore the Season Line",
-        "ctaReserve": "Request a table",
-        "heroImageLabel": "Hero — kitchen at dusk, chef at the pass",
-        "manifesto": {
-            "eyebrow": "Approach",
-            "quote": "We cook what's growing this week — not what's always on the menu.",
-            "quoteAttribution": "— from the kitchen, Amsel",
-            "body": "Amsel works without a fixed year-round menu. What comes from the ground, the cellar or a nearby market decides what lands on the plate — the Season Line shows exactly that, month by month.",
-            "imageLabel": "Detail — ingredient on the cutting board"
+        "eyebrow": "Che Fame · Vienna",
+        "headline": "Hungry? Perfetto.",
+        "subtitle": "A modern Italian restaurant in Vienna-Margareten. Pasta, pizza, antipasti, dolci — made the way it should be.",
+        "ctaPrenota": "Prenota",
+        "ctaCucina": "La Cucina",
+        "buonAppetito": "Buon appetito!",
+        "cucinaEyebrow": "Pasta, pizza & more",
+        "cucinaCta": "Tutta la carta",
+        "pizzaTagline": "La pizza non aspetta.",
+        "dolciEyebrow": "To finish",
+        "fattoInCasa": {
+            "title": "Fatto in casa.",
+            "body": "Pomodoro, basilico, limone, peperoncino — the four ingredients that show up in almost everything we make.",
+            "labels": {
+                "pomodoro": "Pomodoro",
+                "basilico": "Basilico",
+                "limone": "Limone",
+                "peperoncino": "Peperoncino"
+            }
         },
-        "seasonTeaser": {
-            "eyebrow": "The menu, rethought",
-            "title": "The Season Line",
-            "body": "Instead of a fixed menu: a timeline through the year. Drag, scroll or use the arrow keys through the months — and see what's actually growing.",
-            "cta": "View the Season Line",
-            "imageLabel": "Season Line — ingredients through the year"
+        "prenotaCta": {
+            "title": "Tonight? Tomorrow? For 2 or for 4?",
+            "cta": "Request a table"
         }
     },
-    "Season": {
-        "metaTitle": "Season Line — Amsel",
-        "metaDescription": "Amsel's menu as a timeline through the year — with full dietary and allergen information for every dish.",
+    "Cucina": {
+        "metaTitle": "La Cucina — Che Fame",
+        "metaDescription": "The full Che Fame menu: pasta, pizza, antipasti, dolci — filterable by category, vegetarian and vegan.",
         "eyebrow": "The menu",
-        "title": "The Season Line",
-        "subtitle": "Drag through the months to see what's in season — the complete menu with full dietary and allergen information stays visible at all times.",
+        "title": "La Cucina",
+        "subtitle": "Tutto, Pasta, Pizza, Antipasti or Dolci — and vegetarian or vegan, if that's what you need.",
         "categories": {
-            "vorspeisen": "Starters",
-            "hauptgerichte": "Mains",
-            "desserts": "Desserts"
+            "tutto": "Tutto",
+            "antipasti": "Antipasti",
+            "pasta": "Pasta",
+            "pizza": "Pizza",
+            "dolci": "Dolci"
         },
-        "seasons": {
-            "fruehling": "Spring",
-            "sommer": "Summer",
-            "herbst": "Autumn",
-            "winter": "Winter"
-        },
-        "months": [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ],
-        "dietary": {
-            "vegan": "Vegan",
-            "vegetarisch": "Vegetarian",
-            "glutenfrei": "Gluten-free"
-        },
-        "allergens": {
-            "gluten": "Gluten",
-            "milchprodukte": "Dairy",
-            "nuesse": "Nuts",
-            "fisch": "Fish",
-            "eier": "Eggs"
-        },
-        "containsAllergens": "Contains:",
-        "inSeasonLabel": "In season now",
-        "scrubberImageLabel": "Ingredient of the month",
-        "items": {
-            "rote-bete-carpaccio": { "name": "Beetroot carpaccio", "description": "With fresh goat cheese, toasted walnut crumble and apple vinaigrette." },
-            "kuerbissuppe": { "name": "Pumpkin soup", "description": "With roasted pumpkin-seed oil and seeds." },
-            "wurzelgemuese-tarte": { "name": "Root vegetable tart", "description": "With king oyster mushrooms and mountain cheese." },
-            "geschmorte-pastinake": { "name": "Braised parsnip", "description": "With lentil ragout and parsley-root purée." },
-            "saiblingsfilet": { "name": "Arctic char fillet", "description": "With root vegetables and beurre blanc." },
-            "rindsragout": { "name": "Beef ragout", "description": "From pasture-raised beef, with root vegetables and mashed potatoes." },
-            "sellerie-steak": { "name": "Celeriac steak", "description": "Grilled, with chimichurri and toasted buckwheat." },
-            "apfel-topfen-strudel": { "name": "Apple & quark strudel", "description": "With vanilla sauce." },
-            "schokoladentarte": { "name": "Chocolate tart", "description": "With fleur de sel." }
+        "vegetarian": "Vegetariano",
+        "vegan": "Vegano",
+        "countSuffix": "dishes",
+        "dishes": {
+            "bruschetta-pomodoro": { "name": "Bruschetta al Pomodoro", "description": "Toasted sourdough, tomatoes, basil, garlic" },
+            "burrata-prosciutto": { "name": "Burrata e Prosciutto", "description": "Burrata, Parma ham, rocket, balsamic" },
+            "carpaccio-manzo": { "name": "Carpaccio di Manzo", "description": "Thinly sliced beef fillet, parmesan, rocket, lemon" },
+            "spaghetti-pomodoro": { "name": "Spaghetti al Pomodoro", "description": "Tomato sauce, basil, olive oil" },
+            "cacio-e-pepe": { "name": "Cacio e Pepe", "description": "Tonnarelli, Pecorino Romano, black pepper" },
+            "pappardelle-ragu": { "name": "Pappardelle al Ragù", "description": "Wide ribbon pasta, beef ragù, pecorino" },
+            "ravioli-zucca": { "name": "Ravioli di Zucca", "description": "Pumpkin ravioli, sage butter, parmesan" },
+            "margherita": { "name": "Margherita", "description": "Tomato, mozzarella, basil" },
+            "diavola": { "name": "Diavola", "description": "Tomato, mozzarella, spicy salami, chilli" },
+            "marinara": { "name": "Marinara", "description": "Tomato, garlic, oregano, olive oil" },
+            "funghi-tartufo": { "name": "Funghi e Tartufo", "description": "Mushrooms, truffle cream, mozzarella" },
+            "tiramisu": { "name": "Tiramisù", "description": "Mascarpone, coffee, cocoa" },
+            "panna-cotta-limone": { "name": "Panna Cotta al Limone", "description": "Cream pudding, lemon, berries" },
+            "cannoli": { "name": "Cannoli Siciliani", "description": "Crisp shells, ricotta, pistachio" }
         }
     },
-    "Haus": {
-        "metaTitle": "The House — Amsel",
-        "metaDescription": "About Amsel: kitchen, space, and how to request a table.",
-        "eyebrow": "About",
-        "title": "The House",
-        "intro": "Amsel sits in a former courtyard building in Vienna-Margareten — stone floors, tall windows, a tiled stove that still burns real wood.",
-        "interiorImageLabel": "Interior — dining room at dusk",
-        "philosophyTitle": "The kitchen",
-        "philosophyBody": "We work with a fixed circle of small producers around Vienna — what they deliver decides the menu, not the other way round. No dish stays on the menu longer than it's actually in season.",
-        "detailImageLabel": "Detail — tools and ingredient in the kitchen",
-        "contactTitle": "Write to us",
-        "contactBody": "For questions, special occasions, or just to say hello.",
+    "Prenota": {
+        "metaTitle": "Prenota — Che Fame",
+        "metaDescription": "Request a table at Che Fame — by phone or message, no online booking yet.",
+        "eyebrow": "Prenota",
+        "title": "Request a table",
+        "body": "Che Fame currently takes reservations by phone or message — there's no online booking yet.",
+        "hoursTitle": "Opening hours",
+        "ctaCall": "Call:",
+        "formTitle": "Or write to us",
         "form": {
             "nameLabel": "Name",
             "emailLabel": "Email",
@@ -106,17 +93,5 @@
             "submitting": "Sending…",
             "success": "Thanks! Your message has arrived."
         }
-    },
-    "Reservations": {
-        "metaTitle": "Reservations — Amsel",
-        "metaDescription": "Request a table at Amsel — by phone or message, no online booking yet.",
-        "eyebrow": "Reservations",
-        "statement": "One table. One evening. Time.",
-        "imageLabel": "Photo — table set for the evening, candlelight",
-        "title": "Request a table",
-        "body": "Amsel currently takes reservations by phone or message — there's no online booking yet.",
-        "hoursTitle": "Opening hours",
-        "ctaCall": "Call:",
-        "ctaWrite": "Send a message"
     }
 }

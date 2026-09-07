@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { display, sans } from "@/styles/fonts";
+import { display, sans, script } from "@/styles/fonts";
 import { routing } from "@/i18n/routing";
 import { buildOpenGraph } from "@/lib/seo";
 import "../globals.css";
@@ -41,7 +41,7 @@ export default async function RootLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${display.variable} ${sans.variable} h-full antialiased`}>
+    <html lang={locale} className={`${display.variable} ${sans.variable} ${script.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <NextIntlClientProvider>
           <Header />

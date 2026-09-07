@@ -1,25 +1,26 @@
 import { useTranslations } from "next-intl";
 import { RESTAURANT } from "@/data/restaurant";
+import { Boat } from "@/components/icons/Boat";
 
-// Contact details live here persistently rather than on a dedicated Kontakt
-// page — a request/reservation moment belongs on /reservieren, and the
-// house's own story belongs on /haus; a bare address/phone/email block
-// doesn't need a whole route of its own. The wordmark repeats large at the
-// close — not for size's own sake, but so the last thing a visitor sees is
-// the brand itself, not just a utility block of hours and a phone number.
 export function Footer() {
   const t = useTranslations("Footer");
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 pt-16 sm:pt-24">
-        <p className="font-display font-medium" style={{ fontSize: "var(--text-display-lg)", lineHeight: 1 }}>
-          {RESTAURANT.name}
+      <div className="mx-auto max-w-6xl px-6 pt-14">
+        <Boat />
+      </div>
+
+      <div className="mx-auto max-w-6xl px-6 pt-2 pb-14">
+        <p className="font-display text-2xl text-foreground">{t("thanks")}</p>
+        <p className="mt-2 font-sans text-sm font-semibold tracking-wide text-primary uppercase">
+          {t("cities")}
         </p>
       </div>
 
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 pt-10 pb-14 sm:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 pb-14 sm:grid-cols-3">
         <address className="font-sans text-sm text-foreground-muted not-italic">
+          <p className="font-semibold text-foreground">{RESTAURANT.name}</p>
           <p>{RESTAURANT.address.street}</p>
           <p>
             {RESTAURANT.address.postalCode} {RESTAURANT.address.city}
@@ -42,8 +43,9 @@ export function Footer() {
           <p className="mt-1">{t("hoursWeekend")}</p>
         </div>
       </div>
+
       <div className="border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-6 font-sans text-xs tracking-wide text-foreground-muted/70">
+        <div className="mx-auto max-w-6xl px-6 py-6 font-sans text-xs text-foreground-muted/70">
           {t("copyright", { year: new Date().getFullYear() })}
         </div>
       </div>
