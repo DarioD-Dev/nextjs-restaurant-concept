@@ -1,26 +1,16 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 
-// No photography needed here: a large tomato-vivid circle (a plate/pizza
-// silhouette, not a literal illustration) bleeds off the right edge behind
-// the headline — round shapes are the visual signature this project uses
-// instead of Amsel's sharp rectilinear edges. Slow entrance only
-// (hero-rise), nothing scroll-linked here — that's reserved for the boat.
+// Partenza — where La Rotta begins. Headline sits left, deliberately not
+// centered, leaving the right side open for the route/boat layer above it.
+// No illustration of its own here: the boat starting its journey behind
+// the text is the visual.
 export async function Hero() {
   const t = await getTranslations("Home");
 
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 -right-32 -z-10 size-[28rem] -translate-y-1/2 rounded-full bg-primary-vivid/15 sm:size-[38rem]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 -right-56 -z-10 size-[20rem] -translate-y-1/2 rounded-full border-4 border-highlight/50 sm:size-[26rem]"
-      />
-
-      <div className="mx-auto max-w-6xl px-6 pt-20 pb-24 sm:pt-28 sm:pb-32">
+    <section className="relative px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
+      <div className="mx-auto max-w-4xl">
         <p className="hero-rise font-sans text-sm font-bold text-primary uppercase">{t("eyebrow")}</p>
         <h1
           className="hero-rise mt-4 max-w-2xl font-display text-foreground"

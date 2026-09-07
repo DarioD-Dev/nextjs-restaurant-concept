@@ -1,16 +1,14 @@
 import type { SVGProps } from "react";
 import type { IngredientIcon } from "@/data/dishes";
 
-// Simple single-stroke line art, not detailed illustration — four
-// recognizable shapes (pomodoro, basilico, limone, peperoncino), each its
-// own tiny SVG so it can be reused both as a dish marker and in the
-// "Fatto in casa" ingredient row at whatever size/color the caller needs
-// via currentColor.
+// Small per-dish markers, same line language as the bigger illustrations
+// (see components/illustrations) but reduced to their simplest silhouette
+// for use at icon size next to a dish name.
 const shared: SVGProps<SVGSVGElement> = {
   viewBox: "0 0 24 24",
   fill: "none",
   stroke: "currentColor",
-  strokeWidth: 1.5,
+  strokeWidth: 1.6,
   strokeLinecap: "round",
   strokeLinejoin: "round",
 };

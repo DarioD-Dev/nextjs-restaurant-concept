@@ -1,17 +1,15 @@
 import { useTranslations } from "next-intl";
 import { RESTAURANT } from "@/data/restaurant";
-import { Boat } from "@/components/icons/Boat";
 
+// The boat's own animated journey now ends at ArrivoCta, just above this
+// footer — repeating it here would be a second, redundant "arrival"
+// moment, so the footer stays text-only.
 export function Footer() {
   const t = useTranslations("Footer");
 
   return (
     <footer className="border-t border-border">
-      <div className="mx-auto max-w-6xl px-6 pt-14">
-        <Boat />
-      </div>
-
-      <div className="mx-auto max-w-6xl px-6 pt-2 pb-14">
+      <div className="mx-auto max-w-6xl px-6 pt-14 pb-2">
         <p className="font-display text-2xl text-foreground">{t("thanks")}</p>
         <p className="mt-2 font-sans text-sm font-semibold tracking-wide text-primary uppercase">
           {t("cities")}

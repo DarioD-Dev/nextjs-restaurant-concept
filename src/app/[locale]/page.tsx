@@ -1,11 +1,11 @@
 import { setRequestLocale } from "next-intl/server";
+import { RouteJourney } from "@/components/route/RouteJourney";
 import { Hero } from "@/components/home/Hero";
-import { BuonAppetito } from "@/components/home/BuonAppetito";
-import { CucinaTeaser } from "@/components/home/CucinaTeaser";
-import { PizzaSpotlight } from "@/components/home/PizzaSpotlight";
-import { FattoInCasa } from "@/components/home/FattoInCasa";
-import { DolciTeaser } from "@/components/home/DolciTeaser";
-import { PrenotaCta } from "@/components/home/PrenotaCta";
+import { IlTavolo } from "@/components/home/IlTavolo";
+import { LaPizza } from "@/components/home/LaPizza";
+import { IlCestino } from "@/components/home/IlCestino";
+import { Dolci } from "@/components/home/Dolci";
+import { ArrivoCta } from "@/components/home/ArrivoCta";
 import type { Locale } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: Locale }> };
@@ -15,14 +15,13 @@ export default async function Home({ params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <>
+    <RouteJourney>
       <Hero />
-      <BuonAppetito />
-      <CucinaTeaser />
-      <PizzaSpotlight />
-      <FattoInCasa />
-      <DolciTeaser />
-      <PrenotaCta />
-    </>
+      <IlTavolo />
+      <LaPizza />
+      <IlCestino />
+      <Dolci />
+      <ArrivoCta />
+    </RouteJourney>
   );
 }

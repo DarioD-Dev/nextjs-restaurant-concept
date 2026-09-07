@@ -1,19 +1,18 @@
-import { Libre_Caslon_Display, Figtree, Caveat } from "next/font/google";
+import { Gabarito, Figtree, Caveat } from "next/font/google";
 
-// Warm, characterful serif for headlines rather than another editorial
-// didone (Amsel was Bodoni Moda) or a rustic slab (the original Wurzelwerk
-// pass was Bitter) — Libre Caslon Display has personality without reading
-// as fine-dining.
-export const display = Libre_Caslon_Display({
+// Rounded, warm, geometric display face with real character — but
+// restrained enough not to read as childish (that ruled out Baloo 2 and
+// Fredoka). No serif at all: every other DarioDev project uses one
+// (Bricolage, Fraunces, Cormorant Garamond, Libre Caslon), and a serif is
+// also the fastest way to accidentally drift back toward "editorial /
+// fine dining", which this project explicitly isn't.
+export const display = Gabarito({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["600", "700", "800", "900"],
   display: "swap",
 });
 
-// Friendly, rounded geometric sans for body/UI/menu — the opposite of the
-// tightly tracked editorial groteskes (Archivo, Work Sans, Manrope, Jost)
-// every other DarioDev project uses.
 export const sans = Figtree({
   variable: "--font-sans-ui",
   subsets: ["latin"],
@@ -21,9 +20,9 @@ export const sans = Figtree({
   display: "swap",
 });
 
-// Handwriting accent — used in exactly one or two spots on the whole site
-// (see globals.css / the "Buon appetito" transition), never for real
-// content. Not a base UI font.
+// Handwriting accent — now specifically the "route label" font, the small
+// station names along La Rotta (see Route.tsx), plus the one Buon-appetito
+// moment. Never body content.
 export const script = Caveat({
   variable: "--font-script",
   subsets: ["latin"],

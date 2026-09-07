@@ -105,7 +105,45 @@ button:not(:disabled),
   }
 }
 
-/* Motion moment 1/4: pizza steam. Three thin wisps drifting up and fading,
+/* Animation 3/3 ("kleine Illustrationen erscheinen beim Erreichen ihrer
+   Station"): illustrations arrive at their station. Always
+   rendered in their final visible position (no-JS/crawler-safe); a
+   mounted effect adds .station-pending only to instances currently below
+   the fold, an IntersectionObserver removes it once. Same reasoning as
+   DarioDev's own Reveal.tsx: the hidden state must never be part of the
+   server HTML or the first paint. */
+.station-illustration {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.station-illustration.station-pending {
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+}
+
+/* Il Tavolo / La Cucina postcards: a slight per-card tilt (set via the
+   --tilt custom property inline) that straightens and lifts on hover and
+   keyboard focus. Written by hand rather than composed from Tailwind's
+   rotate and translate-y utilities — those proved unreliable together
+   here (an individual-CSS-property cascade quirk between the base tilt
+   and the focus-visible/hover override that wasn't worth chasing
+   further), and a single explicit rule is easier to trust than debugging
+   utility-class interaction. */
+.tilt-card {
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.2s ease-out;
+}
+
+.tilt-card:hover,
+.tilt-card:focus-visible {
+  transform: translateY(-4px) rotate(0deg);
+}
+
+/* Animation 2/3: pizza steam. Three thin wisps drifting up and fading,
    offset so they don't move in lockstep. Static (just visible, no motion)
    under reduced-motion — the steam still reads as steam, it just doesn't
    animate. */

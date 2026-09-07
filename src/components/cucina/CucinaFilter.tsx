@@ -95,16 +95,25 @@ export function CucinaFilter({
         {filtered.length} {labels.countSuffix}
       </p>
 
-      <div className="mt-6 flex flex-col gap-12">
+      <div className="mt-8 flex flex-col gap-14">
         {grouped.map((group) => (
           <div key={group.category}>
             <h2 className="font-display text-2xl text-foreground">{categoryLabels[group.category]}</h2>
-            <ul className="mt-6 divide-y divide-border">
-              {group.items.map((dish) => (
-                <li key={dish.id} className="flex items-start justify-between gap-6 py-5">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2">
+            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {group.items.map((dish, i) => (
+                <li key={dish.id}>
+                  <div
+                    tabIndex={0}
+                    className="tilt-card h-full rounded-2xl border-2 border-foreground bg-surface p-5"
+                    style={{ "--tilt": i % 2 === 0 ? "-1deg" : "1deg" } as React.CSSProperties}
+                  >
+                    <div className="flex flex-wrap items-start justify-between gap-2">
                       <h3 className="font-display text-lg text-foreground">{dish.name}</h3>
+                      <span className="font-display text-lg whitespace-nowrap text-primary">
+                        € {formatPriceEur(dish.priceEur)}
+                      </span>
+                    </div>
+                    <div className="mt-1 flex flex-wrap items-center gap-1.5">
                       {dish.icons.map((icon) => (
                         <IngredientIconGlyph key={icon} name={icon} className="size-4 text-primary" />
                       ))}
@@ -118,11 +127,8 @@ export function CucinaFilter({
                         </span>
                       ) : null}
                     </div>
-                    <p className="mt-1 max-w-md text-sm text-foreground-muted">{dish.description}</p>
+                    <p className="mt-2 text-sm text-foreground-muted">{dish.description}</p>
                   </div>
-                  <span className="font-display text-lg whitespace-nowrap text-foreground">
-                    € {formatPriceEur(dish.priceEur)}
-                  </span>
                 </li>
               ))}
             </ul>
