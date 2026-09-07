@@ -19,7 +19,7 @@
     "Home": {
         "eyebrow": "Che Fame · Wien",
         "headline": "Hunger? Perfetto.",
-        "subtitle": "Modernes italienisches Restaurant in Wien-Margareten. Pasta, Pizza, Antipasti, Dolci — gemacht, wie es sich gehört.",
+        "subtitle": "Pasta, Pizza, Antipasti, Dolci — mitten in Wien-Margareten. Kommen Sie hungrig, um den Rest kümmern wir uns.",
         "ctaPrenota": "Prenota",
         "ctaCucina": "La Cucina",
         "buonAppetito": "Buon appetito!",
@@ -43,7 +43,9 @@
             }
         },
         "prenotaCta": {
-            "title": "Heute Abend? Morgen? Für 2 oder für 4?",
+            "eyebrow": "Ci vediamo?",
+            "title": "Und, überzeugt?",
+            "body": "Ehrlich gesagt: Lesen macht niemanden satt. Kommen Sie vorbei und überzeugen Sie sich selbst — am besten mit Hunger. Freitag und Samstag sind meistens zuerst weg.",
             "cta": "Tisch anfragen"
         }
     },

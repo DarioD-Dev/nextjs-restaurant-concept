@@ -19,7 +19,7 @@
     "Home": {
         "eyebrow": "Che Fame · Vienna",
         "headline": "Hungry? Perfetto.",
-        "subtitle": "A modern Italian restaurant in Vienna-Margareten. Pasta, pizza, antipasti, dolci — made the way it should be.",
+        "subtitle": "Pasta, pizza, antipasti, dolci — right in Vienna-Margareten. Come hungry, we'll take care of the rest.",
         "ctaPrenota": "Prenota",
         "ctaCucina": "La Cucina",
         "buonAppetito": "Buon appetito!",
@@ -43,7 +43,9 @@
             }
         },
         "prenotaCta": {
-            "title": "Tonight? Tomorrow? For 2 or for 4?",
+            "eyebrow": "Ci vediamo?",
+            "title": "So — convinced?",
+            "body": "Honestly: reading has never filled anyone up. Come and see for yourself — ideally hungry. Fridays and Saturdays tend to go first.",
             "cta": "Request a table"
         }
     },

@@ -69,14 +69,31 @@ function buildSlalomPath(height: number): string {
 
 const ROUTE_PATH = buildSlalomPath(ROUTE_HEIGHT);
 
-// Rest position for reduced-motion / not-yet-measured states — near the
-// start of the route, a calm illustration rather than mid-journey.
-const REST_PROGRESS = 0.06;
+// Rest position for reduced-motion: parked half way down the route, which
+// is both where the boat spends most of the journey anyway and the one
+// place it is guaranteed to be fully visible under the fade rules below.
+const REST_PROGRESS = 0.5;
 
 // The boat eases toward the scroll position instead of being pinned to it
 // frame-for-frame. Without this it snaps as fast as the wheel turns; with
 // it, it glides.
 const EASE = 0.11;
+
+// Visibility along the journey. The boat is not on the page at the very
+// top — the hero station carries itself — then it appears quickly and
+// stays for the entire middle of the page, and it is gone again by the
+// time the closing tomato banner arrives, so it looks like it sails in
+// behind it rather than sitting on top of it. Both distances are in
+// pixels down the page, and the fade-out is measured backwards from the
+// element marked data-route-end, so it stays correct whatever the content
+// above it does.
+const FADE_IN_START = 220;
+const FADE_IN_END = 460;
+const FADE_OUT_LENGTH = 340;
+
+function clamp01(v: number) {
+  return v < 0 ? 0 : v > 1 ? 1 : v;
+}
 
 export function RouteJourney({ children }: { children: React.ReactNode }) {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -98,6 +115,13 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const totalLength = path.getTotalLength();
     let heading = 1;
+    let endY = Number.POSITIVE_INFINITY;
+    // The route's pixel height, kept here rather than re-read off the SVG.
+    // place() runs from the same callbacks that set it, and inside a
+    // ResizeObserver callback the element's box still reports the previous
+    // value — which silently made the vertical scale zero and parked the
+    // boat at the top of the page.
+    let routeHeightPx = 0;
 
     // Measured from `content` — a plain normal-flow sibling that holds
     // only the actual page sections — never from `wrap` itself. `wrap`
@@ -107,7 +131,17 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
     // on the bug it's trying to correct.
     function syncHeight() {
       if (!content || !svg) return;
-      svg.style.height = `${content.scrollHeight}px`;
+      routeHeightPx = content.scrollHeight;
+      svg.style.height = `${routeHeightPx}px`;
+
+      // Where the journey ends: the top edge of the closing station, in the
+      // same coordinate space the boat is positioned in. Re-measured
+      // whenever the content resizes, so no breakpoint or translation can
+      // leave the fade sitting at the wrong height.
+      const marker = content.querySelector("[data-route-end]");
+      endY = marker
+        ? marker.getBoundingClientRect().top - content.getBoundingClientRect().top
+        : Number.POSITIVE_INFINITY;
     }
 
     function place(progress: number) {
@@ -115,7 +149,7 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       const svgRect = svg.getBoundingClientRect();
       const wrapRect = wrap.getBoundingClientRect();
       const scaleX = svgRect.width / 100;
-      const scaleY = svgRect.height / ROUTE_HEIGHT;
+      const scaleY = routeHeightPx / ROUTE_HEIGHT;
       // The svg isn't always flush with wrap's own top-left corner — on
       // mobile it's pinned to a narrow strip on the right edge instead of
       // spanning full-bleed (see className below), so the boat (which is
@@ -151,20 +185,35 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       // water instead of tipping and mirroring along with the hull.
       boat.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       glyph.style.transform = `rotate(${angle * heading}deg) scaleX(${heading})`;
+      boat.style.opacity = String(
+        Math.min(
+          clamp01((y - FADE_IN_START) / (FADE_IN_END - FADE_IN_START)),
+          clamp01((endY - y) / FADE_OUT_LENGTH),
+        ),
+      );
     }
 
     syncHeight();
 
     if (reduced) {
-      place(REST_PROGRESS);
-      // Content can still reflow after mount (webfont swap, images), so
-      // the static boat's height reference stays correct too.
-      const ro = new ResizeObserver(() => {
+      const settle = () => {
         syncHeight();
         place(REST_PROGRESS);
-      });
+      };
+      settle();
+      // Placed again on the next frame: on a cold load the first call can
+      // land before the route SVG's new height has been laid out, and with
+      // no scrolling to correct it afterwards the parked boat would stay
+      // stuck at the top of the page with a zero vertical scale.
+      const frame = requestAnimationFrame(settle);
+      // Content can still reflow after that (webfont swap, images), so the
+      // static boat's height reference stays correct too.
+      const ro = new ResizeObserver(settle);
       ro.observe(content);
-      return () => ro.disconnect();
+      return () => {
+        cancelAnimationFrame(frame);
+        ro.disconnect();
+      };
     }
 
     function computeProgress() {
@@ -194,6 +243,13 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
     }
 
     place(current);
+    // Same insurance as the reduced-motion branch above: re-place once the
+    // first frame has been laid out, so a visitor who lands and doesn't
+    // scroll still sees the boat where the route actually runs.
+    const firstFrame = requestAnimationFrame(() => {
+      syncHeight();
+      place(current);
+    });
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", onResize);
     const ro = new ResizeObserver(onResize);
@@ -202,6 +258,7 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", onResize);
       ro.disconnect();
+      cancelAnimationFrame(firstFrame);
       if (frame !== null) cancelAnimationFrame(frame);
     };
   }, []);
@@ -250,6 +307,10 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
         // none). On wider screens it goes back to travelling behind the
         // illustrations, which is where the disappearing-and-resurfacing
         // effect belongs.
+        // Starts hidden: the effect below sets the real opacity on its
+        // first frame, and without this the boat would flash once at the
+        // page's top-left corner before it is ever placed.
+        style={{ opacity: 0 }}
         className="boat-halo pointer-events-none absolute top-0 left-0 z-20 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1 text-primary sm:z-0"
       >
         {/* Wake only from the small breakpoint up: on mobile the boat sits

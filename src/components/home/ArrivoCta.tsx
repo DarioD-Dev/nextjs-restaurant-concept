@@ -11,19 +11,24 @@ import { WavyBand } from "@/components/shapes/Fields";
 export async function ArrivoCta() {
   const t = await getTranslations("Home.prenotaCta");
 
+  // data-route-end marks the arrival for RouteJourney: the travelling boat
+  // fades out just before this band, so it reads as having sailed in behind
+  // it — and the moored boat below is the one that made it.
   return (
-    <section className="relative overflow-x-clip py-20 text-background sm:py-24">
+    <section data-route-end className="relative overflow-x-clip py-20 text-background sm:py-24">
       <WavyBand className="absolute inset-x-0 -top-10 -z-20 h-[calc(100%+3rem)] w-full text-primary-vivid" />
 
-      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 text-center">
+      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-5 px-6 text-center">
         <div className="flex items-center gap-1.5 text-background">
           <BoatWake className="w-5 opacity-70" />
           <PaperBoat className="size-11" aria-hidden="true" />
           <BoatWake className="w-5 -scale-x-100 opacity-70" />
         </div>
-        <h2 className="font-display" style={{ fontSize: "var(--text-display-md)" }}>
+        <p className="font-script text-3xl text-highlight">{t("eyebrow")}</p>
+        <h2 className="font-display" style={{ fontSize: "var(--text-display-lg)" }}>
           {t("title")}
         </h2>
+        <p className="max-w-lg text-base text-background/90">{t("body")}</p>
         <Link
           href="/prenota"
           className="rounded-full bg-background px-8 py-3.5 font-sans text-sm font-bold text-primary transition-colors hover:bg-highlight"
