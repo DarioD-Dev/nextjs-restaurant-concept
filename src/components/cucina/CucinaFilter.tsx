@@ -23,7 +23,12 @@ export function CucinaFilter({
   labels: {
     vegetarian: string;
     vegan: string;
-    countSuffix: string;
+    // Singular and plural come over separately rather than as one suffix:
+    // the count changes on the client, so the right word has to be picked
+    // there — "1 Gerichte" was the old, wrong version of this.
+    countOne: string;
+    countMany: string;
+    empty: string;
   };
 }) {
   const [category, setCategory] = useState<CategoryFilter>("tutto");
@@ -92,8 +97,14 @@ export function CucinaFilter({
       </div>
 
       <p aria-live="polite" className="mt-6 font-sans text-sm text-foreground-muted">
-        {filtered.length} {labels.countSuffix}
+        {filtered.length} {filtered.length === 1 ? labels.countOne : labels.countMany}
       </p>
+
+      {filtered.length === 0 ? (
+        <p className="mt-8 rounded-2xl border-2 border-dashed border-border px-6 py-10 text-center font-display text-lg text-foreground-muted">
+          {labels.empty}
+        </p>
+      ) : null}
 
       <div className="mt-8 flex flex-col gap-14">
         {grouped.map((group) => (

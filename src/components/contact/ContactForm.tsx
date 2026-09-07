@@ -6,8 +6,11 @@ import { submitContactForm, type ContactFormState } from "@/lib/actions/contact"
 
 const initialState: ContactFormState = { status: "idle" };
 
+// Chunky outlined fields, matching the dish cards rather than the thin
+// grey inputs of a generic form — this page should feel like the rest of
+// the site, not like an admin panel.
 const fieldClass =
-  "mt-1.5 w-full rounded-xl border border-border bg-surface px-3.5 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-primary aria-[invalid=true]:border-primary";
+  "mt-1.5 w-full rounded-xl border-2 border-foreground bg-surface px-3.5 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-primary aria-[invalid=true]:border-primary";
 
 export function ContactForm() {
   const t = useTranslations("Prenota.form");

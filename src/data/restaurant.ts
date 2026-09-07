@@ -5,7 +5,7 @@
 // would — opening hours are language content instead, so those live in
 // messages/*.json (Footer.hours) rather than here.
 export const RESTAURANT = {
-  name: "Che Fame",
+  name: "La Barchetta",
   email: "dario.dominkovic@hotmail.com",
   phone: "+43 1 890 12 34",
   address: {

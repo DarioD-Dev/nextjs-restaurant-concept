@@ -8,7 +8,7 @@ import type { SVGProps } from "react";
 // ink outline, anything drawn straight onto the colour gets a cream one).
 //
 // Drawn here by hand, like every other illustration in this project — no
-// third-party or licensed artwork is used anywhere in Che Fame.
+// third-party or licensed artwork is used anywhere in La Barchetta.
 export function AperitivoIllustration(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 360 310" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>

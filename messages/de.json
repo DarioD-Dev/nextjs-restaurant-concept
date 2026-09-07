@@ -1,30 +1,30 @@
 {
     "Meta": {
-        "title": "Che Fame — Modernes italienisches Restaurant in Wien",
-        "description": "Che Fame: Pasta, Pizza, Antipasti und Dolci in Wien. Echte Gerichte, eine filterbare Speisekarte, kein Fine Dining."
+        "title": "La Barchetta — Italienisches Restaurant in Wien",
+        "description": "La Barchetta in Wien-Margareten: Pasta, Pizza, Antipasti und Nachspeisen. Speisekarte zum Filtern, Tisch in einer Minute angefragt."
     },
     "Header": {
-        "cucina": "La Cucina",
-        "prenota": "Prenota",
+        "cucina": "Speisekarte",
+        "prenota": "Tisch reservieren",
         "openMenu": "Menü öffnen",
         "closeMenu": "Menü schließen"
     },
     "Footer": {
-        "thanks": "Grazie per essere passato.",
-        "cities": "Roma · Napoli · Palermo",
+        "thanks": "Danke fürs Vorbeischauen.",
+        "cities": "Kleines Boot, große Portionen.",
         "hoursWeekdays": "Di–So 11:30–22:00",
         "hoursWeekend": "Mo Ruhetag",
-        "copyright": "© {year} Che Fame"
+        "copyright": "© {year} La Barchetta"
     },
     "Home": {
-        "eyebrow": "Che Fame · Wien",
+        "eyebrow": "La Barchetta · Wien",
         "headline": "Hunger? Perfetto.",
         "subtitle": "Pasta, Pizza, Antipasti, Dolci — mitten in Wien-Margareten. Kommen Sie hungrig, um den Rest kümmern wir uns.",
-        "ctaPrenota": "Prenota",
-        "ctaCucina": "La Cucina",
+        "ctaPrenota": "Tisch reservieren",
+        "ctaCucina": "Speisekarte",
         "buonAppetito": "Buon appetito!",
         "cucinaEyebrow": "Pasta, Pizza & mehr",
-        "cucinaCta": "Tutta la carta",
+        "cucinaCta": "Ganze Speisekarte",
         "pizzaTagline": "La pizza non aspetta.",
         "dolciEyebrow": "Zum Schluss",
         "tavola": {
@@ -50,55 +50,99 @@
         }
     },
     "Cucina": {
-        "metaTitle": "La Cucina — Che Fame",
-        "metaDescription": "Die vollständige Speisekarte von Che Fame: Pasta, Pizza, Antipasti, Dolci — filterbar nach Kategorie, vegetarisch und vegan.",
-        "eyebrow": "Die Karte",
-        "title": "La Cucina",
-        "subtitle": "Tutto, Pasta, Pizza, Antipasti oder Dolci — und vegetarisch oder vegan, wenn's passen muss.",
+        "metaTitle": "Speisekarte — La Barchetta",
+        "metaDescription": "Die ganze Speisekarte von La Barchetta: Pasta, Pizza, Antipasti und Nachspeisen — filterbar nach Kategorie, vegetarisch und vegan.",
+        "eyebrow": "Alles, was heute an Bord ist",
+        "title": "Speisekarte",
+        "subtitle": "Nach Kategorie filtern, vegetarisch oder vegan dazuschalten — und Sie sehen sofort, wie viel übrig bleibt.",
         "categories": {
-            "tutto": "Tutto",
+            "tutto": "Alles",
             "antipasti": "Antipasti",
             "pasta": "Pasta",
             "pizza": "Pizza",
             "dolci": "Dolci"
         },
-        "vegetarian": "Vegetariano",
-        "vegan": "Vegano",
-        "countSuffix": "Gerichte",
+        "vegetarian": "Vegetarisch",
+        "vegan": "Vegan",
         "dishes": {
-            "bruschetta-pomodoro": { "name": "Bruschetta al Pomodoro", "description": "Geröstetes Sauerteigbrot, Tomaten, Basilikum, Knoblauch" },
-            "burrata-prosciutto": { "name": "Burrata e Prosciutto", "description": "Burrata, Parmaschinken, Rucola, Balsamico" },
-            "carpaccio-manzo": { "name": "Carpaccio di Manzo", "description": "Rinderfilet hauchdünn, Parmesan, Rucola, Zitrone" },
-            "spaghetti-pomodoro": { "name": "Spaghetti al Pomodoro", "description": "Tomatensauce, Basilikum, Olivenöl" },
-            "cacio-e-pepe": { "name": "Cacio e Pepe", "description": "Tonnarelli, Pecorino Romano, schwarzer Pfeffer" },
-            "pappardelle-ragu": { "name": "Pappardelle al Ragù", "description": "Breite Bandnudeln, Rind-Ragù, Pecorino" },
-            "ravioli-zucca": { "name": "Ravioli di Zucca", "description": "Kürbis-Ravioli, Salbeibutter, Parmesan" },
-            "margherita": { "name": "Margherita", "description": "Tomate, Mozzarella, Basilikum" },
-            "diavola": { "name": "Diavola", "description": "Tomate, Mozzarella, scharfe Salami, Peperoncino" },
-            "marinara": { "name": "Marinara", "description": "Tomate, Knoblauch, Oregano, Olivenöl" },
-            "funghi-tartufo": { "name": "Funghi e Tartufo", "description": "Champignons, Trüffelcreme, Mozzarella" },
-            "tiramisu": { "name": "Tiramisù", "description": "Mascarpone, Kaffee, Kakao" },
-            "panna-cotta-limone": { "name": "Panna Cotta al Limone", "description": "Sahnepudding, Zitrone, Beeren" },
-            "cannoli": { "name": "Cannoli Siciliani", "description": "Knusprige Röllchen, Ricotta, Pistazien" }
-        }
+            "bruschetta-pomodoro": {
+                "name": "Bruschetta al Pomodoro",
+                "description": "Geröstetes Sauerteigbrot, Tomaten, Basilikum, Knoblauch"
+            },
+            "burrata-prosciutto": {
+                "name": "Burrata e Prosciutto",
+                "description": "Burrata, Parmaschinken, Rucola, Balsamico"
+            },
+            "carpaccio-manzo": {
+                "name": "Carpaccio di Manzo",
+                "description": "Rinderfilet hauchdünn, Parmesan, Rucola, Zitrone"
+            },
+            "spaghetti-pomodoro": {
+                "name": "Spaghetti al Pomodoro",
+                "description": "Tomatensauce, Basilikum, Olivenöl"
+            },
+            "cacio-e-pepe": {
+                "name": "Cacio e Pepe",
+                "description": "Tonnarelli, Pecorino Romano, schwarzer Pfeffer"
+            },
+            "pappardelle-ragu": {
+                "name": "Pappardelle al Ragù",
+                "description": "Breite Bandnudeln, Rind-Ragù, Pecorino"
+            },
+            "ravioli-zucca": {
+                "name": "Ravioli di Zucca",
+                "description": "Kürbis-Ravioli, Salbeibutter, Parmesan"
+            },
+            "margherita": {
+                "name": "Margherita",
+                "description": "Tomate, Mozzarella, Basilikum"
+            },
+            "diavola": {
+                "name": "Diavola",
+                "description": "Tomate, Mozzarella, scharfe Salami, Peperoncino"
+            },
+            "marinara": {
+                "name": "Marinara",
+                "description": "Tomate, Knoblauch, Oregano, Olivenöl"
+            },
+            "funghi-tartufo": {
+                "name": "Funghi e Tartufo",
+                "description": "Champignons, Trüffelcreme, Mozzarella"
+            },
+            "tiramisu": {
+                "name": "Tiramisù",
+                "description": "Mascarpone, Kaffee, Kakao"
+            },
+            "panna-cotta-limone": {
+                "name": "Panna Cotta al Limone",
+                "description": "Sahnepudding, Zitrone, Beeren"
+            },
+            "cannoli": {
+                "name": "Cannoli Siciliani",
+                "description": "Knusprige Röllchen, Ricotta, Pistazien"
+            }
+        },
+        "countOne": "Gericht",
+        "countMany": "Gerichte",
+        "empty": "Nichts gefunden — nehmen Sie einen Filter wieder raus."
     },
     "Prenota": {
-        "metaTitle": "Prenota — Che Fame",
-        "metaDescription": "Tisch bei Che Fame anfragen — telefonisch oder per Nachricht, noch ohne Online-Buchung.",
-        "eyebrow": "Prenota",
-        "title": "Tisch anfragen",
-        "body": "Che Fame nimmt Reservierungen aktuell telefonisch oder über eine Nachricht entgegen — eine Online-Buchung gibt es noch nicht.",
+        "metaTitle": "Tisch reservieren — La Barchetta",
+        "metaDescription": "Tisch bei La Barchetta anfragen — telefonisch oder per Nachricht, ohne Online-Buchung.",
+        "eyebrow": "Platz an Bord",
+        "title": "Tisch reservieren",
+        "body": "Reservierungen nehmen wir telefonisch oder per Nachricht entgegen — eine Online-Buchung gibt es hier noch nicht. Dafür antwortet ein echter Mensch, meist noch am selben Tag.",
         "hoursTitle": "Öffnungszeiten",
         "ctaCall": "Anrufen:",
-        "formTitle": "Oder schreib uns",
+        "formTitle": "Oder schreiben Sie uns",
         "form": {
             "nameLabel": "Name",
             "emailLabel": "E-Mail",
             "messageLabel": "Nachricht",
-            "error": "Bitte überprüfen — dieses Feld fehlt oder ist ungültig.",
+            "error": "Bitte prüfen — dieses Feld fehlt oder ist ungültig.",
             "submit": "Nachricht senden",
             "submitting": "Wird gesendet…",
-            "success": "Danke! Deine Nachricht ist angekommen."
+            "success": "Danke! Ihre Nachricht ist angekommen."
         }
     }
 }

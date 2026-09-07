@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { RESTAURANT } from "@/data/restaurant";
+import { BarchettaLogo } from "@/components/brand/BarchettaLogo";
 
 function LocaleSwitcher() {
   const locale = useLocale() as Locale;
@@ -46,21 +47,21 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-display text-2xl text-foreground" onClick={() => setOpen(false)}>
-          {RESTAURANT.name}
+        <Link href="/" aria-label={RESTAURANT.name} onClick={() => setOpen(false)}>
+          <BarchettaLogo className="h-11 w-auto sm:h-14" aria-hidden="true" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           <Link
-            href="/la-cucina"
-            aria-current={pathname === "/la-cucina" ? "page" : undefined}
+            href="/menu"
+            aria-current={pathname === "/menu" ? "page" : undefined}
             className="font-sans text-sm font-semibold text-foreground-muted transition-colors hover:text-foreground aria-[current=page]:text-primary"
           >
             {t("cucina")}
           </Link>
           <LocaleSwitcher />
           <Link
-            href="/prenota"
+            href="/reservations"
             className="rounded-full bg-primary px-5 py-2.5 font-sans text-sm font-bold text-background transition-colors hover:bg-primary-hover"
           >
             {t("prenota")}
@@ -91,14 +92,14 @@ export function Header() {
         <nav className="border-t border-border bg-background md:hidden">
           <div className="mx-auto flex max-w-6xl flex-col gap-1 px-6 py-4">
             <Link
-              href="/la-cucina"
+              href="/menu"
               onClick={() => setOpen(false)}
               className="py-2 font-sans text-sm font-semibold text-foreground-muted transition-colors hover:text-foreground"
             >
               {t("cucina")}
             </Link>
             <Link
-              href="/prenota"
+              href="/reservations"
               onClick={() => setOpen(false)}
               className="mt-2 inline-block w-fit rounded-full bg-primary px-5 py-2.5 font-sans text-sm font-bold text-background transition-colors hover:bg-primary-hover"
             >

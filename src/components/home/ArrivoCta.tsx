@@ -30,7 +30,7 @@ export async function ArrivoCta() {
         </h2>
         <p className="max-w-lg text-base text-background/90">{t("body")}</p>
         <Link
-          href="/prenota"
+          href="/reservations"
           className="rounded-full bg-background px-8 py-3.5 font-sans text-sm font-bold text-primary transition-colors hover:bg-highlight"
         >
           {t("cta")}

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ─── Layer 1: primitives. Raw values, never used directly in a component. ───
-   Che Fame's palette: four families, one light theme — no dark mode, by
+   La Barchetta's palette: four families, one light theme — no dark mode, by
    explicit decision (see vault notes: Amsel, Maison Aurelle and Salon
    Kupferglanz all leaned dark/editorial, and a fourth dark DarioDev project
    would read as a template with swapped branding). Contrast measured

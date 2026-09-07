@@ -2,7 +2,7 @@ import type { SVGProps } from "react";
 
 // Three desserts, drawn rather than boxed: the Dolci station shows the
 // actual sweets on small plates instead of a third row of cards. Same line
-// language as the rest of Che Fame — outline in currentColor, lemon as the
+// language as the rest of La Barchetta — outline in currentColor, lemon as the
 // only fill that ever appears.
 
 export function TiramisuIllustration(props: SVGProps<SVGSVGElement>) {

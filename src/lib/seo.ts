@@ -31,7 +31,7 @@ export function buildOpenGraph({
     type: "website",
     title,
     description,
-    siteName: "Che Fame",
+    siteName: "La Barchetta",
     url: absoluteUrl(href, locale),
     locale: locale === "de" ? "de_AT" : "en",
   };

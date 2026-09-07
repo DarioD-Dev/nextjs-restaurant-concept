@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { RESTAURANT } from "@/data/restaurant";
+import { BarchettaLogo } from "@/components/brand/BarchettaLogo";
 
 // The boat's own animated journey now ends at ArrivoCta, just above this
 // footer — repeating it here would be a second, redundant "arrival"
@@ -10,7 +11,10 @@ export function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="mx-auto max-w-6xl px-6 pt-14 pb-2">
-        <p className="font-display text-2xl text-foreground">{t("thanks")}</p>
+        {/* The logo gets its one large outing here, where the name on the
+            sail is actually readable. */}
+        <BarchettaLogo aria-hidden="true" className="h-24 w-auto" />
+        <p className="mt-6 font-display text-2xl text-foreground">{t("thanks")}</p>
         <p className="mt-2 font-sans text-sm font-semibold tracking-wide text-primary uppercase">
           {t("cities")}
         </p>

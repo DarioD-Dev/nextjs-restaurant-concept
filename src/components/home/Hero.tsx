@@ -38,13 +38,13 @@ export async function Hero() {
           </p>
           <div className="hero-rise mt-8 flex flex-wrap gap-4" style={{ "--rise-delay": "220ms" } as React.CSSProperties}>
             <Link
-              href="/prenota"
+              href="/reservations"
               className="rounded-full bg-primary px-6 py-3 font-sans text-sm font-bold text-background transition-colors hover:bg-primary-hover"
             >
               {t("ctaPrenota")}
             </Link>
             <Link
-              href="/la-cucina"
+              href="/menu"
               className="rounded-full border-2 border-foreground px-6 py-3 font-sans text-sm font-bold text-foreground transition-colors hover:border-primary hover:text-primary"
             >
               {t("ctaCucina")}

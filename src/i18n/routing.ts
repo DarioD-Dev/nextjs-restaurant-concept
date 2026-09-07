@@ -9,8 +9,12 @@ export const routing = defineRouting({
   localePrefix: "always",
   pathnames: {
     "/": "/",
-    "/la-cucina": { de: "/la-cucina", en: "/menu" },
-    "/prenota": { de: "/prenota", en: "/reservations" },
+    // Route keys are English (they're code); the URLs a visitor actually
+    // sees are plain in their own language. Nothing functional is named in
+    // Italian — a guest looking for the menu should never have to work out
+    // what "la cucina" means.
+    "/menu": { de: "/speisekarte", en: "/menu" },
+    "/reservations": { de: "/reservierung", en: "/reservations" },
   },
 });
 

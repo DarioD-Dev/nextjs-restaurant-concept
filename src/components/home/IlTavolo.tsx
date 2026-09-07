@@ -7,7 +7,7 @@ import { StationReveal } from "@/components/route/StationReveal";
 // A scattered set of dish "postcards" — alternating vertical offset and a
 // few degrees of rotation each, not a uniform grid — one from each
 // category, proving the data model with real content before the visitor
-// even reaches /la-cucina.
+// even reaches the menu page.
 const TEASER = [
   { id: "bruschetta-pomodoro", tilt: "-2deg", offset: "" },
   { id: "spaghetti-pomodoro", tilt: "1deg", offset: "sm:mt-10" },
@@ -28,7 +28,7 @@ export async function IlTavolo() {
             {t("title")}
           </h2>
           <Link
-            href="/la-cucina"
+            href="/menu"
             className="rounded-full border-2 border-foreground px-5 py-2.5 font-sans text-sm font-bold text-foreground transition-colors hover:border-primary hover:text-primary"
           >
             {tHome("cucinaCta")}
