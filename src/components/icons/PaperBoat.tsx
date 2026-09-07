@@ -4,6 +4,11 @@ import type { SVGProps } from "react";
 // hull plus two triangular sail-flaps meeting at a center fold — not a
 // generic sailboat clipart. Same single-stroke line language as the other
 // Che Fame illustrations.
+//
+// The little pennant at the mast is what makes the shape asymmetric, and
+// that is deliberate: RouteJourney mirrors the boat horizontally each time
+// the route changes direction, and a perfectly symmetric glyph would make
+// that flip invisible.
 export function PaperBoat(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -16,8 +21,9 @@ export function PaperBoat(props: SVGProps<SVGSVGElement>) {
       {...props}
     >
       <path d="M2 14h16l-4 4H6z" />
-      <path d="M10 14V2l-6 10.5" />
-      <path d="M10 14V2l6 10.5" />
+      <path d="M10 14V3l-6 9.5" />
+      <path d="M10 14V3l6 9.5" />
+      <path d="M10 3.4 14.6 4.9 10 6.4" />
     </svg>
   );
 }

@@ -40,8 +40,11 @@ export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  // z-30: the homepage's stations sit at z-10 so the route's boat can't
+  // paint over their text, which means the sticky header has to clear them
+  // both or content scrolls over the wordmark.
   return (
-    <header className="sticky top-0 z-10 border-b border-border bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="font-display text-2xl text-foreground" onClick={() => setOpen(false)}>
           {RESTAURANT.name}

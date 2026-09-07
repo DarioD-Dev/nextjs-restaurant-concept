@@ -27,6 +27,11 @@
         "cucinaCta": "Tutta la carta",
         "pizzaTagline": "La pizza non aspetta.",
         "dolciEyebrow": "To finish",
+        "tavola": {
+            "eyebrow": "A tavola!",
+            "title": "One table, everything on it.",
+            "body": "That's what an evening here looks like: pasta, pizza, a glass of wine, lemon, basil — and decidedly too much bread."
+        },
         "fattoInCasa": {
             "title": "Fatto in casa.",
             "body": "Pomodoro, basilico, limone, peperoncino — the four ingredients that show up in almost everything we make.",

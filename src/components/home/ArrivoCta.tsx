@@ -1,18 +1,26 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { PaperBoat } from "@/components/icons/PaperBoat";
+import { BoatWake } from "@/components/icons/BoatWake";
+import { WavyBand } from "@/components/shapes/Fields";
 
-// Arrivo — where La Rotta ends. Bold tomato again (bookending the Pizza
-// station's color), and the boat glyph appears once more, at rest, as if
-// it has actually arrived — a small payoff for having followed the route
-// down the page.
+// Arrivo — where La Rotta ends. Tomato again, but as a shape whose top
+// edge cuts into the dolci station above it, and the boat is here with its
+// wake, moored rather than travelling: the same glyph that has been
+// crossing the page, finally at rest.
 export async function ArrivoCta() {
   const t = await getTranslations("Home.prenotaCta");
 
   return (
-    <section className="relative bg-primary-vivid py-20 text-background sm:py-28">
-      <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 text-center">
-        <PaperBoat className="size-10 text-background" aria-hidden="true" />
+    <section className="relative overflow-x-clip py-20 text-background sm:py-24">
+      <WavyBand className="absolute inset-x-0 -top-10 -z-20 h-[calc(100%+3rem)] w-full text-primary-vivid" />
+
+      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 text-center">
+        <div className="flex items-center gap-1.5 text-background">
+          <BoatWake className="w-5 opacity-70" />
+          <PaperBoat className="size-11" aria-hidden="true" />
+          <BoatWake className="w-5 -scale-x-100 opacity-70" />
+        </div>
         <h2 className="font-display" style={{ fontSize: "var(--text-display-md)" }}>
           {t("title")}
         </h2>

@@ -125,6 +125,15 @@ button:not(:disabled),
   transform: translateY(18px) scale(0.96);
 }
 
+/* The travelling boat crosses the big tomato and basil shapes, where a
+   tomato-coloured outline on its own would all but disappear. Two stacked
+   cream drop-shadows give it a thin halo that keeps it readable on every
+   ground the route passes over, without having to track which shape it
+   happens to be above. */
+.boat-halo {
+  filter: drop-shadow(0 0 2px var(--background)) drop-shadow(0 0 3px var(--background));
+}
+
 /* Il Tavolo / La Cucina postcards: a slight per-card tilt (set via the
    --tilt custom property inline) that straightens and lifts on hover and
    keyboard focus. Written by hand rather than composed from Tailwind's

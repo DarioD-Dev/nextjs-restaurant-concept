@@ -20,8 +20,8 @@ export async function IlTavolo() {
   const tHome = await getTranslations("Home");
 
   return (
-    <section className="relative px-6 py-16 sm:py-24">
-      <div className="mx-auto max-w-5xl">
+    <section className="relative px-6 pt-16 pb-6 sm:pt-24 sm:pb-8">
+      <div className="relative z-10 mx-auto max-w-5xl">
         <p className="font-script text-3xl text-primary">{tHome("cucinaEyebrow")}</p>
         <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
           <h2 className="font-display text-foreground" style={{ fontSize: "var(--text-display-md)" }}>

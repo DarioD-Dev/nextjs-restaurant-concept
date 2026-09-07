@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { PaperBoat } from "@/components/icons/PaperBoat";
+import { BoatWake } from "@/components/icons/BoatWake";
 
 // La Rotta — the connecting device the whole homepage is built around. A
 // single dashed path runs the full height of the page (drawn once, in a
@@ -17,9 +18,9 @@ import { PaperBoat } from "@/components/icons/PaperBoat";
 // responsive breakpoints reflow content) without needing per-breakpoint
 // path data.
 //
-// The SVG's height is set imperatively from `wrap.scrollHeight` rather
-// than a CSS `height: 100%`. `wrap` is a position:relative box whose own
-// height is auto (determined by its normal-flow children), and while a
+// The SVG's height is set imperatively from the measured content height
+// rather than a CSS `height: 100%`. `wrap` is a position:relative box whose
+// own height is auto (determined by its normal-flow children), and while a
 // *percentage* height on an absolutely positioned descendant is spec-legal
 // against an auto-height containing block, it turned out not to be
 // reliable in practice here — specifically, it measured correctly during
@@ -28,15 +29,54 @@ import { PaperBoat } from "@/components/icons/PaperBoat";
 // via a full-page screenshot tool, which resizes the render surface in a
 // way this percentage math didn't survive. An explicit pixel height
 // measured straight from the DOM sidesteps that ambiguity entirely.
+//
+// Layering (the whole homepage depends on this order, see the home
+// sections): color fields sit at -z-20, this route line at -z-10, the boat
+// just above them at the default layer, and every piece of text and every
+// illustration at `relative z-10`. That is what lets the boat glide *over*
+// the big tomato and basil shapes while still passing *behind* the
+// illustrations — and guarantees it can never sit on top of readable text.
 const ROUTE_HEIGHT = 1400;
-const ROUTE_PATH =
-  "M82,20 C42,90 14,130 26,210 C38,290 78,320 72,420 " +
-  "C66,520 16,545 22,640 C28,735 82,760 76,860 " +
-  "C70,960 34,985 44,1080 C54,1175 52,1230 50,1300";
+
+// The boat keeps to a narrow lane on the right-hand side instead of
+// crossing the full page width: it carves between 70% and 80% of the
+// route box, centred on 75%. Long carves (one direction change per CARVE
+// units, ~4 over the whole page) so it reads like a skier taking a slope
+// in calm, wide turns rather than a zig-zagging cursor.
+const LANE_LEFT = 70;
+const LANE_RIGHT = 80;
+const CARVE = 350;
+
+function buildSlalomPath(height: number): string {
+  const turns = [{ x: (LANE_LEFT + LANE_RIGHT) / 2, y: 0 }];
+  let goRight = true;
+  for (let y = CARVE; y <= height; y += CARVE) {
+    turns.push({ x: goRight ? LANE_RIGHT : LANE_LEFT, y });
+    goRight = !goRight;
+  }
+  const last = turns[turns.length - 1];
+  if (last.y < height) turns.push({ x: goRight ? LANE_RIGHT : LANE_LEFT, y: height });
+
+  return turns
+    .map((p, i) => {
+      if (i === 0) return `M${p.x},${p.y}`;
+      const prev = turns[i - 1];
+      const midY = (prev.y + p.y) / 2;
+      return `C${prev.x},${midY} ${p.x},${midY} ${p.x},${p.y}`;
+    })
+    .join(" ");
+}
+
+const ROUTE_PATH = buildSlalomPath(ROUTE_HEIGHT);
 
 // Rest position for reduced-motion / not-yet-measured states — near the
 // start of the route, a calm illustration rather than mid-journey.
 const REST_PROGRESS = 0.06;
+
+// The boat eases toward the scroll position instead of being pinned to it
+// frame-for-frame. Without this it snaps as fast as the wheel turns; with
+// it, it glides.
+const EASE = 0.11;
 
 export function RouteJourney({ children }: { children: React.ReactNode }) {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -44,6 +84,7 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
   const svgRef = useRef<SVGSVGElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
   const boatRef = useRef<HTMLDivElement>(null);
+  const glyphRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const wrap = wrapRef.current;
@@ -51,10 +92,12 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
     const svg = svgRef.current;
     const path = pathRef.current;
     const boat = boatRef.current;
-    if (!wrap || !content || !svg || !path || !boat) return;
+    const glyph = glyphRef.current;
+    if (!wrap || !content || !svg || !path || !boat || !glyph) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const totalLength = path.getTotalLength();
+    let heading = 1;
 
     // Measured from `content` — a plain normal-flow sibling that holds
     // only the actual page sections — never from `wrap` itself. `wrap`
@@ -68,7 +111,7 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
     }
 
     function place(progress: number) {
-      if (!wrap || !svg || !path || !boat) return;
+      if (!wrap || !svg || !path || !boat || !glyph) return;
       const svgRect = svg.getBoundingClientRect();
       const wrapRect = wrap.getBoundingClientRect();
       const scaleX = svgRect.width / 100;
@@ -83,18 +126,31 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       const offsetY = svgRect.top - wrapRect.top;
 
       const len = totalLength * progress;
-      const p0 = path!.getPointAtLength(len);
-      const p1 = path!.getPointAtLength(Math.min(totalLength, len + totalLength * 0.01));
+      const p0 = path.getPointAtLength(len);
+      const p1 = path.getPointAtLength(Math.min(totalLength, len + totalLength * 0.01));
+
+      // Direction comes from the path's own tangent, not from comparing
+      // frames, so it stays stable no matter how the easing above lands.
+      // The dead zone keeps the boat from flickering at a turn's apex,
+      // where the horizontal component passes through zero.
+      if (Math.abs(p1.x - p0.x) > 0.05) heading = p1.x > p0.x ? 1 : -1;
 
       const dx = (p1.x - p0.x) * scaleX;
       const dy = (p1.y - p0.y) * scaleY;
       // Tangent angle, damped hard (×0.35) — a boat that fully points along
-      // every curve reads as a compass needle, not a gentle drift.
-      const angle = Math.atan2(dy, dx) * (180 / Math.PI) * 0.35;
+      // every curve reads as a compass needle, not a gentle drift. Measured
+      // in the boat's own frame (dx × heading, so travel is always "forward"
+      // here) and mirrored back out below: taken raw, a leftward heading
+      // would come out of atan2 near 180° and tip the boat right over.
+      const angle = Math.atan2(dy, dx * heading) * (180 / Math.PI) * 0.35;
 
       const x = offsetX + p0.x * scaleX;
       const y = offsetY + p0.y * scaleY;
-      boat.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${angle}deg)`;
+      // Position on the wrapper, orientation on the glyph inside it: the
+      // wake ripples live in the wrapper and must stay level with the
+      // water instead of tipping and mirroring along with the hull.
+      boat.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      glyph.style.transform = `rotate(${angle * heading}deg) scaleX(${heading})`;
     }
 
     syncHeight();
@@ -103,42 +159,50 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       place(REST_PROGRESS);
       // Content can still reflow after mount (webfont swap, images), so
       // the static boat's height reference stays correct too.
-      const ro = new ResizeObserver(syncHeight);
-      ro.observe(wrap);
+      const ro = new ResizeObserver(() => {
+        syncHeight();
+        place(REST_PROGRESS);
+      });
+      ro.observe(content);
       return () => ro.disconnect();
     }
 
-    let ticking = false;
     function computeProgress() {
       if (!wrap) return 0;
       const rect = wrap.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const total = Math.max(1, rect.height - vh);
+      const total = Math.max(1, rect.height - window.innerHeight);
       return Math.min(1, Math.max(0, -rect.top / total));
     }
-    function update() {
-      place(computeProgress());
-      ticking = false;
+
+    let target = computeProgress();
+    let current = target;
+    let frame: number | null = null;
+
+    function step() {
+      current += (target - current) * EASE;
+      if (Math.abs(target - current) < 0.0005) current = target;
+      place(current);
+      frame = current === target ? null : requestAnimationFrame(step);
     }
-    function onScrollOrResize() {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(update);
+    function schedule() {
+      target = computeProgress();
+      if (frame === null) frame = requestAnimationFrame(step);
     }
     function onResize() {
       syncHeight();
-      onScrollOrResize();
+      schedule();
     }
 
-    update();
-    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    place(current);
+    window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", onResize);
     const ro = new ResizeObserver(onResize);
-    ro.observe(wrap);
+    ro.observe(content);
     return () => {
-      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", onResize);
       ro.disconnect();
+      if (frame !== null) cancelAnimationFrame(frame);
     };
   }, []);
 
@@ -147,7 +211,7 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       {/* On mobile the route stays visible but shrinks to a narrow strip
           pinned to the right edge instead of spanning full-bleed — the same
           path data, just mapped into a much narrower box, so its left-right
-          wobble automatically compresses and never reaches into the content
+          carve automatically compresses and never reaches into the content
           column or forces horizontal scroll. Height is set imperatively
           (see syncHeight above), not via a CSS h-full utility. */}
       <svg
@@ -160,16 +224,16 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
         // `content` and sets the real value — belt-and-braces against any
         // first-paint flicker, not load-bearing for the fix itself.
         style={{ height: 0 }}
-        className="pointer-events-none absolute top-0 right-0 -z-10 w-12 sm:inset-x-0 sm:w-full"
+        className="pointer-events-none absolute top-0 right-3 -z-10 w-14 sm:inset-x-0 sm:w-full"
       >
         <path
           ref={pathRef}
           d={ROUTE_PATH}
           fill="none"
-          stroke="var(--ink)"
-          strokeOpacity="0.22"
-          strokeWidth="0.6"
-          strokeDasharray="0.2 3.2"
+          stroke="var(--primary)"
+          strokeOpacity="0.35"
+          strokeWidth="1.6"
+          strokeDasharray="0.5 3.4"
           strokeLinecap="round"
           vectorEffect="non-scaling-stroke"
         />
@@ -178,9 +242,24 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       <div
         ref={boatRef}
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 left-0 size-7 -translate-x-1/2 -translate-y-1/2 text-primary sm:size-10"
+        // z-20 on mobile, z-0 from sm up: on a phone the stations run edge
+        // to edge, so a boat behind them would spend most of the page
+        // sliced in half by a card border. Up there it rides over the empty
+        // right margin of the cards instead — it can't cover copy, which is
+        // left-aligned, and it never becomes interactive (pointer-events
+        // none). On wider screens it goes back to travelling behind the
+        // illustrations, which is where the disappearing-and-resurfacing
+        // effect belongs.
+        className="boat-halo pointer-events-none absolute top-0 left-0 z-20 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1 text-primary sm:z-0"
       >
-        <PaperBoat className="size-full drop-shadow-sm" />
+        {/* Wake only from the small breakpoint up: on mobile the boat sits
+            a few pixels from the viewport edge, and the ripples would be
+            clipped there anyway. */}
+        <BoatWake className="hidden w-4 opacity-70 sm:block" />
+        <div ref={glyphRef} className="size-7 sm:size-10">
+          <PaperBoat className="size-full" />
+        </div>
+        <BoatWake className="hidden w-4 -scale-x-100 opacity-70 sm:block" />
       </div>
 
       <div ref={contentRef}>{children}</div>

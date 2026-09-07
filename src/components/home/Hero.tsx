@@ -10,7 +10,10 @@ export async function Hero() {
 
   return (
     <section className="relative px-6 pt-20 pb-16 sm:pt-28 sm:pb-24">
-      <div className="mx-auto max-w-4xl">
+      {/* z-10 on every station's content wrapper: the route layer's boat is
+          absolutely positioned and would otherwise paint over running text.
+          See the layering note in RouteJourney. */}
+      <div className="relative z-10 mx-auto max-w-4xl">
         <p className="hero-rise font-sans text-sm font-bold text-primary uppercase">{t("eyebrow")}</p>
         <h1
           className="hero-rise mt-4 max-w-2xl font-display text-foreground"

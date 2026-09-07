@@ -2,6 +2,7 @@ import { setRequestLocale } from "next-intl/server";
 import { RouteJourney } from "@/components/route/RouteJourney";
 import { Hero } from "@/components/home/Hero";
 import { IlTavolo } from "@/components/home/IlTavolo";
+import { LaTavola } from "@/components/home/LaTavola";
 import { LaPizza } from "@/components/home/LaPizza";
 import { IlCestino } from "@/components/home/IlCestino";
 import { Dolci } from "@/components/home/Dolci";
@@ -18,6 +19,7 @@ export default async function Home({ params }: Props) {
     <RouteJourney>
       <Hero />
       <IlTavolo />
+      <LaTavola />
       <LaPizza />
       <IlCestino />
       <Dolci />
