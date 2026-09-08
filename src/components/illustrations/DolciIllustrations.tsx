@@ -7,7 +7,16 @@ import type { SVGProps } from "react";
 
 export function TiramisuIllustration(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 120 100"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
       {/* plate */}
       <path d="M14,84 C34,92 86,92 106,84" />
       <ellipse cx="60" cy="82" rx="46" ry="9" />
@@ -30,14 +39,27 @@ export function TiramisuIllustration(props: SVGProps<SVGSVGElement>) {
 
 export function PannaCottaIllustration(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 120 100"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
       <path d="M16,86 C36,94 84,94 104,86" />
       <ellipse cx="60" cy="84" rx="44" ry="9" />
       {/* dome */}
       <path d="M30,80 C30,50 40,32 60,32 C80,32 90,50 90,80" />
       <path d="M30,80 C42,86 78,86 90,80" />
       {/* lemon sauce pooling at the base */}
-      <path d="M34,80 C42,88 78,88 86,80 C78,84 42,84 34,80 Z" fill="var(--highlight)" stroke="none" />
+      <path
+        d="M34,80 C42,88 78,88 86,80 C78,84 42,84 34,80 Z"
+        fill="var(--highlight)"
+        stroke="none"
+      />
       <path d="M34,80 C44,86 76,86 86,80" />
       {/* zest curl */}
       <path d="M52,30 C56,20 68,18 72,24 C74,29 68,32 64,29" />
@@ -48,7 +70,16 @@ export function PannaCottaIllustration(props: SVGProps<SVGSVGElement>) {
 
 export function CannoliIllustration(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 120 100"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
       <path d="M14,84 C34,92 86,92 106,84" />
       <ellipse cx="60" cy="82" rx="46" ry="9" />
       {/* lower tube */}

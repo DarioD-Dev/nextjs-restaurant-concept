@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { AperitivoIllustration, HeroUnderline } from "@/components/illustrations/AperitivoIllustration";
+import { AperitivoIllustration } from "@/components/illustrations/AperitivoIllustration";
+import { HeadingUnderline } from "@/components/illustrations/HeadingUnderline";
 import { StationReveal } from "@/components/route/StationReveal";
 
 // Partenza — where La Rotta begins. Headline sits left, deliberately not
@@ -18,15 +19,16 @@ export async function Hero() {
           See the layering note in RouteJourney. */}
       <div className="relative z-10 mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_minmax(0,24rem)]">
         <div>
-          <p className="hero-rise font-sans text-sm font-bold text-primary uppercase">{t("eyebrow")}</p>
+          <p className="hero-rise font-sans text-sm font-bold text-primary uppercase">
+            {t("eyebrow")}
+          </p>
           <h1
-            className="hero-rise mt-4 max-w-2xl font-display text-foreground"
-            style={{ fontSize: "var(--text-display-xl)", lineHeight: 0.95, "--rise-delay": "80ms" } as React.CSSProperties}
+            className="hero-rise mt-4 max-w-2xl font-display text-display-xl leading-[0.95] text-foreground"
+            style={{ "--rise-delay": "80ms" } as React.CSSProperties}
           >
             {t("headline")}
           </h1>
-          <HeroUnderline
-            aria-hidden="true"
+          <HeadingUnderline
             className="hero-rise mt-1 w-48 text-primary sm:w-60"
             style={{ "--rise-delay": "120ms" } as React.CSSProperties}
           />
@@ -36,18 +38,21 @@ export async function Hero() {
           >
             {t("subtitle")}
           </p>
-          <div className="hero-rise mt-8 flex flex-wrap gap-4" style={{ "--rise-delay": "220ms" } as React.CSSProperties}>
+          <div
+            className="hero-rise mt-8 flex flex-wrap gap-4"
+            style={{ "--rise-delay": "220ms" } as React.CSSProperties}
+          >
             <Link
               href="/reservations"
               className="rounded-full bg-primary px-6 py-3 font-sans text-sm font-bold text-background transition-colors hover:bg-primary-hover"
             >
-              {t("ctaPrenota")}
+              {t("ctaReserve")}
             </Link>
             <Link
               href="/menu"
               className="rounded-full border-2 border-foreground px-6 py-3 font-sans text-sm font-bold text-foreground transition-colors hover:border-primary hover:text-primary"
             >
-              {t("ctaCucina")}
+              {t("ctaMenu")}
             </Link>
           </div>
         </div>

@@ -13,7 +13,7 @@ const fieldClass =
   "mt-1.5 w-full rounded-xl border-2 border-foreground bg-surface px-3.5 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-primary aria-[invalid=true]:border-primary";
 
 export function ContactForm() {
-  const t = useTranslations("Prenota.form");
+  const t = useTranslations("Reservations.form");
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
   const successRef = useRef<HTMLParagraphElement>(null);
 
@@ -26,7 +26,12 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <p ref={successRef} tabIndex={-1} role="status" className="font-semibold text-primary outline-none">
+      <p
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        className="font-semibold text-primary outline-none"
+      >
         {t("success")}
       </p>
     );
@@ -35,7 +40,8 @@ export function ContactForm() {
   const nameInvalid = Boolean(state.fieldErrors?.name);
   const emailInvalid = Boolean(state.fieldErrors?.email);
   const messageInvalid = Boolean(state.fieldErrors?.message);
-  const hasUnattributedError = state.status === "error" && !nameInvalid && !emailInvalid && !messageInvalid;
+  const hasUnattributedError =
+    state.status === "error" && !nameInvalid && !emailInvalid && !messageInvalid;
 
   return (
     <form action={formAction} className="flex flex-col gap-5">

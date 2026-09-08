@@ -6,6 +6,7 @@ import type { SVGProps } from "react";
 export function PastaIllustration(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      aria-hidden="true"
       viewBox="0 0 200 170"
       fill="none"
       stroke="currentColor"

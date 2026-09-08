@@ -56,7 +56,10 @@ const ICONS: Record<IngredientIcon, (props: SVGProps<SVGSVGElement>) => React.Re
   peperoncino: Peperoncino,
 };
 
-export function IngredientIconGlyph({ name, ...props }: { name: IngredientIcon } & SVGProps<SVGSVGElement>) {
+export function IngredientIconGlyph({
+  name,
+  ...props
+}: { name: IngredientIcon } & SVGProps<SVGSVGElement>) {
   const Icon = ICONS[name];
   return <Icon aria-hidden="true" {...props} />;
 }

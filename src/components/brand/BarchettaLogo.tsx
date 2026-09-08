@@ -10,16 +10,14 @@ import type { SVGProps } from "react";
 // 10px). A steeper sail looks more like a boat and makes the name a
 // smudge.
 //
-// Two versions, because one drawing can't do both jobs. BarchettaLogo
-// carries the name; BarchettaMark is the same boat with the sail left
-// blank, for places where a name would be a grey smudge anyway. The
-// favicon in src/app/icon.svg is that mark, drawn again with literal hex
-// values because it renders outside the page and has no CSS variables to
-// read.
+// The favicon is a separate drawing (src/app/icon.svg): at 32px the name
+// on the sail is a grey smudge, so that one leaves the sail blank — and it
+// has to be a standalone file with literal hex values anyway, because it
+// renders outside the page and has no CSS variables to read.
 
 export function BarchettaLogo(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 260 112" fill="none" {...props}>
+    <svg aria-hidden="true" viewBox="0 0 260 112" fill="none" {...props}>
       {/* sail, carrying the name */}
       <path d="M130,6 L18,68 H242 Z" fill="var(--primary)" />
       <path d="M130,6 V68" stroke="var(--background)" strokeWidth="1.6" strokeOpacity="0.45" />
@@ -64,26 +62,6 @@ export function BarchettaLogo(props: SVGProps<SVGSVGElement>) {
         <path d="M52,109 C61,102 70,102 79,109" />
         <path d="M181,109 C190,102 199,102 208,109" />
         <path d="M232,106 C240,99 248,99 256,106" />
-      </g>
-    </svg>
-  );
-}
-
-export function BarchettaMark(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 260 112" fill="none" {...props}>
-      <path d="M130,6 L18,68 H242 Z" fill="var(--primary)" />
-      <path d="M130,6 V68" stroke="var(--background)" strokeWidth="3" strokeOpacity="0.5" />
-      <path
-        d="M10,70 H250 L226,99 H34 Z"
-        fill="var(--surface)"
-        stroke="var(--foreground)"
-        strokeWidth="4"
-        strokeLinejoin="round"
-      />
-      <g stroke="var(--primary)" strokeWidth="4" strokeLinecap="round">
-        <path d="M6,106 C15,99 24,99 33,106" />
-        <path d="M227,106 C236,99 245,99 254,106" />
       </g>
     </svg>
   );

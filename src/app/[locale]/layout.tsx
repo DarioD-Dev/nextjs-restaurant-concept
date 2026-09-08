@@ -1,51 +1,59 @@
 import type { Metadata } from "next";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { display, sans, script } from "@/styles/fonts";
+import { assertLocale } from "@/i18n/locale";
 import { routing } from "@/i18n/routing";
-import { buildOpenGraph } from "@/lib/seo";
+import { SITE_URL, buildPageMetadata } from "@/lib/seo";
 import "../globals.css";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-type Props = {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-};
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
+export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Promise<Metadata> {
+  const locale = assertLocale((await params).locale);
   const t = await getTranslations({ locale, namespace: "Meta" });
-  const title = t("title");
-  const description = t("description");
 
   return {
-    title,
-    description,
-    openGraph: buildOpenGraph({ title, description, locale, href: "/" }),
+    // Set once here so any future relative metadata URL (an OG image, say)
+    // resolves against the real origin instead of failing the build.
+    metadataBase: new URL(SITE_URL),
+    ...buildPageMetadata({
+      title: t("title"),
+      description: t("description"),
+      locale,
+      href: "/",
+    }),
   };
 }
 
-export default async function RootLayout({ children, params }: Props) {
-  const { locale } = await params;
-
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
+export default async function RootLayout({ children, params }: LayoutProps<"/[locale]">) {
+  const locale = assertLocale((await params).locale);
   setRequestLocale(locale);
+  const t = await getTranslations("Header");
 
   return (
-    <html lang={locale} className={`${display.variable} ${sans.variable} ${script.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+    <html
+      lang={locale}
+      className={`${display.variable} ${sans.variable} ${script.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col bg-background text-foreground">
         <NextIntlClientProvider>
+          {/* Same header and nav on every page, so keyboard users get a way
+              past it (WCAG 2.4.1). Invisible until focused. */}
+          <a
+            href="#main"
+            className="sr-only rounded-full bg-primary px-5 py-2.5 font-sans text-sm font-bold text-background focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50"
+          >
+            {t("skipToContent")}
+          </a>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="main" className="flex-1">
+            {children}
+          </main>
           <Footer />
         </NextIntlClientProvider>
       </body>

@@ -129,8 +129,7 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
     // reading its scrollHeight while the svg's own (possibly still wrong,
     // pre-sync) box is one of its children is circular: the fix would feed
     // on the bug it's trying to correct.
-    function syncHeight() {
-      if (!content || !svg) return;
+    const syncHeight = () => {
       routeHeightPx = content.scrollHeight;
       svg.style.height = `${routeHeightPx}px`;
 
@@ -142,10 +141,9 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       endY = marker
         ? marker.getBoundingClientRect().top - content.getBoundingClientRect().top
         : Number.POSITIVE_INFINITY;
-    }
+    };
 
-    function place(progress: number) {
-      if (!wrap || !svg || !path || !boat || !glyph) return;
+    const place = (progress: number) => {
       const svgRect = svg.getBoundingClientRect();
       const wrapRect = wrap.getBoundingClientRect();
       const scaleX = svgRect.width / 100;
@@ -191,24 +189,27 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
           clamp01((endY - y) / FADE_OUT_LENGTH),
         ),
       );
-    }
+    };
 
-    syncHeight();
+    // Re-measure, then draw. Always in that order: the boat's vertical
+    // scale comes from the measured height, so placing before measuring
+    // puts it at the top of the page with a zero scale.
+    const settle = (progress: number) => {
+      syncHeight();
+      place(progress);
+    };
 
     if (reduced) {
-      const settle = () => {
-        syncHeight();
-        place(REST_PROGRESS);
-      };
-      settle();
+      const park = () => settle(REST_PROGRESS);
+      park();
       // Placed again on the next frame: on a cold load the first call can
       // land before the route SVG's new height has been laid out, and with
       // no scrolling to correct it afterwards the parked boat would stay
-      // stuck at the top of the page with a zero vertical scale.
-      const frame = requestAnimationFrame(settle);
+      // stuck where it started.
+      const frame = requestAnimationFrame(park);
       // Content can still reflow after that (webfont swap, images), so the
       // static boat's height reference stays correct too.
-      const ro = new ResizeObserver(settle);
+      const ro = new ResizeObserver(park);
       ro.observe(content);
       return () => {
         cancelAnimationFrame(frame);
@@ -216,40 +217,36 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       };
     }
 
-    function computeProgress() {
-      if (!wrap) return 0;
+    const computeProgress = () => {
       const rect = wrap.getBoundingClientRect();
       const total = Math.max(1, rect.height - window.innerHeight);
       return Math.min(1, Math.max(0, -rect.top / total));
-    }
+    };
 
     let target = computeProgress();
     let current = target;
     let frame: number | null = null;
 
-    function step() {
+    const step = () => {
       current += (target - current) * EASE;
       if (Math.abs(target - current) < 0.0005) current = target;
       place(current);
       frame = current === target ? null : requestAnimationFrame(step);
-    }
-    function schedule() {
+    };
+    const schedule = () => {
       target = computeProgress();
       if (frame === null) frame = requestAnimationFrame(step);
-    }
-    function onResize() {
+    };
+    const onResize = () => {
       syncHeight();
       schedule();
-    }
+    };
 
-    place(current);
+    settle(current);
     // Same insurance as the reduced-motion branch above: re-place once the
     // first frame has been laid out, so a visitor who lands and doesn't
     // scroll still sees the boat where the route actually runs.
-    const firstFrame = requestAnimationFrame(() => {
-      syncHeight();
-      place(current);
-    });
+    const firstFrame = requestAnimationFrame(() => settle(current));
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", onResize);
     const ro = new ResizeObserver(onResize);

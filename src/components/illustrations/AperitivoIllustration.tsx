@@ -11,7 +11,14 @@ import type { SVGProps } from "react";
 // third-party or licensed artwork is used anywhere in La Barchetta.
 export function AperitivoIllustration(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 360 310" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 360 310"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
       {/* the tray */}
       <path
         d="M180,45 C250,43 306,99 305,170 C304,240 249,294 178,293 C110,292 55,238 56,168 C57,100 112,47 180,45 Z"
@@ -26,8 +33,14 @@ export function AperitivoIllustration(props: SVGProps<SVGSVGElement>) {
 
       {/* the glass */}
       <g stroke="var(--foreground)" strokeWidth="3">
-        <path d="M137,86 C137,152 161,192 195,198 C229,192 253,152 253,86 Z" fill="var(--background)" />
-        <path d="M144,112 C148,154 168,184 195,190 C222,184 242,154 246,112 Z" fill="var(--primary-vivid)" />
+        <path
+          d="M137,86 C137,152 161,192 195,198 C229,192 253,152 253,86 Z"
+          fill="var(--background)"
+        />
+        <path
+          d="M144,112 C148,154 168,184 195,190 C222,184 242,154 246,112 Z"
+          fill="var(--primary-vivid)"
+        />
         <path d="M195,198 V244" />
         <ellipse cx="195" cy="248" rx="34" ry="8" fill="var(--background)" />
       </g>
@@ -64,23 +77,25 @@ export function AperitivoIllustration(props: SVGProps<SVGSVGElement>) {
 
       {/* sparkle marks: cream on the tray, tomato out on the page */}
       <g fill="var(--background)">
-        <path d="M0,-9 L2.4,-2.4 L9,0 L2.4,2.4 L0,9 L-2.4,2.4 L-9,0 L-2.4,-2.4 Z" transform="translate(104 120)" />
-        <path d="M0,-6 L1.6,-1.6 L6,0 L1.6,1.6 L0,6 L-1.6,1.6 L-6,0 L-1.6,-1.6 Z" transform="translate(128 84)" />
+        <path
+          d="M0,-9 L2.4,-2.4 L9,0 L2.4,2.4 L0,9 L-2.4,2.4 L-9,0 L-2.4,-2.4 Z"
+          transform="translate(104 120)"
+        />
+        <path
+          d="M0,-6 L1.6,-1.6 L6,0 L1.6,1.6 L0,6 L-1.6,1.6 L-6,0 L-1.6,-1.6 Z"
+          transform="translate(128 84)"
+        />
       </g>
       <g fill="var(--primary)">
-        <path d="M0,-10 L2.6,-2.6 L10,0 L2.6,2.6 L0,10 L-2.6,2.6 L-10,0 L-2.6,-2.6 Z" transform="translate(326 128)" />
-        <path d="M0,-7 L1.8,-1.8 L7,0 L1.8,1.8 L0,7 L-1.8,1.8 L-7,0 L-1.8,-1.8 Z" transform="translate(36 96)" />
+        <path
+          d="M0,-10 L2.6,-2.6 L10,0 L2.6,2.6 L0,10 L-2.6,2.6 L-10,0 L-2.6,-2.6 Z"
+          transform="translate(326 128)"
+        />
+        <path
+          d="M0,-7 L1.8,-1.8 L7,0 L1.8,1.8 L0,7 L-1.8,1.8 L-7,0 L-1.8,-1.8 Z"
+          transform="translate(36 96)"
+        />
       </g>
-    </svg>
-  );
-}
-
-// A quick hand-drawn stroke under the headline — the same gesture as the
-// Caveat script used elsewhere, just drawn instead of typed.
-export function HeroUnderline(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 220 14" fill="none" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" {...props}>
-      <path d="M3,9 C46,2 82,12 124,6 C154,1.5 186,8 217,4" />
     </svg>
   );
 }

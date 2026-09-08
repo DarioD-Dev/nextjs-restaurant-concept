@@ -9,7 +9,7 @@ import type { SVGProps } from "react";
 // instead of disappearing into a same-color fill.
 export function PizzaIllustration(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 200 200" fill="none" {...props}>
+    <svg aria-hidden="true" viewBox="0 0 200 200" fill="none" {...props}>
       <circle cx="100" cy="100" r="88" stroke="currentColor" strokeWidth="3" />
       <circle cx="100" cy="100" r="74" fill="var(--primary)" />
       <g stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">

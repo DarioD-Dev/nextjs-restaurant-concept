@@ -1,22 +1,34 @@
 import type { Metadata } from "next";
 import { getPathname } from "@/i18n/navigation";
-import type { Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
+import { RESTAURANT } from "@/data/restaurant";
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nextjs-restaurant-concept.vercel.app";
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://nextjs-restaurant-concept.vercel.app";
 
-type Href = Parameters<typeof getPathname>[0]["href"];
+/** The internal route keys of `routing.pathnames` — "/", "/menu", "/reservations". */
+export type Href = Parameters<typeof getPathname>[0]["href"];
 
-export function absoluteUrl(href: Href, locale: string): string {
-  return new URL(getPathname({ href, locale: locale as Locale }), SITE_URL).toString();
+export function absoluteUrl(href: Href, locale: Locale): string {
+  return new URL(getPathname({ href, locale }), SITE_URL).toString();
 }
 
+// OG locale codes are underscored and region-qualified; the site's own
+// codes are plain. Small enough to keep as a literal map, and it fails to
+// compile if a locale is ever added without deciding what it maps to.
+const OG_LOCALES: Record<Locale, string> = { de: "de_AT", en: "en_GB" };
+
 /**
- * Next merges metadata per top-level field, and `openGraph` is replaced
- * wholesale rather than merged — a page that sets only a title silently
- * drops the type and site name inherited from the layout. So every page
- * builds the complete object through here.
+ * Every page's metadata is built here rather than assembled inline.
+ *
+ * Two things make that worth centralising. Next merges metadata per
+ * top-level field, and `openGraph` is *replaced* wholesale rather than
+ * merged — a page that sets only a title would silently drop the type and
+ * site name inherited from the layout. And a bilingual site needs the
+ * canonical/hreflang set consistently on every route, which is exactly the
+ * kind of thing that rots when each page hand-rolls it.
  */
-export function buildOpenGraph({
+export function buildPageMetadata({
   title,
   description,
   locale,
@@ -24,15 +36,25 @@ export function buildOpenGraph({
 }: {
   title: string;
   description: string;
-  locale: string;
+  locale: Locale;
   href: Href;
-}): Metadata["openGraph"] {
+}): Metadata {
+  const url = absoluteUrl(href, locale);
+
   return {
-    type: "website",
     title,
     description,
-    siteName: "La Barchetta",
-    url: absoluteUrl(href, locale),
-    locale: locale === "de" ? "de_AT" : "en",
+    alternates: {
+      canonical: url,
+      languages: Object.fromEntries(routing.locales.map((l) => [l, absoluteUrl(href, l)])),
+    },
+    openGraph: {
+      type: "website",
+      title,
+      description,
+      siteName: RESTAURANT.name,
+      url,
+      locale: OG_LOCALES[locale],
+    },
   };
 }

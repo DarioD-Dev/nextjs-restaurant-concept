@@ -7,6 +7,7 @@ import type { SVGProps } from "react";
 export function BoatWake(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      aria-hidden="true"
       viewBox="0 0 24 14"
       fill="none"
       stroke="currentColor"

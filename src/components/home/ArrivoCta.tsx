@@ -9,7 +9,7 @@ import { WavyBand } from "@/components/shapes/Fields";
 // wake, moored rather than travelling: the same glyph that has been
 // crossing the page, finally at rest.
 export async function ArrivoCta() {
-  const t = await getTranslations("Home.prenotaCta");
+  const t = await getTranslations("Home.closingCta");
 
   // data-route-end marks the arrival for RouteJourney: the travelling boat
   // fades out just before this band, so it reads as having sailed in behind
@@ -21,13 +21,11 @@ export async function ArrivoCta() {
       <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-5 px-6 text-center">
         <div className="flex items-center gap-1.5 text-background">
           <BoatWake className="w-5 opacity-70" />
-          <PaperBoat className="size-11" aria-hidden="true" />
+          <PaperBoat className="size-11" />
           <BoatWake className="w-5 -scale-x-100 opacity-70" />
         </div>
         <p className="font-script text-3xl text-highlight">{t("eyebrow")}</p>
-        <h2 className="font-display" style={{ fontSize: "var(--text-display-lg)" }}>
-          {t("title")}
-        </h2>
+        <h2 className="font-display text-display-lg">{t("title")}</h2>
         <p className="max-w-lg text-base text-background/90">{t("body")}</p>
         <Link
           href="/reservations"

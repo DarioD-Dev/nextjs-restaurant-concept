@@ -1,148 +1,141 @@
 {
-    "Meta": {
-        "title": "La Barchetta — Italienisches Restaurant in Wien",
-        "description": "La Barchetta in Wien-Margareten: Pasta, Pizza, Antipasti und Nachspeisen. Speisekarte zum Filtern, Tisch in einer Minute angefragt."
+  "Meta": {
+    "title": "La Barchetta — Italienisches Restaurant in Wien",
+    "description": "La Barchetta in Wien-Margareten: Pasta, Pizza, Antipasti und Nachspeisen. Speisekarte zum Filtern, Tisch in einer Minute angefragt."
+  },
+  "Header": {
+    "menu": "Speisekarte",
+    "reserve": "Tisch reservieren",
+    "skipToContent": "Zum Inhalt springen",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "Footer": {
+    "thanks": "Danke fürs Vorbeischauen.",
+    "tagline": "Kleines Boot, große Portionen.",
+    "hoursWeekdays": "Di–So 11:30–22:00",
+    "hoursWeekend": "Mo Ruhetag",
+    "copyright": "© {year} La Barchetta"
+  },
+  "Home": {
+    "eyebrow": "La Barchetta · Wien",
+    "headline": "Hunger? Perfetto.",
+    "subtitle": "Pasta, Pizza, Antipasti, Dolci — mitten in Wien-Margareten. Kommen Sie hungrig, um den Rest kümmern wir uns.",
+    "ctaReserve": "Tisch reservieren",
+    "ctaMenu": "Speisekarte",
+    "menuEyebrow": "Pasta, Pizza & mehr",
+    "menuCta": "Ganze Speisekarte",
+    "pizzaTagline": "La pizza non aspetta.",
+    "dolciEyebrow": "Zum Schluss",
+    "tavola": {
+      "eyebrow": "A tavola!",
+      "title": "Ein Tisch, alles drauf.",
+      "body": "So sieht bei uns ein Abend aus: Pasta, Pizza, ein Glas Wein, Zitrone, Basilikum — und deutlich zu viel Brot."
     },
-    "Header": {
-        "cucina": "Speisekarte",
-        "prenota": "Tisch reservieren",
-        "openMenu": "Menü öffnen",
-        "closeMenu": "Menü schließen"
+    "cestino": {
+      "title": "Fatto in casa.",
+      "body": "Pomodoro, Basilico, Limone, Peperoncino — die vier Zutaten, die in fast jedem Gericht mitreden."
     },
-    "Footer": {
-        "thanks": "Danke fürs Vorbeischauen.",
-        "cities": "Kleines Boot, große Portionen.",
-        "hoursWeekdays": "Di–So 11:30–22:00",
-        "hoursWeekend": "Mo Ruhetag",
-        "copyright": "© {year} La Barchetta"
-    },
-    "Home": {
-        "eyebrow": "La Barchetta · Wien",
-        "headline": "Hunger? Perfetto.",
-        "subtitle": "Pasta, Pizza, Antipasti, Dolci — mitten in Wien-Margareten. Kommen Sie hungrig, um den Rest kümmern wir uns.",
-        "ctaPrenota": "Tisch reservieren",
-        "ctaCucina": "Speisekarte",
-        "buonAppetito": "Buon appetito!",
-        "cucinaEyebrow": "Pasta, Pizza & mehr",
-        "cucinaCta": "Ganze Speisekarte",
-        "pizzaTagline": "La pizza non aspetta.",
-        "dolciEyebrow": "Zum Schluss",
-        "tavola": {
-            "eyebrow": "A tavola!",
-            "title": "Ein Tisch, alles drauf.",
-            "body": "So sieht bei uns ein Abend aus: Pasta, Pizza, ein Glas Wein, Zitrone, Basilikum — und deutlich zu viel Brot."
-        },
-        "fattoInCasa": {
-            "title": "Fatto in casa.",
-            "body": "Pomodoro, Basilico, Limone, Peperoncino — die vier Zutaten, die in fast jedem Gericht mitreden.",
-            "labels": {
-                "pomodoro": "Pomodoro",
-                "basilico": "Basilico",
-                "limone": "Limone",
-                "peperoncino": "Peperoncino"
-            }
-        },
-        "prenotaCta": {
-            "eyebrow": "Ci vediamo?",
-            "title": "Und, überzeugt?",
-            "body": "Ehrlich gesagt: Lesen macht niemanden satt. Kommen Sie vorbei und überzeugen Sie sich selbst — am besten mit Hunger. Freitag und Samstag sind meistens zuerst weg.",
-            "cta": "Tisch anfragen"
-        }
-    },
-    "Cucina": {
-        "metaTitle": "Speisekarte — La Barchetta",
-        "metaDescription": "Die ganze Speisekarte von La Barchetta: Pasta, Pizza, Antipasti und Nachspeisen — filterbar nach Kategorie, vegetarisch und vegan.",
-        "eyebrow": "Alles, was heute an Bord ist",
-        "title": "Speisekarte",
-        "subtitle": "Nach Kategorie filtern, vegetarisch oder vegan dazuschalten — und Sie sehen sofort, wie viel übrig bleibt.",
-        "categories": {
-            "tutto": "Alles",
-            "antipasti": "Antipasti",
-            "pasta": "Pasta",
-            "pizza": "Pizza",
-            "dolci": "Dolci"
-        },
-        "vegetarian": "Vegetarisch",
-        "vegan": "Vegan",
-        "dishes": {
-            "bruschetta-pomodoro": {
-                "name": "Bruschetta al Pomodoro",
-                "description": "Geröstetes Sauerteigbrot, Tomaten, Basilikum, Knoblauch"
-            },
-            "burrata-prosciutto": {
-                "name": "Burrata e Prosciutto",
-                "description": "Burrata, Parmaschinken, Rucola, Balsamico"
-            },
-            "carpaccio-manzo": {
-                "name": "Carpaccio di Manzo",
-                "description": "Rinderfilet hauchdünn, Parmesan, Rucola, Zitrone"
-            },
-            "spaghetti-pomodoro": {
-                "name": "Spaghetti al Pomodoro",
-                "description": "Tomatensauce, Basilikum, Olivenöl"
-            },
-            "cacio-e-pepe": {
-                "name": "Cacio e Pepe",
-                "description": "Tonnarelli, Pecorino Romano, schwarzer Pfeffer"
-            },
-            "pappardelle-ragu": {
-                "name": "Pappardelle al Ragù",
-                "description": "Breite Bandnudeln, Rind-Ragù, Pecorino"
-            },
-            "ravioli-zucca": {
-                "name": "Ravioli di Zucca",
-                "description": "Kürbis-Ravioli, Salbeibutter, Parmesan"
-            },
-            "margherita": {
-                "name": "Margherita",
-                "description": "Tomate, Mozzarella, Basilikum"
-            },
-            "diavola": {
-                "name": "Diavola",
-                "description": "Tomate, Mozzarella, scharfe Salami, Peperoncino"
-            },
-            "marinara": {
-                "name": "Marinara",
-                "description": "Tomate, Knoblauch, Oregano, Olivenöl"
-            },
-            "funghi-tartufo": {
-                "name": "Funghi e Tartufo",
-                "description": "Champignons, Trüffelcreme, Mozzarella"
-            },
-            "tiramisu": {
-                "name": "Tiramisù",
-                "description": "Mascarpone, Kaffee, Kakao"
-            },
-            "panna-cotta-limone": {
-                "name": "Panna Cotta al Limone",
-                "description": "Sahnepudding, Zitrone, Beeren"
-            },
-            "cannoli": {
-                "name": "Cannoli Siciliani",
-                "description": "Knusprige Röllchen, Ricotta, Pistazien"
-            }
-        },
-        "countOne": "Gericht",
-        "countMany": "Gerichte",
-        "empty": "Nichts gefunden — nehmen Sie einen Filter wieder raus."
-    },
-    "Prenota": {
-        "metaTitle": "Tisch reservieren — La Barchetta",
-        "metaDescription": "Tisch bei La Barchetta anfragen — telefonisch oder per Nachricht, ohne Online-Buchung.",
-        "eyebrow": "Platz an Bord",
-        "title": "Tisch reservieren",
-        "body": "Reservierungen nehmen wir telefonisch oder per Nachricht entgegen — eine Online-Buchung gibt es hier noch nicht. Dafür antwortet ein echter Mensch, meist noch am selben Tag.",
-        "hoursTitle": "Öffnungszeiten",
-        "ctaCall": "Anrufen:",
-        "formTitle": "Oder schreiben Sie uns",
-        "form": {
-            "nameLabel": "Name",
-            "emailLabel": "E-Mail",
-            "messageLabel": "Nachricht",
-            "error": "Bitte prüfen — dieses Feld fehlt oder ist ungültig.",
-            "submit": "Nachricht senden",
-            "submitting": "Wird gesendet…",
-            "success": "Danke! Ihre Nachricht ist angekommen."
-        }
+    "closingCta": {
+      "eyebrow": "Ci vediamo?",
+      "title": "Und, überzeugt?",
+      "body": "Ehrlich gesagt: Lesen macht niemanden satt. Kommen Sie vorbei und überzeugen Sie sich selbst — am besten mit Hunger. Freitag und Samstag sind meistens zuerst weg.",
+      "cta": "Tisch anfragen"
     }
+  },
+  "Menu": {
+    "metaTitle": "Speisekarte — La Barchetta",
+    "metaDescription": "Die ganze Speisekarte von La Barchetta: Pasta, Pizza, Antipasti und Nachspeisen — filterbar nach Kategorie, vegetarisch und vegan.",
+    "eyebrow": "Alles, was heute an Bord ist",
+    "title": "Speisekarte",
+    "subtitle": "Nach Kategorie filtern, vegetarisch oder vegan dazuschalten — und Sie sehen sofort, wie viel übrig bleibt.",
+    "categories": {
+      "all": "Alles",
+      "antipasti": "Antipasti",
+      "pasta": "Pasta",
+      "pizza": "Pizza",
+      "dolci": "Dolci"
+    },
+    "vegetarian": "Vegetarisch",
+    "vegan": "Vegan",
+    "dishes": {
+      "bruschetta-pomodoro": {
+        "name": "Bruschetta al Pomodoro",
+        "description": "Geröstetes Sauerteigbrot, Tomaten, Basilikum, Knoblauch"
+      },
+      "burrata-prosciutto": {
+        "name": "Burrata e Prosciutto",
+        "description": "Burrata, Parmaschinken, Rucola, Balsamico"
+      },
+      "carpaccio-manzo": {
+        "name": "Carpaccio di Manzo",
+        "description": "Rinderfilet hauchdünn, Parmesan, Rucola, Zitrone"
+      },
+      "spaghetti-pomodoro": {
+        "name": "Spaghetti al Pomodoro",
+        "description": "Tomatensauce, Basilikum, Olivenöl"
+      },
+      "cacio-e-pepe": {
+        "name": "Cacio e Pepe",
+        "description": "Tonnarelli, Pecorino Romano, schwarzer Pfeffer"
+      },
+      "pappardelle-ragu": {
+        "name": "Pappardelle al Ragù",
+        "description": "Breite Bandnudeln, Rind-Ragù, Pecorino"
+      },
+      "ravioli-zucca": {
+        "name": "Ravioli di Zucca",
+        "description": "Kürbis-Ravioli, Salbeibutter, Parmesan"
+      },
+      "margherita": {
+        "name": "Margherita",
+        "description": "Tomate, Mozzarella, Basilikum"
+      },
+      "diavola": {
+        "name": "Diavola",
+        "description": "Tomate, Mozzarella, scharfe Salami, Peperoncino"
+      },
+      "marinara": {
+        "name": "Marinara",
+        "description": "Tomate, Knoblauch, Oregano, Olivenöl"
+      },
+      "funghi-tartufo": {
+        "name": "Funghi e Tartufo",
+        "description": "Champignons, Trüffelcreme, Mozzarella"
+      },
+      "tiramisu": {
+        "name": "Tiramisù",
+        "description": "Mascarpone, Kaffee, Kakao"
+      },
+      "panna-cotta-limone": {
+        "name": "Panna Cotta al Limone",
+        "description": "Sahnepudding, Zitrone, Beeren"
+      },
+      "cannoli": {
+        "name": "Cannoli Siciliani",
+        "description": "Knusprige Röllchen, Ricotta, Pistazien"
+      }
+    },
+    "countOne": "Gericht",
+    "countMany": "Gerichte",
+    "empty": "Nichts gefunden — nehmen Sie einen Filter wieder raus."
+  },
+  "Reservations": {
+    "metaTitle": "Tisch reservieren — La Barchetta",
+    "metaDescription": "Tisch bei La Barchetta anfragen — telefonisch oder per Nachricht, ohne Online-Buchung.",
+    "eyebrow": "Platz an Bord",
+    "title": "Tisch reservieren",
+    "body": "Reservierungen nehmen wir telefonisch oder per Nachricht entgegen — eine Online-Buchung gibt es hier noch nicht. Dafür antwortet ein echter Mensch, meist noch am selben Tag.",
+    "ctaCall": "Anrufen:",
+    "formTitle": "Oder schreiben Sie uns",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "E-Mail",
+      "messageLabel": "Nachricht",
+      "error": "Bitte prüfen — dieses Feld fehlt oder ist ungültig.",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet…",
+      "success": "Danke! Ihre Nachricht ist angekommen."
+    }
+  }
 }

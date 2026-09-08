@@ -13,10 +13,10 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 pt-14 pb-2">
         {/* The logo gets its one large outing here, where the name on the
             sail is actually readable. */}
-        <BarchettaLogo aria-hidden="true" className="h-24 w-auto" />
+        <BarchettaLogo className="h-24 w-auto" />
         <p className="mt-6 font-display text-2xl text-foreground">{t("thanks")}</p>
         <p className="mt-2 font-sans text-sm font-semibold tracking-wide text-primary uppercase">
-          {t("cities")}
+          {t("tagline")}
         </p>
       </div>
 
@@ -30,12 +30,18 @@ export function Footer() {
         </address>
         <div className="font-sans text-sm text-foreground-muted">
           <p>
-            <a href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-foreground">
+            <a
+              href={`tel:${RESTAURANT.phone.replace(/\s/g, "")}`}
+              className="transition-colors hover:text-foreground"
+            >
               {RESTAURANT.phone}
             </a>
           </p>
           <p className="mt-1">
-            <a href={`mailto:${RESTAURANT.email}`} className="transition-colors hover:text-foreground">
+            <a
+              href={`mailto:${RESTAURANT.email}`}
+              className="transition-colors hover:text-foreground"
+            >
               {RESTAURANT.email}
             </a>
           </p>

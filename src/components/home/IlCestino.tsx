@@ -9,7 +9,7 @@ import { SideBlob } from "@/components/shapes/Fields";
 // the top of the section instead, so the copy always stands on cream and
 // never on green.
 export async function IlCestino() {
-  const t = await getTranslations("Home.fattoInCasa");
+  const t = await getTranslations("Home.cestino");
 
   return (
     <section className="relative overflow-x-clip px-6 pt-24 pb-12 sm:pt-28 sm:pb-16">
@@ -24,10 +24,10 @@ export async function IlCestino() {
         </StationReveal>
 
         <div className="relative z-10 text-center lg:text-left">
-          <h2 className="font-display text-foreground" style={{ fontSize: "var(--text-display-md)" }}>
-            {t("title")}
-          </h2>
-          <p className="mx-auto mt-3 max-w-sm text-base text-foreground-muted lg:mx-0">{t("body")}</p>
+          <h2 className="font-display text-foreground text-display-md">{t("title")}</h2>
+          <p className="mx-auto mt-3 max-w-sm text-base text-foreground-muted lg:mx-0">
+            {t("body")}
+          </p>
         </div>
       </div>
     </section>

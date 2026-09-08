@@ -1,25 +1,28 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { HeroUnderline } from "@/components/illustrations/AperitivoIllustration";
+import { HeadingUnderline } from "@/components/illustrations/HeadingUnderline";
 import { TavolaIllustration } from "@/components/illustrations/TavolaIllustration";
 import { PaperBoat } from "@/components/icons/PaperBoat";
 import { BoatWake } from "@/components/icons/BoatWake";
 import { StationReveal } from "@/components/route/StationReveal";
 import { WavyBand } from "@/components/shapes/Fields";
 import { RESTAURANT } from "@/data/restaurant";
-import { buildOpenGraph } from "@/lib/seo";
-import type { Locale } from "@/i18n/routing";
+import { buildPageMetadata } from "@/lib/seo";
+import { assertLocale } from "@/i18n/locale";
 
-type Props = { params: Promise<{ locale: Locale }> };
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/reservations">): Promise<Metadata> {
+  const locale = assertLocale((await params).locale);
+  const t = await getTranslations({ locale, namespace: "Reservations" });
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Prenota" });
-  const title = t("metaTitle");
-  const description = t("metaDescription");
-
-  return { title, description, openGraph: buildOpenGraph({ title, description, locale, href: "/reservations" }) };
+  return buildPageMetadata({
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    locale,
+    href: "/reservations",
+  });
 }
 
 // Honest, not a fake booking widget — same pattern every DarioDev concept
@@ -28,10 +31,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // pretending a table was booked. What changed is only the presentation:
 // the page is built from the same stations, colour shapes and drawings as
 // the homepage instead of being a bare form on a white page.
-export default async function ReservationsPage({ params }: Props) {
-  const { locale } = await params;
+export default async function ReservationsPage({ params }: PageProps<"/[locale]/reservations">) {
+  const locale = assertLocale((await params).locale);
   setRequestLocale(locale);
-  const t = await getTranslations("Prenota");
+  const t = await getTranslations("Reservations");
   const tFooter = await getTranslations("Footer");
 
   return (
@@ -40,10 +43,8 @@ export default async function ReservationsPage({ params }: Props) {
         <div className="mx-auto grid max-w-5xl items-center gap-8 lg:grid-cols-[1fr_minmax(0,24rem)]">
           <div>
             <p className="font-script text-3xl text-primary">{t("eyebrow")}</p>
-            <h1 className="mt-1 font-display text-foreground" style={{ fontSize: "var(--text-display-lg)" }}>
-              {t("title")}
-            </h1>
-            <HeroUnderline aria-hidden="true" className="mt-1 w-44 text-primary sm:w-56" />
+            <h1 className="mt-1 font-display text-display-lg text-foreground">{t("title")}</h1>
+            <HeadingUnderline className="mt-1 w-44 text-primary sm:w-56" />
             <p className="mt-4 max-w-lg text-lg text-foreground-muted">{t("body")}</p>
           </div>
 
@@ -61,7 +62,7 @@ export default async function ReservationsPage({ params }: Props) {
         <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">
           <div className="flex items-center gap-1.5">
             <BoatWake className="w-5 opacity-70" />
-            <PaperBoat className="size-10" aria-hidden="true" />
+            <PaperBoat className="size-10" />
             <BoatWake className="w-5 -scale-x-100 opacity-70" />
           </div>
           <a
@@ -79,9 +80,7 @@ export default async function ReservationsPage({ params }: Props) {
 
       <section className="px-6 pt-14 pb-20 sm:pb-24">
         <div className="mx-auto max-w-2xl">
-          <h2 className="font-display text-foreground" style={{ fontSize: "var(--text-display-md)" }}>
-            {t("formTitle")}
-          </h2>
+          <h2 className="font-display text-display-md text-foreground">{t("formTitle")}</h2>
           <div className="mt-6 rounded-3xl border-2 border-foreground bg-surface p-6 shadow-[6px_6px_0_var(--foreground)] sm:p-8">
             <ContactForm />
           </div>

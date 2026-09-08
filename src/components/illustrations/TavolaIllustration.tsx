@@ -15,7 +15,14 @@ import type { SVGProps } from "react";
 // page.
 export function TavolaIllustration(props: SVGProps<SVGSVGElement>) {
   return (
-    <svg viewBox="0 0 640 470" fill="none" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 640 470"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
       {/* the tablecloth */}
       <path
         d="M56,74 C170,42 300,54 432,46 C524,40 606,74 610,152 C614,232 598,332 562,388 C520,450 378,434 248,428 C138,423 40,404 30,320 C20,238 26,124 56,74 Z"
@@ -25,13 +32,22 @@ export function TavolaIllustration(props: SVGProps<SVGSVGElement>) {
       {/* two glasses, crossing the top edge of the cloth */}
       <g stroke="var(--foreground)" strokeWidth="2.6">
         <g transform="translate(468 96)">
-          <path d="M-21,-52 H21 C21,-20 12,-4 0,-2 C-12,-4 -21,-20 -21,-52 Z" fill="var(--background)" />
-          <path d="M-18,-28 C-10,-22 10,-22 18,-28 C17,-14 9,-4 0,-2 C-9,-4 -17,-14 -18,-28 Z" fill="var(--primary-vivid)" />
+          <path
+            d="M-21,-52 H21 C21,-20 12,-4 0,-2 C-12,-4 -21,-20 -21,-52 Z"
+            fill="var(--background)"
+          />
+          <path
+            d="M-18,-28 C-10,-22 10,-22 18,-28 C17,-14 9,-4 0,-2 C-9,-4 -17,-14 -18,-28 Z"
+            fill="var(--primary-vivid)"
+          />
           <path d="M0,-2 V26" />
           <path d="M-15,28 H15" />
         </g>
         <g transform="translate(536 74) rotate(6)">
-          <path d="M-17,-44 H17 C17,-17 10,-4 0,-2 C-10,-4 -17,-17 -17,-44 Z" fill="var(--background)" />
+          <path
+            d="M-17,-44 H17 C17,-17 10,-4 0,-2 C-10,-4 -17,-17 -17,-44 Z"
+            fill="var(--background)"
+          />
           <path d="M0,-2 V22" />
           <path d="M-13,24 H13" />
         </g>
@@ -39,7 +55,14 @@ export function TavolaIllustration(props: SVGProps<SVGSVGElement>) {
 
       {/* the pizza, on its board */}
       <g>
-        <circle cx="300" cy="238" r="112" fill="var(--background)" stroke="var(--foreground)" strokeWidth="3" />
+        <circle
+          cx="300"
+          cy="238"
+          r="112"
+          fill="var(--background)"
+          stroke="var(--foreground)"
+          strokeWidth="3"
+        />
         <circle cx="300" cy="238" r="94" fill="var(--primary-vivid)" />
         <circle cx="300" cy="238" r="94" stroke="var(--foreground)" strokeWidth="2.4" />
         <g stroke="var(--background)" strokeWidth="1.8" strokeOpacity="0.55">
@@ -53,15 +76,32 @@ export function TavolaIllustration(props: SVGProps<SVGSVGElement>) {
           <circle cx="304" cy="238" r="10" />
         </g>
         <g fill="var(--secondary)" stroke="var(--foreground)" strokeWidth="1.4">
-          <path d="M0,0 C9,-8 23,-5 26,3 C17,11 4,9 0,0 Z" transform="translate(238 232) rotate(-14)" />
-          <path d="M0,0 C9,-8 23,-5 26,3 C17,11 4,9 0,0 Z" transform="translate(316 300) rotate(12)" />
-          <path d="M0,0 C9,-8 23,-5 26,3 C17,11 4,9 0,0 Z" transform="translate(320 172) rotate(-6)" />
+          <path
+            d="M0,0 C9,-8 23,-5 26,3 C17,11 4,9 0,0 Z"
+            transform="translate(238 232) rotate(-14)"
+          />
+          <path
+            d="M0,0 C9,-8 23,-5 26,3 C17,11 4,9 0,0 Z"
+            transform="translate(316 300) rotate(12)"
+          />
+          <path
+            d="M0,0 C9,-8 23,-5 26,3 C17,11 4,9 0,0 Z"
+            transform="translate(320 172) rotate(-6)"
+          />
         </g>
       </g>
 
       {/* pasta bowl, top left */}
       <g>
-        <ellipse cx="134" cy="152" rx="84" ry="64" fill="var(--background)" stroke="var(--foreground)" strokeWidth="3" />
+        <ellipse
+          cx="134"
+          cy="152"
+          rx="84"
+          ry="64"
+          fill="var(--background)"
+          stroke="var(--foreground)"
+          strokeWidth="3"
+        />
         <ellipse cx="134" cy="152" rx="66" ry="48" stroke="var(--foreground)" strokeWidth="2" />
         <g stroke="var(--foreground)" strokeWidth="2.4">
           <path d="M80,150 C96,132 112,168 130,150 C148,132 166,166 186,146" />
@@ -84,9 +124,23 @@ export function TavolaIllustration(props: SVGProps<SVGSVGElement>) {
 
       {/* plate with lemon and olives, right */}
       <g>
-        <circle cx="500" cy="330" r="72" fill="var(--background)" stroke="var(--foreground)" strokeWidth="3" />
+        <circle
+          cx="500"
+          cy="330"
+          r="72"
+          fill="var(--background)"
+          stroke="var(--foreground)"
+          strokeWidth="3"
+        />
         <circle cx="500" cy="330" r="55" stroke="var(--foreground)" strokeWidth="1.8" />
-        <circle cx="488" cy="322" r="26" fill="var(--highlight)" stroke="var(--foreground)" strokeWidth="2.2" />
+        <circle
+          cx="488"
+          cy="322"
+          r="26"
+          fill="var(--highlight)"
+          stroke="var(--foreground)"
+          strokeWidth="2.2"
+        />
         <g stroke="var(--foreground)" strokeWidth="1.6">
           <path d="M488,300 V344M466,322 H510M472,306 L504,338M504,306 L472,338" />
         </g>
@@ -98,7 +152,16 @@ export function TavolaIllustration(props: SVGProps<SVGSVGElement>) {
 
       {/* napkin with cutlery, crossing the bottom edge */}
       <g transform="translate(126 400) rotate(-7)">
-        <rect x="-76" y="-52" width="152" height="104" rx="10" fill="var(--background)" stroke="var(--foreground)" strokeWidth="2.6" />
+        <rect
+          x="-76"
+          y="-52"
+          width="152"
+          height="104"
+          rx="10"
+          fill="var(--background)"
+          stroke="var(--foreground)"
+          strokeWidth="2.6"
+        />
         <g stroke="var(--foreground)" strokeWidth="1.8">
           <path d="M-76,-22 H76M-76,18 H76" />
         </g>

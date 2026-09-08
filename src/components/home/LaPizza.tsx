@@ -1,8 +1,8 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { PizzaIllustration } from "@/components/illustrations/PizzaIllustration";
 import { StationReveal } from "@/components/route/StationReveal";
 import { WavyBand } from "@/components/shapes/Fields";
-import { dishes, formatPriceEur } from "@/data/dishes";
+import { getDish, formatPrice, type DishId } from "@/data/dishes";
 
 function SteamWisp({ delay }: { delay: string }) {
   return (
@@ -12,12 +12,18 @@ function SteamWisp({ delay }: { delay: string }) {
       className="steam-wisp h-14 w-3 text-background/80"
       style={{ animationDelay: delay }}
     >
-      <path d="M5 29c-3-4 3-7 0-11s3-7 0-11" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path
+        d="M5 29c-3-4 3-7 0-11s3-7 0-11"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
 
-const FEATURED_ID = "margherita";
+const FEATURED_ID = "margherita" satisfies DishId;
 
 // The tomato field is a drawn shape, not the section's background: it
 // starts above this section (running up behind the tavola scene) and the
@@ -26,9 +32,10 @@ const FEATURED_ID = "margherita";
 // point — it puts the illustration in front of the colour instead of
 // inside it.
 export async function LaPizza() {
-  const t = await getTranslations("Cucina");
+  const locale = await getLocale();
+  const t = await getTranslations("Menu");
   const tHome = await getTranslations("Home");
-  const dish = dishes.find((d) => d.id === FEATURED_ID)!;
+  const dish = getDish(FEATURED_ID);
 
   return (
     <section className="relative overflow-x-clip py-16 text-background sm:py-20">
@@ -37,13 +44,11 @@ export async function LaPizza() {
       <div className="mx-auto grid max-w-5xl items-center gap-8 px-6 lg:grid-cols-[1fr_minmax(0,24rem)]">
         <div className="relative z-10 text-center lg:text-left">
           <p className="font-script text-3xl text-highlight">{tHome("pizzaTagline")}</p>
-          <h2 className="mt-2 font-display" style={{ fontSize: "var(--text-display-lg)" }}>
-            {t(`dishes.${dish.id}.name`)}
-          </h2>
+          <h2 className="mt-2 font-display text-display-lg">{t(`dishes.${FEATURED_ID}.name`)}</h2>
           <p className="mx-auto mt-3 max-w-sm text-base text-background/85 lg:mx-0">
-            {t(`dishes.${dish.id}.description`)}
+            {t(`dishes.${FEATURED_ID}.description`)}
           </p>
-          <p className="mt-5 font-display text-2xl">€ {formatPriceEur(dish.priceEur)}</p>
+          <p className="mt-5 font-display text-2xl">{formatPrice(dish.priceEur, locale)}</p>
         </div>
 
         {/* The pizza is served on a cream disc that hangs off the bottom of

@@ -3,10 +3,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
 
-const nextConfig: NextConfig = {
-  images: {
-    formats: ["image/avif", "image/webp"],
-  },
-};
+// Nothing to configure beyond the next-intl plugin: the site ships no
+// bitmap images (every illustration is inline SVG), so there is no image
+// pipeline to tune here.
+const nextConfig: NextConfig = {};
 
 export default withNextIntl(nextConfig);

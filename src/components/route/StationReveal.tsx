@@ -6,7 +6,13 @@ import { useEffect, useRef, type ReactNode } from "react";
 // Same no-JS-safe pattern as DarioDev's Reveal.tsx — always rendered
 // visible; only a mounted effect can hide an instance currently below the
 // fold, and only outside prefers-reduced-motion.
-export function StationReveal({ children, className }: { children: ReactNode; className?: string }) {
+export function StationReveal({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

@@ -38,7 +38,9 @@ export async function submitContactForm(
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
-    console.info(`[contact] RESEND_API_KEY not set — would have sent:\n${name} <${email}>\n${message}`);
+    console.info(
+      `[contact] RESEND_API_KEY not set — would have sent:\n${name} <${email}>\n${message}`,
+    );
     return { status: "success" };
   }
 

@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 /* ─── Layer 1: primitives. Raw values, never used directly in a component. ───
-   La Barchetta's palette: four families, one light theme — no dark mode, by
-   explicit decision (see vault notes: Amsel, Maison Aurelle and Salon
-   Kupferglanz all leaned dark/editorial, and a fourth dark DarioDev project
-   would read as a template with swapped branding). Contrast measured
-   against Cream, not guessed. */
+   La Barchetta's palette: four families, one light theme — no dark mode,
+   by explicit decision (Amsel, Maison Aurelle and Salon Kupferglanz all
+   leaned dark/editorial, and a fourth dark DarioDev project would read as
+   a template with swapped branding). Every contrast ratio below was
+   measured against Cream, not guessed. */
 :root {
   color-scheme: light;
-  --cf-cream: #f7f1e3; /* page ground */
-  --cf-cream-raised: #fffbf3; /* cards, slightly lighter than the ground */
-  --cf-ink: #20201c; /* body text — 14.51:1 on cream */
-  --cf-tomato-dark: #a62f25; /* buttons/links/focus — 6.10:1 on cream, text-safe */
-  --cf-tomato-vivid: #c83b2f; /* surfaces/illustration only — 4.52:1, too tight for small text */
-  --cf-basil: #315c3a; /* vegetarian/vegan marking — 6.85:1 on cream */
-  --cf-basil-dark: #24452b; /* deeper basil for hover states */
-  --cf-lemon: #f2c94c; /* small filled surfaces only (badges with ink text) — 1.41:1, never text or a content background */
-  --cf-border: #e4d8be; /* warm sand line */
+  --lb-cream: #f7f1e3; /* page ground */
+  --lb-cream-raised: #fffbf3; /* cards, slightly lighter than the ground */
+  --lb-ink: #20201c; /* body text — 14.51:1 on cream */
+  --lb-tomato-dark: #a62f25; /* buttons/links/focus — 6.10:1 on cream, text-safe */
+  --lb-tomato-vivid: #c83b2f; /* surfaces/illustration only — 4.52:1, too tight for small text */
+  --lb-basil: #315c3a; /* vegetarian/vegan marking — 6.85:1 on cream */
+  --lb-basil-dark: #24452b; /* deeper basil for hover states */
+  --lb-lemon: #f2c94c; /* small filled surfaces only (badges with ink text) — 1.41:1, never text or a content background */
+  --lb-border: #e4d8be; /* warm sand line */
 }
 
 /* ─── Layer 2: semantic. ─── */
 :root {
-  --background: var(--cf-cream);
-  --surface: var(--cf-cream-raised);
-  --foreground: var(--cf-ink);
+  --background: var(--lb-cream);
+  --surface: var(--lb-cream-raised);
+  --foreground: var(--lb-ink);
   --foreground-muted: #5a5648;
-  --primary: var(--cf-tomato-dark);
-  --primary-hover: var(--cf-basil-dark);
-  --primary-vivid: var(--cf-tomato-vivid);
-  --secondary: var(--cf-basil);
-  --highlight: var(--cf-lemon);
-  --border: var(--cf-border);
+  --primary: var(--lb-tomato-dark);
+  --primary-hover: var(--lb-basil-dark);
+  --primary-vivid: var(--lb-tomato-vivid);
+  --secondary: var(--lb-basil);
+  --highlight: var(--lb-lemon);
+  --border: var(--lb-border);
 }
 
 /* ─── Layer 3: Tailwind. Components only ever touch this. ─── */
@@ -64,6 +64,10 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display), Georgia, serif;
+  /* Stated rather than inherited: the display face ships 600 and up, so an
+     unset (400) weight only lands on 600 through CSS font matching — and
+     would silently jump if a lighter weight were ever added. */
+  font-weight: 600;
 }
 
 button:not(:disabled),
@@ -105,8 +109,7 @@ button:not(:disabled),
   }
 }
 
-/* Animation 3/3 ("kleine Illustrationen erscheinen beim Erreichen ihrer
-   Station"): illustrations arrive at their station. Always
+/* Animation 3/3: illustrations arrive at their station. Always
    rendered in their final visible position (no-JS/crawler-safe); a
    mounted effect adds .station-pending only to instances currently below
    the fold, an IntersectionObserver removes it once. Same reasoning as
@@ -134,14 +137,12 @@ button:not(:disabled),
   filter: drop-shadow(0 0 2px var(--background)) drop-shadow(0 0 3px var(--background));
 }
 
-/* Il Tavolo / La Cucina postcards: a slight per-card tilt (set via the
-   --tilt custom property inline) that straightens and lifts on hover and
-   keyboard focus. Written by hand rather than composed from Tailwind's
-   rotate and translate-y utilities — those proved unreliable together
-   here (an individual-CSS-property cascade quirk between the base tilt
-   and the focus-visible/hover override that wasn't worth chasing
-   further), and a single explicit rule is easier to trust than debugging
-   utility-class interaction. */
+/* Dish postcards (homepage teaser and menu page): a slight per-card tilt,
+   set per instance via the --tilt custom property, that straightens and
+   lifts on hover and keyboard focus. One hand-written rule rather than a
+   base utility plus two variant overrides — the whole interaction is three
+   declarations and reads better in one place than spread across the
+   class attribute of every card. */
 .tilt-card {
   transform: rotate(var(--tilt, 0deg));
   transition: transform 0.2s ease-out;

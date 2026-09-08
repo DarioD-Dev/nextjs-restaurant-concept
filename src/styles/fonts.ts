@@ -9,23 +9,26 @@ import { Gabarito, Figtree, Caveat } from "next/font/google";
 export const display = Gabarito({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+  // 600 for headings, 700/800 for the logo lettering. Nothing requests 900.
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
 export const sans = Figtree({
   variable: "--font-sans-ui",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  // Body text, font-semibold and font-bold — no other weight is used.
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
-// Handwriting accent — now specifically the "route label" font, the small
-// station names along La Rotta (see Route.tsx), plus the one Buon-appetito
-// moment. Never body content.
+// Handwriting accent, used only for the short line above a station's
+// heading (and the one on the closing banner). Never body content, never a
+// heading — it carries no information that isn't repeated in the heading
+// underneath it.
 export const script = Caveat({
   variable: "--font-script",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["600"],
   display: "swap",
 });

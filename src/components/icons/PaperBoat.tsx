@@ -12,6 +12,7 @@ import type { SVGProps } from "react";
 export function PaperBoat(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      aria-hidden="true"
       viewBox="0 0 20 20"
       fill="none"
       stroke="currentColor"

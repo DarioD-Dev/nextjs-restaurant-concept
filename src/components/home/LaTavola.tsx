@@ -15,9 +15,7 @@ export async function LaTavola() {
       <div className="mx-auto grid max-w-5xl items-center gap-6 lg:grid-cols-[minmax(0,19rem)_1fr] lg:gap-4">
         <div className="relative z-10">
           <p className="font-script text-3xl text-primary">{t("eyebrow")}</p>
-          <h2 className="mt-1 font-display text-foreground" style={{ fontSize: "var(--text-display-md)" }}>
-            {t("title")}
-          </h2>
+          <h2 className="mt-1 font-display text-foreground text-display-md">{t("title")}</h2>
           <p className="mt-3 max-w-sm text-base text-foreground-muted">{t("body")}</p>
         </div>
 

@@ -7,6 +7,7 @@ import type { SVGProps } from "react";
 export function IngredientsStillLife(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      aria-hidden="true"
       viewBox="0 0 240 170"
       fill="none"
       stroke="currentColor"

@@ -1,148 +1,141 @@
 {
-    "Meta": {
-        "title": "La Barchetta — Italian Restaurant in Vienna",
-        "description": "La Barchetta in Vienna-Margareten: pasta, pizza, antipasti and desserts. A menu you can filter, a table you can ask for in a minute."
+  "Meta": {
+    "title": "La Barchetta — Italian Restaurant in Vienna",
+    "description": "La Barchetta in Vienna-Margareten: pasta, pizza, antipasti and desserts. A menu you can filter, a table you can ask for in a minute."
+  },
+  "Header": {
+    "menu": "Menu",
+    "reserve": "Book a table",
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "thanks": "Thanks for stopping by.",
+    "tagline": "Small boat, big portions.",
+    "hoursWeekdays": "Tue–Sun 11:30 am–10:00 pm",
+    "hoursWeekend": "Closed Mondays",
+    "copyright": "© {year} La Barchetta"
+  },
+  "Home": {
+    "eyebrow": "La Barchetta · Vienna",
+    "headline": "Hungry? Perfetto.",
+    "subtitle": "Pasta, pizza, antipasti, dolci — right in Vienna-Margareten. Come hungry, we'll take care of the rest.",
+    "ctaReserve": "Book a table",
+    "ctaMenu": "See the menu",
+    "menuEyebrow": "Pasta, pizza & more",
+    "menuCta": "The whole menu",
+    "pizzaTagline": "La pizza non aspetta.",
+    "dolciEyebrow": "To finish",
+    "tavola": {
+      "eyebrow": "A tavola!",
+      "title": "One table, everything on it.",
+      "body": "That's what an evening here looks like: pasta, pizza, a glass of wine, lemon, basil — and decidedly too much bread."
     },
-    "Header": {
-        "cucina": "Menu",
-        "prenota": "Book a table",
-        "openMenu": "Open menu",
-        "closeMenu": "Close menu"
+    "cestino": {
+      "title": "Fatto in casa.",
+      "body": "Pomodoro, basilico, limone, peperoncino — the four ingredients that show up in almost everything we make."
     },
-    "Footer": {
-        "thanks": "Thanks for stopping by.",
-        "cities": "Small boat, big portions.",
-        "hoursWeekdays": "Tue–Sun 11:30 am–10:00 pm",
-        "hoursWeekend": "Closed Mondays",
-        "copyright": "© {year} La Barchetta"
-    },
-    "Home": {
-        "eyebrow": "La Barchetta · Vienna",
-        "headline": "Hungry? Perfetto.",
-        "subtitle": "Pasta, pizza, antipasti, dolci — right in Vienna-Margareten. Come hungry, we'll take care of the rest.",
-        "ctaPrenota": "Book a table",
-        "ctaCucina": "See the menu",
-        "buonAppetito": "Buon appetito!",
-        "cucinaEyebrow": "Pasta, pizza & more",
-        "cucinaCta": "The whole menu",
-        "pizzaTagline": "La pizza non aspetta.",
-        "dolciEyebrow": "To finish",
-        "tavola": {
-            "eyebrow": "A tavola!",
-            "title": "One table, everything on it.",
-            "body": "That's what an evening here looks like: pasta, pizza, a glass of wine, lemon, basil — and decidedly too much bread."
-        },
-        "fattoInCasa": {
-            "title": "Fatto in casa.",
-            "body": "Pomodoro, basilico, limone, peperoncino — the four ingredients that show up in almost everything we make.",
-            "labels": {
-                "pomodoro": "Pomodoro",
-                "basilico": "Basilico",
-                "limone": "Limone",
-                "peperoncino": "Peperoncino"
-            }
-        },
-        "prenotaCta": {
-            "eyebrow": "Ci vediamo?",
-            "title": "So — convinced?",
-            "body": "Honestly: reading has never filled anyone up. Come and see for yourself — ideally hungry. Fridays and Saturdays tend to go first.",
-            "cta": "Request a table"
-        }
-    },
-    "Cucina": {
-        "metaTitle": "Menu — La Barchetta",
-        "metaDescription": "The whole La Barchetta menu: pasta, pizza, antipasti and desserts — filterable by category, vegetarian and vegan.",
-        "eyebrow": "Everything on board today",
-        "title": "Menu",
-        "subtitle": "Filter by category, add vegetarian or vegan — and you'll see straight away how much is left.",
-        "categories": {
-            "tutto": "Everything",
-            "antipasti": "Antipasti",
-            "pasta": "Pasta",
-            "pizza": "Pizza",
-            "dolci": "Dolci"
-        },
-        "vegetarian": "Vegetarian",
-        "vegan": "Vegan",
-        "dishes": {
-            "bruschetta-pomodoro": {
-                "name": "Bruschetta al Pomodoro",
-                "description": "Toasted sourdough, tomatoes, basil, garlic"
-            },
-            "burrata-prosciutto": {
-                "name": "Burrata e Prosciutto",
-                "description": "Burrata, Parma ham, rocket, balsamic"
-            },
-            "carpaccio-manzo": {
-                "name": "Carpaccio di Manzo",
-                "description": "Thinly sliced beef fillet, parmesan, rocket, lemon"
-            },
-            "spaghetti-pomodoro": {
-                "name": "Spaghetti al Pomodoro",
-                "description": "Tomato sauce, basil, olive oil"
-            },
-            "cacio-e-pepe": {
-                "name": "Cacio e Pepe",
-                "description": "Tonnarelli, Pecorino Romano, black pepper"
-            },
-            "pappardelle-ragu": {
-                "name": "Pappardelle al Ragù",
-                "description": "Wide ribbon pasta, beef ragù, pecorino"
-            },
-            "ravioli-zucca": {
-                "name": "Ravioli di Zucca",
-                "description": "Pumpkin ravioli, sage butter, parmesan"
-            },
-            "margherita": {
-                "name": "Margherita",
-                "description": "Tomato, mozzarella, basil"
-            },
-            "diavola": {
-                "name": "Diavola",
-                "description": "Tomato, mozzarella, spicy salami, chilli"
-            },
-            "marinara": {
-                "name": "Marinara",
-                "description": "Tomato, garlic, oregano, olive oil"
-            },
-            "funghi-tartufo": {
-                "name": "Funghi e Tartufo",
-                "description": "Mushrooms, truffle cream, mozzarella"
-            },
-            "tiramisu": {
-                "name": "Tiramisù",
-                "description": "Mascarpone, coffee, cocoa"
-            },
-            "panna-cotta-limone": {
-                "name": "Panna Cotta al Limone",
-                "description": "Cream pudding, lemon, berries"
-            },
-            "cannoli": {
-                "name": "Cannoli Siciliani",
-                "description": "Crisp shells, ricotta, pistachio"
-            }
-        },
-        "countOne": "dish",
-        "countMany": "dishes",
-        "empty": "Nothing here — try taking a filter back off."
-    },
-    "Prenota": {
-        "metaTitle": "Book a table — La Barchetta",
-        "metaDescription": "Ask for a table at La Barchetta — by phone or message, no online booking.",
-        "eyebrow": "A seat on board",
-        "title": "Book a table",
-        "body": "We take reservations by phone or by message — there's no online booking here yet. What there is instead: a real person answering, usually the same day.",
-        "hoursTitle": "Opening hours",
-        "ctaCall": "Call:",
-        "formTitle": "Or write to us",
-        "form": {
-            "nameLabel": "Name",
-            "emailLabel": "Email",
-            "messageLabel": "Message",
-            "error": "Please check — this field is missing or invalid.",
-            "submit": "Send message",
-            "submitting": "Sending…",
-            "success": "Thanks! Your message has arrived."
-        }
+    "closingCta": {
+      "eyebrow": "Ci vediamo?",
+      "title": "So — convinced?",
+      "body": "Honestly: reading has never filled anyone up. Come and see for yourself — ideally hungry. Fridays and Saturdays tend to go first.",
+      "cta": "Request a table"
     }
+  },
+  "Menu": {
+    "metaTitle": "Menu — La Barchetta",
+    "metaDescription": "The whole La Barchetta menu: pasta, pizza, antipasti and desserts — filterable by category, vegetarian and vegan.",
+    "eyebrow": "Everything on board today",
+    "title": "Menu",
+    "subtitle": "Filter by category, add vegetarian or vegan — and you'll see straight away how much is left.",
+    "categories": {
+      "all": "Everything",
+      "antipasti": "Antipasti",
+      "pasta": "Pasta",
+      "pizza": "Pizza",
+      "dolci": "Dolci"
+    },
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "dishes": {
+      "bruschetta-pomodoro": {
+        "name": "Bruschetta al Pomodoro",
+        "description": "Toasted sourdough, tomatoes, basil, garlic"
+      },
+      "burrata-prosciutto": {
+        "name": "Burrata e Prosciutto",
+        "description": "Burrata, Parma ham, rocket, balsamic"
+      },
+      "carpaccio-manzo": {
+        "name": "Carpaccio di Manzo",
+        "description": "Thinly sliced beef fillet, parmesan, rocket, lemon"
+      },
+      "spaghetti-pomodoro": {
+        "name": "Spaghetti al Pomodoro",
+        "description": "Tomato sauce, basil, olive oil"
+      },
+      "cacio-e-pepe": {
+        "name": "Cacio e Pepe",
+        "description": "Tonnarelli, Pecorino Romano, black pepper"
+      },
+      "pappardelle-ragu": {
+        "name": "Pappardelle al Ragù",
+        "description": "Wide ribbon pasta, beef ragù, pecorino"
+      },
+      "ravioli-zucca": {
+        "name": "Ravioli di Zucca",
+        "description": "Pumpkin ravioli, sage butter, parmesan"
+      },
+      "margherita": {
+        "name": "Margherita",
+        "description": "Tomato, mozzarella, basil"
+      },
+      "diavola": {
+        "name": "Diavola",
+        "description": "Tomato, mozzarella, spicy salami, chilli"
+      },
+      "marinara": {
+        "name": "Marinara",
+        "description": "Tomato, garlic, oregano, olive oil"
+      },
+      "funghi-tartufo": {
+        "name": "Funghi e Tartufo",
+        "description": "Mushrooms, truffle cream, mozzarella"
+      },
+      "tiramisu": {
+        "name": "Tiramisù",
+        "description": "Mascarpone, coffee, cocoa"
+      },
+      "panna-cotta-limone": {
+        "name": "Panna Cotta al Limone",
+        "description": "Cream pudding, lemon, berries"
+      },
+      "cannoli": {
+        "name": "Cannoli Siciliani",
+        "description": "Crisp shells, ricotta, pistachio"
+      }
+    },
+    "countOne": "dish",
+    "countMany": "dishes",
+    "empty": "Nothing here — try taking a filter back off."
+  },
+  "Reservations": {
+    "metaTitle": "Book a table — La Barchetta",
+    "metaDescription": "Ask for a table at La Barchetta — by phone or message, no online booking.",
+    "eyebrow": "A seat on board",
+    "title": "Book a table",
+    "body": "We take reservations by phone or by message — there's no online booking here yet. What there is instead: a real person answering, usually the same day.",
+    "ctaCall": "Call:",
+    "formTitle": "Or write to us",
+    "form": {
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "messageLabel": "Message",
+      "error": "Please check — this field is missing or invalid.",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "success": "Thanks! Your message has arrived."
+    }
+  }
 }
