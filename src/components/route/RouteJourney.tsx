@@ -141,6 +141,13 @@ export function RouteJourney({ children }: { children: React.ReactNode }) {
       endY = marker
         ? marker.getBoundingClientRect().top - content.getBoundingClientRect().top
         : Number.POSITIVE_INFINITY;
+
+      // Die gepunktete Linie endet dort, wo die Reise endet — sie lief sonst
+      // über das rote Abschlussband hinweg bis in den Footer. Bewusst
+      // geclippt statt die SVG zu kürzen: Die Höhe ist der Maßstab, aus dem
+      // die Schiffsposition gerechnet wird. Kürzen würde die Route stauchen
+      // und damit die Bewegung verändern; Clippen ändert nur, was man sieht.
+      svg.style.clipPath = marker ? `inset(0 0 ${routeHeightPx - endY}px 0)` : "none";
     };
 
     const place = (progress: number) => {

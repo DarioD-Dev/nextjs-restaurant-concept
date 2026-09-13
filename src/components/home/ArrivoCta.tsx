@@ -26,7 +26,6 @@ export async function ArrivoCta() {
         </div>
         <p className="font-script text-3xl text-highlight">{t("eyebrow")}</p>
         <h2 className="font-display text-display-lg">{t("title")}</h2>
-        <p className="max-w-lg text-base text-background/90">{t("body")}</p>
         <Link
           href="/reservations"
           className="rounded-full bg-background px-8 py-3.5 font-sans text-sm font-bold text-primary transition-colors hover:bg-highlight"

@@ -9,7 +9,7 @@ export function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="border-t border-border">
+    <footer>
       <div className="mx-auto max-w-6xl px-6 pt-14 pb-2">
         {/* The logo gets its one large outing here, where the name on the
             sail is actually readable. */}
