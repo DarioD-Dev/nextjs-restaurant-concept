@@ -16,7 +16,6 @@ export async function LaTavola() {
         <div className="relative z-10">
           <p className="font-script text-3xl text-primary">{t("eyebrow")}</p>
           <h2 className="mt-1 font-display text-foreground text-display-md">{t("title")}</h2>
-          <p className="mt-3 max-w-sm text-base text-foreground-muted">{t("body")}</p>
         </div>
 
         <StationReveal className="relative z-10">

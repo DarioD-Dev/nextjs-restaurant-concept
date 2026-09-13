@@ -25,9 +25,6 @@ export async function IlCestino() {
 
         <div className="relative z-10 text-center lg:text-left">
           <h2 className="font-display text-foreground text-display-md">{t("title")}</h2>
-          <p className="mx-auto mt-3 max-w-sm text-base text-foreground-muted lg:mx-0">
-            {t("body")}
-          </p>
         </div>
       </div>
     </section>

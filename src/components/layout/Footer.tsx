@@ -15,9 +15,6 @@ export function Footer() {
             sail is actually readable. */}
         <BarchettaLogo className="h-24 w-auto" />
         <p className="mt-6 font-display text-2xl text-foreground">{t("thanks")}</p>
-        <p className="mt-2 font-sans text-sm font-semibold tracking-wide text-primary uppercase">
-          {t("tagline")}
-        </p>
       </div>
 
       <div className="mx-auto grid max-w-6xl gap-8 px-6 pb-14 sm:grid-cols-3">

@@ -12,7 +12,6 @@
   },
   "Footer": {
     "thanks": "Danke fürs Vorbeischauen.",
-    "tagline": "Kleines Boot, große Portionen.",
     "hoursWeekdays": "Di–So 11:30–22:00",
     "hoursWeekend": "Mo Ruhetag",
     "copyright": "© {year} La Barchetta"
@@ -20,26 +19,23 @@
   "Home": {
     "eyebrow": "La Barchetta · Wien",
     "headline": "Hunger? Perfetto.",
-    "subtitle": "Pasta, Pizza, Antipasti, Dolci — mitten in Wien-Margareten. Kommen Sie hungrig, um den Rest kümmern wir uns.",
+    "subtitle": "Pasta, Pizza, Antipasti, Dolci — mitten in Wien-Margareten.",
     "ctaReserve": "Tisch reservieren",
     "ctaMenu": "Speisekarte",
-    "menuEyebrow": "Pasta, Pizza & mehr",
     "menuCta": "Ganze Speisekarte",
     "pizzaTagline": "La pizza non aspetta.",
     "dolciEyebrow": "Zum Schluss",
     "tavola": {
       "eyebrow": "A tavola!",
-      "title": "Ein Tisch, alles drauf.",
-      "body": "So sieht bei uns ein Abend aus: Pasta, Pizza, ein Glas Wein, Zitrone, Basilikum — und deutlich zu viel Brot."
+      "title": "Ein Tisch, alles drauf."
     },
     "cestino": {
-      "title": "Fatto in casa.",
-      "body": "Pomodoro, Basilico, Limone, Peperoncino — die vier Zutaten, die in fast jedem Gericht mitreden."
+      "title": "Fatto in casa."
     },
     "closingCta": {
       "eyebrow": "Ci vediamo?",
       "title": "Und, überzeugt?",
-      "body": "Ehrlich gesagt: Lesen macht niemanden satt. Kommen Sie vorbei und überzeugen Sie sich selbst — am besten mit Hunger. Freitag und Samstag sind meistens zuerst weg.",
+      "body": "Freitag und Samstag sind meistens zuerst weg.",
       "cta": "Tisch anfragen"
     }
   },
@@ -48,7 +44,6 @@
     "metaDescription": "Die ganze Speisekarte von La Barchetta: Pasta, Pizza, Antipasti und Nachspeisen — filterbar nach Kategorie, vegetarisch und vegan.",
     "eyebrow": "Alles, was heute an Bord ist",
     "title": "Speisekarte",
-    "subtitle": "Nach Kategorie filtern, vegetarisch oder vegan dazuschalten — und Sie sehen sofort, wie viel übrig bleibt.",
     "categories": {
       "all": "Alles",
       "antipasti": "Antipasti",
@@ -125,7 +120,7 @@
     "metaDescription": "Tisch bei La Barchetta anfragen — telefonisch oder per Nachricht, ohne Online-Buchung.",
     "eyebrow": "Platz an Bord",
     "title": "Tisch reservieren",
-    "body": "Reservierungen nehmen wir telefonisch oder per Nachricht entgegen — eine Online-Buchung gibt es hier noch nicht. Dafür antwortet ein echter Mensch, meist noch am selben Tag.",
+    "body": "Telefonisch oder per Nachricht — eine Online-Buchung gibt es hier noch nicht.",
     "ctaCall": "Anrufen:",
     "formTitle": "Oder schreiben Sie uns",
     "form": {

@@ -24,8 +24,7 @@ export async function MenuTeaser() {
   return (
     <section className="relative px-6 pt-16 pb-6 sm:pt-24 sm:pb-8">
       <div className="relative z-10 mx-auto max-w-5xl">
-        <p className="font-script text-3xl text-primary">{tHome("menuEyebrow")}</p>
-        <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <h2 className="font-display text-display-md text-foreground">{t("title")}</h2>
           <Link
             href="/menu"

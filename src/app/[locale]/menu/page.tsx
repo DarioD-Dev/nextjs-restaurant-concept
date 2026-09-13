@@ -57,7 +57,6 @@ export default async function MenuPage({ params }: PageProps<"/[locale]/menu">) 
             <p className="font-script text-3xl text-primary">{t("eyebrow")}</p>
             <h1 className="mt-1 font-display text-display-lg text-foreground">{t("title")}</h1>
             <HeadingUnderline className="mt-1 w-40 text-primary sm:w-52" />
-            <p className="mt-4 max-w-xl text-base text-foreground-muted">{t("subtitle")}</p>
           </div>
 
           {/* The blob lives inside the illustration's own column rather

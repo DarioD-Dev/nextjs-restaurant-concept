@@ -12,7 +12,6 @@
   },
   "Footer": {
     "thanks": "Thanks for stopping by.",
-    "tagline": "Small boat, big portions.",
     "hoursWeekdays": "Tue–Sun 11:30 am–10:00 pm",
     "hoursWeekend": "Closed Mondays",
     "copyright": "© {year} La Barchetta"
@@ -20,26 +19,23 @@
   "Home": {
     "eyebrow": "La Barchetta · Vienna",
     "headline": "Hungry? Perfetto.",
-    "subtitle": "Pasta, pizza, antipasti, dolci — right in Vienna-Margareten. Come hungry, we'll take care of the rest.",
+    "subtitle": "Pasta, pizza, antipasti, dolci — right in Vienna-Margareten.",
     "ctaReserve": "Book a table",
     "ctaMenu": "See the menu",
-    "menuEyebrow": "Pasta, pizza & more",
     "menuCta": "The whole menu",
     "pizzaTagline": "La pizza non aspetta.",
     "dolciEyebrow": "To finish",
     "tavola": {
       "eyebrow": "A tavola!",
-      "title": "One table, everything on it.",
-      "body": "That's what an evening here looks like: pasta, pizza, a glass of wine, lemon, basil — and decidedly too much bread."
+      "title": "One table, everything on it."
     },
     "cestino": {
-      "title": "Fatto in casa.",
-      "body": "Pomodoro, basilico, limone, peperoncino — the four ingredients that show up in almost everything we make."
+      "title": "Fatto in casa."
     },
     "closingCta": {
       "eyebrow": "Ci vediamo?",
       "title": "So — convinced?",
-      "body": "Honestly: reading has never filled anyone up. Come and see for yourself — ideally hungry. Fridays and Saturdays tend to go first.",
+      "body": "Fridays and Saturdays tend to go first.",
       "cta": "Request a table"
     }
   },
@@ -48,7 +44,6 @@
     "metaDescription": "The whole La Barchetta menu: pasta, pizza, antipasti and desserts — filterable by category, vegetarian and vegan.",
     "eyebrow": "Everything on board today",
     "title": "Menu",
-    "subtitle": "Filter by category, add vegetarian or vegan — and you'll see straight away how much is left.",
     "categories": {
       "all": "Everything",
       "antipasti": "Antipasti",
@@ -125,7 +120,7 @@
     "metaDescription": "Ask for a table at La Barchetta — by phone or message, no online booking.",
     "eyebrow": "A seat on board",
     "title": "Book a table",
-    "body": "We take reservations by phone or by message — there's no online booking here yet. What there is instead: a real person answering, usually the same day.",
+    "body": "By phone or message — there's no online booking here yet.",
     "ctaCall": "Call:",
     "formTitle": "Or write to us",
     "form": {
