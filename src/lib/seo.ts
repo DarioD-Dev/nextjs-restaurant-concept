@@ -55,6 +55,13 @@ export function buildPageMetadata({
       siteName: RESTAURANT.name,
       url,
       locale: OG_LOCALES[locale],
+      // Ausdrücklich gesetzt, nicht der automatischen Ergänzung überlassen:
+      // Next ergänzt das Bild aus app/opengraph-image.tsx nur, solange keine
+      // eigene openGraph-Angabe existiert — und die wird, wie oben notiert,
+      // ganz ersetzt statt zusammengeführt. Ohne diese Zeile bleibt die
+      // Linkvorschau bildlos, obwohl die Route das Bild ausliefert.
+      images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630 }],
     },
+    twitter: { card: "summary_large_image" },
   };
 }
