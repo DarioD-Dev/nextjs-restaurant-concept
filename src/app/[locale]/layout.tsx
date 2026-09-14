@@ -21,6 +21,18 @@ export async function generateMetadata({ params }: LayoutProps<"/[locale]">): Pr
     // Set once here so any future relative metadata URL (an OG image, say)
     // resolves against the real origin instead of failing the build.
     metadataBase: new URL(SITE_URL),
+    // Konzeptstudie ohne Auftrag — darf keine echte Wiener Gastronomie im
+    // Suchindex verdrängen. robots.txt allein genügt dafür nicht: Ein
+    // Disallow verhindert nur das Abrufen, nicht das Indexieren. Eine URL,
+    // die von anderswo verlinkt ist — und das Portfolio verlinkt sie —, kann
+    // trotzdem als nackter Treffer ohne Beschreibung erscheinen. Maison
+    // Aurelle und Salon Kupferglanz setzen den Hinweis seit jeher, dieses
+    // Projekt bis 14.09.2026 nicht.
+    //
+    // Bewusst hier und NICHT in buildPageMetadata: Den Helfer benutzen Layout
+    // und Seiten gemeinsam, und wenn beide robots setzen, gibt Next zwei
+    // Meta-Tags aus. Vom Layout aus gilt der Wert ohnehin für jede Route.
+    robots: { index: false, follow: false },
     ...buildPageMetadata({
       title: t("title"),
       description: t("description"),
