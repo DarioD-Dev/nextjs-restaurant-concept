@@ -132,5 +132,10 @@
       "success": "Thanks for your enquiry!",
       "demoNote": "Concept study: no email is sent and no table is reserved."
     }
+  },
+  "NotFound": {
+    "title": "This page doesn't exist.",
+    "body": "The link may be outdated or contain a typo.",
+    "home": "Back to the homepage"
   }
 }

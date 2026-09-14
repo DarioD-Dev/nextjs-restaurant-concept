@@ -132,5 +132,10 @@
       "success": "Danke für Ihre Anfrage!",
       "demoNote": "Konzeptstudie: Es wird keine E-Mail versendet und es wird kein Tisch reserviert."
     }
+  },
+  "NotFound": {
+    "title": "Diese Seite gibt es nicht.",
+    "body": "Der Link ist vielleicht veraltet oder hat einen Tippfehler.",
+    "home": "Zur Startseite"
   }
 }
