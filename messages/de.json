@@ -129,7 +129,8 @@
       "error": "Bitte prüfen — dieses Feld fehlt oder ist ungültig.",
       "submit": "Nachricht senden",
       "submitting": "Wird gesendet…",
-      "success": "Danke! Ihre Nachricht ist angekommen."
+      "success": "Danke für Ihre Anfrage!",
+      "demoNote": "Konzeptstudie: Es wird keine E-Mail versendet und es wird kein Tisch reserviert."
     }
   }
 }

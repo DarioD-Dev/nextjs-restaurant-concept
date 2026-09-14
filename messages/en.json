@@ -129,7 +129,8 @@
       "error": "Please check — this field is missing or invalid.",
       "submit": "Send message",
       "submitting": "Sending…",
-      "success": "Thanks! Your message has arrived."
+      "success": "Thanks for your enquiry!",
+      "demoNote": "Concept study: no email is sent and no table is reserved."
     }
   }
 }

@@ -15,7 +15,7 @@ const fieldClass =
 export function ContactForm() {
   const t = useTranslations("Reservations.form");
   const [state, formAction, pending] = useActionState(submitContactForm, initialState);
-  const successRef = useRef<HTMLParagraphElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
 
   // On success the form is replaced by the confirmation; focus would
   // otherwise fall back to <body> since the submit button it was on is
@@ -26,14 +26,15 @@ export function ContactForm() {
 
   if (state.status === "success") {
     return (
-      <p
-        ref={successRef}
-        tabIndex={-1}
-        role="status"
-        className="font-semibold text-primary outline-none"
-      >
-        {t("success")}
-      </p>
+      // Die Bestätigung nennt die Grenze dieser Demo ausdrücklich. Vorher
+      // stand hier "Ihre Nachricht ist angekommen" — eine Tatsachenbehauptung,
+      // die nicht stimmte: Ohne RESEND_API_KEY protokolliert die Server-Action
+      // nur und meldet Erfolg. Wer das Formular testet — und Interessenten tun
+      // das — hätte auf eine Antwort gewartet, die nie kommt.
+      <div ref={successRef} tabIndex={-1} role="status" className="outline-none">
+        <p className="font-semibold text-primary">{t("success")}</p>
+        <p className="mt-2 text-sm text-foreground/70">{t("demoNote")}</p>
+      </div>
     );
   }
 
