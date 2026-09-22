@@ -1,0 +1,148 @@
+{
+  "Meta": {
+    "title": "La Barchetta — talijanski restoran, Wien",
+    "description": "La Barchetta, Wien-Margareten: pasta, pizza, antipasti i slastice. Jelovnik možete filtrirati, stol zatražite u minuti."
+  },
+  "Header": {
+    "menu": "Jelovnik",
+    "reserve": "Rezervirajte stol",
+    "skipToContent": "Prijeđi na sadržaj",
+    "openMenu": "Otvori izbornik",
+    "closeMenu": "Zatvori izbornik"
+  },
+  "Footer": {
+    "thanks": "Hvala što ste svratili.",
+    "hoursWeekdays": "uto–ned 11:30–22:00",
+    "hoursWeekend": "pon zatvoreno",
+    "disclaimer": "Konceptna studija – nije službena stranica stvarnog restorana. Adresa, telefonski broj i radno vrijeme su izmišljeni.",
+    "copyright": "© {year} La Barchetta"
+  },
+  "Home": {
+    "eyebrow": "La Barchetta · Wien",
+    "headline": "Gladni? Perfetto.",
+    "subtitle": "Pasta, pizza, antipasti, dolci — usred Wien-Margaretena.",
+    "ctaReserve": "Rezervirajte stol",
+    "ctaMenu": "Jelovnik",
+    "menuCta": "Cijeli jelovnik",
+    "pizzaTagline": "La pizza non aspetta.",
+    "dolciEyebrow": "Za kraj",
+    "tavola": {
+      "eyebrow": "A tavola!",
+      "title": "Jedan stol, sve na njemu."
+    },
+    "cestino": {
+      "title": "Fatto in casa."
+    },
+    "closingCta": {
+      "eyebrow": "Ci vediamo?",
+      "title": "I, jeste li uvjereni?",
+      "cta": "Zatražite stol"
+    }
+  },
+  "Menu": {
+    "metaTitle": "Jelovnik — La Barchetta",
+    "metaDescription": "Cijeli jelovnik restorana La Barchetta: pasta, pizza, antipasti i slastice — filtrirajte po kategoriji, vegetarijanski i veganski.",
+    "eyebrow": "Sve što je danas na brodu",
+    "title": "Jelovnik",
+    "categories": {
+      "all": "Sve",
+      "antipasti": "Antipasti",
+      "pasta": "Pasta",
+      "pizza": "Pizza",
+      "dolci": "Dolci"
+    },
+    "vegetarian": "Vegetarijansko",
+    "vegan": "Vegansko",
+    "dishes": {
+      "bruschetta-pomodoro": {
+        "name": "Bruschetta al Pomodoro",
+        "description": "Prepečeni kruh od kiselog tijesta, rajčica, bosiljak, češnjak"
+      },
+      "burrata-prosciutto": {
+        "name": "Burrata e Prosciutto",
+        "description": "Burrata, parmski pršut, rukola, balzamico"
+      },
+      "carpaccio-manzo": {
+        "name": "Carpaccio di Manzo",
+        "description": "Tanko narezani goveđi file, parmezan, rukola, limun"
+      },
+      "spaghetti-pomodoro": {
+        "name": "Spaghetti al Pomodoro",
+        "description": "Umak od rajčice, bosiljak, maslinovo ulje"
+      },
+      "cacio-e-pepe": {
+        "name": "Cacio e Pepe",
+        "description": "Tonnarelli, Pecorino Romano, crni papar"
+      },
+      "pappardelle-ragu": {
+        "name": "Pappardelle al Ragù",
+        "description": "Široki rezanci, goveđi ragù, pecorino"
+      },
+      "ravioli-zucca": {
+        "name": "Ravioli di Zucca",
+        "description": "Ravioli s bučom, maslac od kadulje, parmezan"
+      },
+      "margherita": {
+        "name": "Margherita",
+        "description": "Rajčica, mozzarella, bosiljak"
+      },
+      "diavola": {
+        "name": "Diavola",
+        "description": "Rajčica, mozzarella, ljuta salama, peperoncino"
+      },
+      "marinara": {
+        "name": "Marinara",
+        "description": "Rajčica, češnjak, origano, maslinovo ulje"
+      },
+      "funghi-tartufo": {
+        "name": "Funghi e Tartufo",
+        "description": "Šampinjoni, krema od tartufa, mozzarella"
+      },
+      "tiramisu": {
+        "name": "Tiramisù",
+        "description": "Mascarpone, kava, kakao"
+      },
+      "panna-cotta-limone": {
+        "name": "Panna Cotta al Limone",
+        "description": "Desert od vrhnja, limun, bobičasto voće"
+      },
+      "cannoli": {
+        "name": "Cannoli Siciliani",
+        "description": "Hrskave rolice, ricotta, pistacije"
+      }
+    },
+    "countOne": "jelo",
+    "countMany": "jela",
+    "empty": "Ništa nije pronađeno — maknite jedan filtar."
+  },
+  "Reservations": {
+    "metaTitle": "Rezervirajte stol — La Barchetta",
+    "metaDescription": "Zatražite stol u restoranu La Barchetta — telefonom ili porukom, bez online rezervacije.",
+    "eyebrow": "Mjesto na brodu",
+    "title": "Rezervirajte stol",
+    "body": "Telefonom ili porukom — online rezervacija još ne postoji.",
+    "ctaCall": "Nazovite:",
+    "formTitle": "Ili nam pišite",
+    "form": {
+      "nameLabel": "Ime",
+      "emailLabel": "E-mail",
+      "messageLabel": "Poruka",
+      "error": "Provjerite — ovo polje nedostaje ili nije ispravno.",
+      "submit": "Pošaljite poruku",
+      "submitting": "Šalje se…",
+      "success": "Hvala na upitu!",
+      "demoNote": "Konceptna studija: e-mail se ne šalje i stol se ne rezervira."
+    }
+  },
+  "NotFound": {
+    "title": "Ova stranica ne postoji.",
+    "body": "Poveznica je možda zastarjela ili sadrži tipfeler.",
+    "home": "Na početnu"
+  },
+  "Error": {
+    "title": "Nešto nam je pošlo po zlu.",
+    "body": "Stranicu trenutačno nije bilo moguće učitati. Ponovni pokušaj često pomogne.",
+    "retry": "Pokušajte ponovno",
+    "home": "Na početnu"
+  }
+}

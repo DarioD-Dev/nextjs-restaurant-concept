@@ -16,7 +16,7 @@ export function absoluteUrl(href: Href, locale: Locale): string {
 // OG locale codes are underscored and region-qualified; the site's own
 // codes are plain. Small enough to keep as a literal map, and it fails to
 // compile if a locale is ever added without deciding what it maps to.
-const OG_LOCALES: Record<Locale, string> = { de: "de_AT", en: "en_GB" };
+const OG_LOCALES: Record<Locale, string> = { de: "de_AT", en: "en_GB", hr: "hr_HR" };
 
 /**
  * Every page's metadata is built here rather than assembled inline.
