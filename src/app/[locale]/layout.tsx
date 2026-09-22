@@ -55,10 +55,14 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <NextIntlClientProvider>
           {/* Same header and nav on every page, so keyboard users get a way
-              past it (WCAG 2.4.1). Invisible until focused. */}
+              past it (WCAG 2.4.1). Invisible until focused.
+
+              Parked above the viewport and slid in on focus, rather than
+              sr-only + not-sr-only: not-sr-only resets padding to 0, which
+              flattens the link to a thin strip exactly when it appears. */}
           <a
             href="#main"
-            className="sr-only rounded-full bg-primary px-5 py-2.5 font-sans text-sm font-bold text-background focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50"
+            className="absolute top-3 left-3 z-50 -translate-y-24 rounded-full bg-primary px-5 py-2.5 font-sans text-sm font-bold text-background transition-transform focus:translate-y-0"
           >
             {t("skipToContent")}
           </a>

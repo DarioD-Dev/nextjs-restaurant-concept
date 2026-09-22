@@ -14,6 +14,7 @@
     "thanks": "Thanks for stopping by.",
     "hoursWeekdays": "Tue–Sun 11:30 am–10:00 pm",
     "hoursWeekend": "Closed Mondays",
+    "disclaimer": "Concept study – not an official presence of a real restaurant. Address, phone number and opening hours are invented.",
     "copyright": "© {year} La Barchetta"
   },
   "Home": {
@@ -137,5 +138,11 @@
     "title": "This page doesn't exist.",
     "body": "The link may be outdated or contain a typo.",
     "home": "Back to the homepage"
+  },
+  "Error": {
+    "title": "Something went wrong on our side.",
+    "body": "This page could not be loaded just now. Trying again often does the trick.",
+    "retry": "Try again",
+    "home": "Back to home"
   }
 }

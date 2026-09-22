@@ -50,8 +50,15 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-6 font-sans text-xs text-foreground-muted/70">
-          {t("copyright", { year: new Date().getFullYear() })}
+        {/* Fiktionshinweis, wie ihn Maison Aurelle und Salon Kupferglanz seit
+            jeher tragen. Direkt unter den Kontaktdaten, weil genau die hier
+            erfunden sind: Adresse, Telefonnummer und Öffnungszeiten stehen
+            darüber so, wie sie bei einem echten Lokal stünden. Das
+            `noindex` hält die Seite aus der Suche, aber nicht davon ab,
+            jemandem geschickt zu werden. */}
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 font-sans text-xs text-foreground-muted/70 sm:flex-row sm:items-center sm:justify-between">
+          <p>{t("copyright", { year: new Date().getFullYear() })}</p>
+          <p>{t("disclaimer")}</p>
         </div>
       </div>
     </footer>

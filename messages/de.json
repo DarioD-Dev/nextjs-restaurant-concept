@@ -14,6 +14,7 @@
     "thanks": "Danke fürs Vorbeischauen.",
     "hoursWeekdays": "Di–So 11:30–22:00",
     "hoursWeekend": "Mo Ruhetag",
+    "disclaimer": "Konzeptstudie – kein offizieller Auftritt eines echten Restaurants. Adresse, Telefonnummer und Öffnungszeiten sind erfunden.",
     "copyright": "© {year} La Barchetta"
   },
   "Home": {
@@ -136,6 +137,12 @@
   "NotFound": {
     "title": "Diese Seite gibt es nicht.",
     "body": "Der Link ist vielleicht veraltet oder hat einen Tippfehler.",
+    "home": "Zur Startseite"
+  },
+  "Error": {
+    "title": "Da ist uns etwas danebengegangen.",
+    "body": "Diese Seite konnte gerade nicht geladen werden. Ein neuer Versuch hilft oft schon.",
+    "retry": "Erneut versuchen",
     "home": "Zur Startseite"
   }
 }
