@@ -1,6 +1,6 @@
 {
   "Meta": {
-    "title": "La Barchetta — talijanski restoran, Wien",
+    "title": "La Barchetta — talijanski restoran u Beču",
     "description": "La Barchetta, Wien-Margareten: pasta, pizza, antipasti i slastice. Jelovnik možete filtrirati, stol zatražite u minuti."
   },
   "Header": {
@@ -18,9 +18,9 @@
     "copyright": "© {year} La Barchetta"
   },
   "Home": {
-    "eyebrow": "La Barchetta · Wien",
+    "eyebrow": "La Barchetta · Beč",
     "headline": "Gladni? Perfetto.",
-    "subtitle": "Pasta, pizza, antipasti, dolci — usred Wien-Margaretena.",
+    "subtitle": "Pasta, pizza, antipasti, dolci — usred bečkog Margaretena.",
     "ctaReserve": "Rezervirajte stol",
     "ctaMenu": "Jelovnik",
     "menuCta": "Cijeli jelovnik",
@@ -141,7 +141,7 @@
   },
   "Error": {
     "title": "Nešto nam je pošlo po zlu.",
-    "body": "Stranicu trenutačno nije bilo moguće učitati. Ponovni pokušaj često pomogne.",
+    "body": "Stranicu trenutačno nije moguće učitati. Ponovni pokušaj često pomogne.",
     "retry": "Pokušajte ponovno",
     "home": "Na početnu"
   }
