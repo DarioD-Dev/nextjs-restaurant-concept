@@ -3,6 +3,17 @@ import { getPathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { RESTAURANT } from "@/data/restaurant";
 
+/**
+ * Der Alternativtext des Vorschaubilds — an einer Stelle, weil ihn zwei
+ * Module brauchen: `app/opengraph-image.tsx` exportiert ihn als `alt`, und
+ * das `images`-Objekt der Linkvorschau muss ihn am Bild mitgeben. Next
+ * ergänzt das Datei-Metadatum nämlich NUR, solange keine eigene
+ * `openGraph.images`-Angabe existiert — und die steht hier aus gutem Grund.
+ * Ohne diese Zusammenführung bleibt der Export wirkungslos und og:image:alt
+ * leer.
+ */
+export const OG_IMAGE_ALT = "La Barchetta — italienisches Restaurant in Wien";
+
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://nextjs-restaurant-concept.vercel.app";
 
@@ -60,7 +71,7 @@ export function buildPageMetadata({
       // eigene openGraph-Angabe existiert — und die wird, wie oben notiert,
       // ganz ersetzt statt zusammengeführt. Ohne diese Zeile bleibt die
       // Linkvorschau bildlos, obwohl die Route das Bild ausliefert.
-      images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630 }],
+      images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: OG_IMAGE_ALT }],
     },
     twitter: { card: "summary_large_image" },
   };
