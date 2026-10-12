@@ -21,6 +21,7 @@ export const routing = defineRouting({
     // ist.
     "/menu": { de: "/speisekarte", en: "/menu", hr: "/jelovnik" },
     "/reservations": { de: "/reservierung", en: "/reservations", hr: "/rezervacija" },
+    "/order": { de: "/vorbestellen", en: "/order", hr: "/narudzba" },
   },
 });
 

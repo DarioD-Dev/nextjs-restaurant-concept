@@ -62,6 +62,13 @@ export function Header() {
           >
             {t("menu")}
           </Link>
+          <Link
+            href="/order"
+            aria-current={pathname === "/order" ? "page" : undefined}
+            className="font-sans text-sm font-semibold text-foreground-muted transition-colors hover:text-foreground aria-[current=page]:text-primary"
+          >
+            {t("order")}
+          </Link>
           <LocaleSwitcher />
           <Link
             href="/reservations"
@@ -111,6 +118,13 @@ export function Header() {
               className="py-2 font-sans text-sm font-semibold text-foreground-muted transition-colors hover:text-foreground"
             >
               {t("menu")}
+            </Link>
+            <Link
+              href="/order"
+              onClick={() => setOpen(false)}
+              className="py-2 font-sans text-sm font-semibold text-foreground-muted transition-colors hover:text-foreground"
+            >
+              {t("order")}
             </Link>
             <Link
               href="/reservations"

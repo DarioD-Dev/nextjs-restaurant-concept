@@ -5,6 +5,7 @@
   },
   "Header": {
     "menu": "Menu",
+    "order": "Order ahead",
     "reserve": "Book a table",
     "skipToContent": "Skip to content",
     "openMenu": "Open menu",
@@ -139,6 +140,29 @@
       "success": "Thanks for your enquiry!",
       "demoNote": "Concept study: no email is sent and no table is reserved."
     }
+  },
+  "Order": {
+    "metaTitle": "Order ahead & pickup — La Barchetta",
+    "metaDescription": "Put together an order in advance and collect it at pickup time with no waiting.",
+    "eyebrow": "Order ahead",
+    "title": "Order ahead & pickup",
+    "body": "Pick your dishes, choose a pickup time — no waiting at the restaurant.",
+    "totalLabel": "Total",
+    "emptyCartError": "Please choose at least one dish.",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "pickupDateLabel": "Pickup date",
+    "pickupTimeLabel": "Pickup time",
+    "selectPlaceholder": "Please choose",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone (optional)",
+    "noteLabel": "Note (optional)",
+    "error": "Please check — this field is missing or invalid.",
+    "submit": "Send order",
+    "submitting": "Sending…",
+    "success": "Thanks for your order!",
+    "demoNote": "Concept study: no email is sent, no order is processed and nothing is charged."
   },
   "NotFound": {
     "title": "This page doesn't exist.",

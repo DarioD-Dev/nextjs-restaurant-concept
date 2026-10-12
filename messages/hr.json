@@ -5,6 +5,7 @@
   },
   "Header": {
     "menu": "Jelovnik",
+    "order": "Naruči unaprijed",
     "reserve": "Rezervirajte stol",
     "skipToContent": "Prijeđi na sadržaj",
     "openMenu": "Otvori izbornik",
@@ -139,6 +140,29 @@
       "success": "Hvala na upitu!",
       "demoNote": "Konceptna studija: e-mail se ne šalje i stol se ne rezervira."
     }
+  },
+  "Order": {
+    "metaTitle": "Naruči unaprijed i preuzmi — La Barchetta",
+    "metaDescription": "Složite narudžbu unaprijed i preuzmite je u dogovoreno vrijeme bez čekanja.",
+    "eyebrow": "Naruči unaprijed",
+    "title": "Naruči unaprijed i preuzmi",
+    "body": "Odaberite jela, odaberite vrijeme preuzimanja — bez čekanja u lokalu.",
+    "totalLabel": "Ukupno",
+    "emptyCartError": "Odaberite najmanje jedno jelo.",
+    "decrease": "Smanji količinu",
+    "increase": "Povećaj količinu",
+    "pickupDateLabel": "Datum preuzimanja",
+    "pickupTimeLabel": "Vrijeme preuzimanja",
+    "selectPlaceholder": "Odaberite",
+    "nameLabel": "Ime",
+    "emailLabel": "E-mail",
+    "phoneLabel": "Telefon (neobavezno)",
+    "noteLabel": "Napomena (neobavezno)",
+    "error": "Provjerite — ovo polje nedostaje ili nije ispravno.",
+    "submit": "Pošaljite narudžbu",
+    "submitting": "Šalje se…",
+    "success": "Hvala na narudžbi!",
+    "demoNote": "Konceptna studija: e-mail se ne šalje, narudžba se ne obrađuje i ništa se ne plaća."
   },
   "NotFound": {
     "title": "Ova stranica ne postoji.",
