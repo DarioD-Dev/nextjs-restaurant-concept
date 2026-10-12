@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ContactForm } from "@/components/contact/ContactForm";
+import { ReservationForm } from "@/components/reservations/ReservationForm";
 import { HeadingUnderline } from "@/components/illustrations/HeadingUnderline";
 import { TavolaIllustration } from "@/components/illustrations/TavolaIllustration";
 import { PaperBoat } from "@/components/icons/PaperBoat";
@@ -26,11 +26,10 @@ export async function generateMetadata({
 }
 
 // Honest, not a fake booking widget — same pattern every DarioDev concept
-// project uses for this exact situation: no real online reservation system
-// yet, so the CTA goes to a phone call or a real message instead of
-// pretending a table was booked. What changed is only the presentation:
-// the page is built from the same stations, colour shapes and drawings as
-// the homepage instead of being a bare form on a white page.
+// project uses for this exact situation: no real floor plan behind this,
+// so picking a table and time here sends a request, not a confirmed
+// booking. The phone call stays the boldest surface on the page because
+// it's still the only path that actually books a table on the spot.
 export default async function ReservationsPage({ params }: PageProps<"/[locale]/reservations">) {
   const locale = assertLocale((await params).locale);
   setRequestLocale(locale);
@@ -82,7 +81,7 @@ export default async function ReservationsPage({ params }: PageProps<"/[locale]/
         <div className="mx-auto max-w-2xl">
           <h2 className="font-display text-display-md text-foreground">{t("formTitle")}</h2>
           <div className="mt-6 rounded-3xl border-2 border-foreground bg-surface p-6 shadow-[6px_6px_0_var(--foreground)] sm:p-8">
-            <ContactForm />
+            <ReservationForm />
           </div>
         </div>
       </section>
