@@ -116,7 +116,6 @@ export function MenuFilter({
               {group.items.map((dish, i) => (
                 <li key={dish.id}>
                   <article
-                    tabIndex={0}
                     className="tilt-card h-full rounded-2xl border-2 border-foreground bg-surface p-5"
                     style={{ "--tilt": i % 2 === 0 ? "-1deg" : "1deg" } as React.CSSProperties}
                   >

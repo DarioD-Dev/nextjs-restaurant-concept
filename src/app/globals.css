@@ -139,7 +139,7 @@ button:not(:disabled),
 
 /* Dish postcards (homepage teaser and menu page): a slight per-card tilt,
    set per instance via the --tilt custom property, that straightens and
-   lifts on hover and keyboard focus. One hand-written rule rather than a
+   lifts on hover. One hand-written rule rather than a
    base utility plus two variant overrides — the whole interaction is three
    declarations and reads better in one place than spread across the
    class attribute of every card. */
@@ -148,8 +148,7 @@ button:not(:disabled),
   transition: transform 0.2s ease-out;
 }
 
-.tilt-card:hover,
-.tilt-card:focus-visible {
+.tilt-card:hover {
   transform: translateY(-4px) rotate(0deg);
 }
 

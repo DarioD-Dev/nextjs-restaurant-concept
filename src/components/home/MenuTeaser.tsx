@@ -41,7 +41,6 @@ export async function MenuTeaser() {
               <li key={id} className={offset}>
                 <StationReveal>
                   <article
-                    tabIndex={0}
                     className="tilt-card rounded-2xl border-2 border-foreground bg-surface p-5 shadow-[4px_4px_0_var(--foreground)]"
                     style={{ "--tilt": tilt } as React.CSSProperties}
                   >
